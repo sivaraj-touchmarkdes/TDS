@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="Touchmark" href="#" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog inner page Touchmark descience</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link href="./output.css" rel="stylesheet">
+    <link href="../src/input.css" rel="stylesheet">
+
+    <!-- // Link rel // -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+
+    <style>
+        .background-animate {
+            background-size: 400%;
+
+            -webkit-animation: AnimationName 3s ease infinite;
+            -moz-animation: AnimationName 3s ease infinite;
+            animation: AnimationName 3s ease infinite;
+        }
+
+        @keyframes AnimationName {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Define hover effects */
+        .hover-effect {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .hover-effect:hover {
+            background-color: #1C95C9;
+            color: #fff;
+        }
+
+        .hover-effect:hover #arrowPath {
+            fill: #fff;
+        }
+    </style>
+
+</head>
+
+<body class="font-gellix bg-gradient-to-r from-[#009ADC] via-[#1A4A93] to-[#1A4A93] background-animate">
+
+    <!--start header-->
+    <header class="fixed w-full top-0 z-20">
+        <nav id="header" class="border-gray-200 py-2.5">
+            <div
+                class="flex flex-wrap items-center justify-between xl:max-w-screen-xl 2xl:max-w-screen-2xl lg:max-w-screen-lg px-4 mx-auto">
+                <a href="#" class="flex items-center">
+                    <img src="../src/assets/img/tds-color-logo.png" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
+                </a>
+                <div class="flex items-center lg:order-2">
+                    <a href="/"
+                        class="text-white bg-[#009ADC] focus:ring-4 font-medium rounded-3xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 focus:outline-none">Let's
+                        Talk</a>
+                    <button data-collapse-toggle="mobile-menu-2" type="button"
+                        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="mobile-menu-2" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <li>
+                            <a href="#"
+                                class="navbartext block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#009ADC] lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="navbartext block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#009ADC] lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Company</a>
+                        </li>
+                        <li>
+                            <a href="./rupinis-casestudy.html"
+                                class="navbartext block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#009ADC] lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Case
+                                Study</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="navbartext block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#009ADC] lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="navbartext block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#009ADC] lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--End header-->
+
+
+    <!-- Start : Hero Video Banner -->
+    <section class="flex">
+        <div
+            class="xl:max-w-screen-2xl 2xl:max-w-screen-2xl lg:max-w-screen-lg lg:px-8 mx-auto py-8 lg:py-24 text-white">
+            <div class="pt-12 lg:pt-0">
+                <div class="flex justify-center">
+                    <h3 class="flex justify-center items-center text-base font-normal">Home</h3>
+                    <div class="border-2 rounded-full border-r ml-2"></div>
+                    <h3 class="ml-2 flex justify-center items-center text-base font-normal">Blogs</h3>
+                    <div class="border-2 rounded-full border-r ml-2"></div>
+                    <h1 class="font-semibold ml-2 text-base">Descience Blogs</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End : Hero Video Banner -->
+
+
+    <!--Start : Descience Blogs-->
+    <section class="bg-white rounded-t-3xl text-black">
+        <div class="max-w-screen-2xl px-5 mx-auto py-8 lg:py-24">
+            <!--start : Blog inner page Touchmark descience --->
+            <div class="mx-auto max-w-full bg-white">
+
+                <!-- Start : Journey into the World of Machine Learning-->
+                <div class="grid grid-cols-12">
+                    <div class="lg:col-span-9 col-span-12">
+                        <h1 class="text-[#484848] text-5xl font-semibold">Journey into the World of Machine Learning
+                        </h1>
+                        <div class="flex justify-start items-center space-x-3 mt-5">
+                            <div class="flex justify-center items-center"><img
+                                    src="../src/assets/img/blog/icons/calendar-icon-black.svg">
+                                <h3 class="text-base font-semibold text-[#3E3E3E] ml-2 mt-1">24/03/2024</h3>
+                            </div>
+                            <div class="flex justify-center items-center"><img
+                                    src="../src/assets/img/blog/icons/clock-icon-black.svg">
+                                <h3 class="text-base font-semibold text-[#3E3E3E] ml-2 mt-1">7-min read</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-3 lg:block hidden"></div>
+                </div>
+                <!--  End  : Journey into the World of Machine Learning-->
+
+                <!-- Start : Scrolling Contents-->
+                <div class="grid grid-cols-12 gap-4 mt-20">
+
+                    <!-- Start : Left Side Blog Content -->
+                    <div class="col-span-12 lg:col-span-7 lg:sticky lg:top-5 max-w-screen-2xl lg:pb-10 lg:mt-26">
+                        <img src="../src/assets/img/blog/blog-inner-page-01.png">
+                        <ul class="space-y-20">
+
+                            <!-- Start : In brief -->
+                            <li class="mt-20">
+                                <h1 class="text-4xl font-semibold text-[#484848]">In brief:</h1>
+                                <ul class="mt-7 text-base space-y-5 list-disc text-[#1C95C9] rounded-2xl ml-5">
+                                    <li>
+                                        <span class="text-[#161616]">
+                                            In a recent Accenture study, 66% of communication service providers (CSPs)
+                                            were
+                                            concerned about their tech debt, with rising IT costs and hampered
+                                            growth.</span>
+                                    </li>
+                                    <li>
+                                        <span class="text-[#161616]">
+                                            Modern IT systems can help CSPs reduce tech debt and achieve greater
+                                            agility,
+                                            cost
+                                            efficiency, and customer differentiation.</span>
+                                    </li>
+                                    <li>
+                                        <span class="text-[#161616]">
+                                            CSPs need to accelerate their technology transformation by embracing cloud,
+                                            data
+                                            and
+                                            AI, open technology architectures, and interoperability.</span>
+                                    </li>
+                                </ul>
+                                <div
+                                    class="mt-7 inline-flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect px-4 py-2 space-x-3 rounded-3xl">
+                                    <h3 class="text-base font-semibold">Read the
+                                        full report</h3>
+                                    <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                        <g>
+                                            <g>
+                                                <path id="arrowPath"
+                                                    d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                                    fill="#1C95C9"></path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </li>
+                            <!--  End  : In brief -->
+
+                            <!-- Start : Rethink your approach to transformation -->
+                            <li>
+                                <h1 class="lg:text-4xl xl:text-3xl 2xl:text-4xl font-semibold text-[#484848]">Rethink
+                                    your
+                                    approach to transformation :
+                                </h1>
+                                <ul class="mt-7 text-base space-y-5 rounded-2xl">
+                                    <li>
+                                        <span class="text-[#161616]">
+                                            The average communication service provider’s tech debt (% of legacy IT in
+                                            total
+                                            IT costs) in 2023 was 56%. This unresolved tech debt hinders productivity
+                                            and
+                                            innovation across the company.</span>
+                                    </li>
+                                    <li>
+                                        <span class="text-[#161616]">
+                                            CSPs’ approach to IT transformation over the past decade+ has been through
+                                            adaptation as the business embraced new models, architectures, and
+                                            acquisitions.
+                                            This approach multiplied the complexity of the IT components, compounding
+                                            tech
+                                            debt. As a result, initiatives have not always yielded high-value returns
+                                            and
+                                            business outcomes.</span>
+                                    </li>
+                                    <li>
+                                        <span class="text-[#161616]">
+                                            In Accenture's latest study—a survey of 250+ top CSP executives—less than 7%
+                                            of
+                                            respondents were fully satisfied with the return on their IT modernization
+                                            investments in the past three years.</span>
+                                    </li>
+                                    <li>
+                                        <span class="text-[#161616]">
+                                            With generative AI applications on the rise throughout the CSP enterprise,
+                                            the
+                                            time to address tech debt is now.
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--  End  : Rethink your approach to transformation -->
+
+                            <!-- Start : The cost of delayed technology transformation -->
+                            <li>
+                                <h1 class="lg:text-4xl xl:text-3xl 2xl:text-4xl font-semibold text-[#484848]">The cost
+                                    of delayed technology transformation
+                                </h1>
+                                <ul class="mt-7 text-base space-y-5 rounded-2xl">
+                                    <li>
+                                        <span class="text-[#161616]">Tech debt has a negative impact on all elements of
+                                            CSPs’ business. Failure to monetize assets, competition struggles, operation
+                                            and maintenance costs, and slow time to market top the list of our global
+                                            survey. All this indicates that there is a need for a comprehensive review
+                                            of CSPs’ IT structure through a tech debt lens.</span>
+                                    </li>
+                                    <li>
+                                        <span class="text-[#161616]">Companies with lower-than-average tech debt have
+                                            performed better than their peers in revenue growth and expect better
+                                            performance in the next three years (5.3% vs. 4.4% 2024-2026).</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--  End  : The cost of delayed technology transformation -->
+
+                            <!-- start : 61%-->
+                            <li>
+                                <h1 class="lg:text-4xl xl:text-3xl 2xl:text-4xl font-semibold text-[#484848]">61%
+                                </h1>
+                                <ul class="mt-7 text-base space-y-5 rounded-2xl">
+                                    <li>
+                                        <span class="text-[#161616]">of CSP executives say that their company will miss
+                                            future growth opportunities if it fails to accomplish ongoing IT
+                                            transformation.</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--  End  : 61%-->
+
+                            <!-- Start : The golden opportunity for growth-->
+                            <li>
+                                <h1 class="lg:text-4xl xl:text-3xl 2xl:text-4xl font-semibold text-[#484848]">The golden
+                                    opportunity for growth
+                                </h1>
+                                <p class="text-base mt-7">By cutting tech debt and building modern IT infrastructure, IT
+                                    can be a catalyst for innovation rather than a cost center. A modern digital core
+                                    based on cloud, data and AI, open technology architectures, and interoperability
+                                    will enable CSPs to:</p>
+                                <ul class="mt-5 text-base space-y-5 rounded-2xl">
+                                    <li>
+                                        <span class="text-[#161616]">1.Enable operational excellence and cost
+                                            efficiency,</span>
+                                    </li>
+                                    <li>
+                                        <span class="text-[#161616]">2.Provide customers with seamless and personalized
+                                            engagement and </span>
+                                    </li>
+                                    <li>
+                                        <span class="text-[#161616]">3.Reduce time to market for new products and
+                                            services.</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--  End : The golden opportunity for growth -->
+
+
+                            <!-- Start : Leaders have started on the road to modern IT-->
+                            <li>
+                                <h1 class="lg:text-4xl xl:text-3xl 2xl:text-4xl font-semibold text-[#484848]">Leaders
+                                    have started on the road to modern IT
+                                </h1>
+                                <p class="text-base mt-7">Though most CSPs are aware of the impact of rising tech debt,
+                                    there is a gap between the vision for the future and the current state. For
+                                    instance, 93% of CSPs cite Cloud First infrastructure as a significant capability,
+                                    but only 26% follow advanced practices enabling scalability and agility.  </p>
+                                <p class="text-base mt-5">Over the past three years, companies in the top quartile of
+                                    technological advancement have been more cost-efficient than their low-maturity
+                                    peers. They also set their sights higher for agility in the coming years. </p>
+
+                                <ul class="mt-5 text-base space-y-5 list-disc ml-5 rounded-2xl">
+                                    <li>
+                                        <span class="text-[#161616]">Lower IT opex: Tech-advanced companies reported
+                                            only a 0.8% rise in IT costs vs. 3.4% for others</span>
+                                    </li>
+                                    <li>
+                                        <span class="text-[#161616]">Lower IT total cost to operate: Tech-advanced
+                                            companies reported only a 1.5% rise in TCO vs. 3.7% for others</span>
+                                    </li>
+                                    <li>
+                                        <span class="text-[#161616]">Greater agility: Over the next three years, more
+                                            advanced CSPs foresee a 32% increase in speed to market</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--  End  : Leaders have started on the road to modern IT-->
+
+                        </ul>
+                    </div>
+                    <!--  End  : Left Side Blog Content -->
+
+
+                    <!-- Start : Right Side Fixed Articles -->
+                    <div class="col-span-12 lg:col-span-5 md:sticky top-20 xl:h-[1100px] lg:h-[1100px] 2xl:h-[1100px] border border-[#1C95C9] rounded-2xl">
+                        <!-- Divider -->
+                        <div class="lg:p-10 p-5">
+                            <div>
+                                <h1 class="text-xl font-semibold text-[#484848]">Share this</h1>
+                                <div class="flex justify-start items-center space-x-3 mt-5">
+                                    <img src="../src/assets/img/blog/icons/share-link-icon.svg">
+                                    <img src="../src/assets/img/blog/icons/linkedin-icon.svg">
+                                    <img src="../src/assets/img/blog/icons/instagram-icon.svg">
+                                    <img src="../src/assets/img/blog/icons/whatsapp-icon.svg">
+                                    <img src="../src/assets/img/blog/icons/facebook-icon.svg">
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mt-10">
+                                <h1 class="text-xl font-semibold text-[#484848]">Recent Articles</h1>
+                                <h3 class="underline text-base text-[#1C95C9]">View all</h3>
+                            </div>
+
+                            <div class="mt-14">
+                                <div class="flex text-[#484848] font-semibold">
+                                    <img src="../src/assets/img/blog/recent-blog-article.png">
+                                    <div class="ml-5">
+                                        <h3 class="text-sm">12 Apr 2023</h3>
+                                        <h1 class="text-lg mt-1">Explore the world of Machine Learning Explore the world of</h1>
+                                        <div class="flex justify-start items-center space-x-2 mt-5">
+                                            <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial Intelligence</p>
+                                            <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine Learning</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10 border border-b-[#D0F1FF]"></div>
+                            </div>
+
+                            <div class="mt-10">
+                                <div class="flex text-[#484848] font-semibold">
+                                    <img src="../src/assets/img/blog/recent-blog-article.png">
+                                    <div class="ml-5">
+                                        <h3 class="text-sm">12 Apr 2023</h3>
+                                        <h1 class="text-lg mt-1">Explore the world of Machine Learning Explore the world of</h1>
+                                        <div class="flex justify-start items-center space-x-3 mt-5">
+                                            <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial Intelligence</p>
+                                            <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine Learning</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10 border border-b-[#D0F1FF]"></div>
+                            </div>
+
+                            <div class="mt-10">
+                                <div class="flex text-[#484848] font-semibold">
+                                    <img src="../src/assets/img/blog/recent-blog-article.png">
+                                    <div class="ml-5">
+                                        <h3 class="text-sm">12 Apr 2023</h3>
+                                        <h1 class="text-lg mt-1">Explore the world of Machine Learning Explore the world of</h1>
+                                        <div class="flex justify-start items-center space-x-3 mt-5">
+                                            <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial Intelligence</p>
+                                            <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine Learning</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10 border border-b-[#D0F1FF]"></div>
+                            </div>
+
+                            <div class="mt-10">
+                                <div class="flex text-[#484848] font-semibold">
+                                    <img src="../src/assets/img/blog/recent-blog-article.png">
+                                    <div class="ml-5">
+                                        <h3 class="text-sm">12 Apr 2023</h3>
+                                        <h1 class="text-lg mt-1">Explore the world of Machine Learning Explore the world of</h1>
+                                        <div class="flex justify-start items-center space-x-3 mt-5">
+                                            <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial Intelligence</p>
+                                            <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine Learning</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--  End  : Right Side Fixed Articles -->
+
+                </div>
+                <!--  End : Scrolling Contents-->
+
+            </div>
+            <!-- End  : Blog inner page Touchmark descience --->
+        </div>
+    </section>
+    <!--End : Descience Blogs-->
+
+
+
+    <!--start Footer-->
+    <footer class="bg-white">
+        <div
+            class="xl:max-w-screen-2xl 2xl:max-w-screen-2xl lg:max-w-screen-lg lg:px-8 mx-auto py-8 lg:py-24 text-black bg-white">
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class=" hover:underline">About</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Careers</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Brand Center</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Discord Server</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Twitter</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Facebook
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Privacy Policy</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Licensing</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Terms</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class=" hover:underline">About</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Careers</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Brand Center</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">iOS</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Android</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Windows</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">MacOS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End Footer-->
+
+</body>
+
+<script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+
+<!----header--->
+<script>
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('header');
+        var companyLinks = document.querySelectorAll('.navbartext');
+
+        // Change background color of header
+        if (window.scrollY > 0) {
+            header.classList.add('bg-white');
+        } else {
+            header.classList.remove('bg-white');
+        }
+
+        // Change text color of company links
+        var textColorClass = window.scrollY > 0 ? 'text-black' : 'text-white';
+        companyLinks.forEach(function (link) {
+            link.classList.remove('text-white', 'text-black');
+            link.classList.add(textColorClass);
+        });
+    });
+</script>
+<!----header--->
+
+
+
+<!-- Smooth scroll to content sections and highlight active link-->
+<script>
+    // JavaScript to update menu border color based on scroll position
+    window.addEventListener('scroll', function () {
+        var sections = document.querySelectorAll('.section');
+        var menuLinks = document.querySelectorAll('.nav-link');
+
+        sections.forEach(function (section, index) {
+            var top = section.offsetTop;
+            var bottom = top + section.offsetHeight;
+            var scrollPosition = window.scrollY;
+
+            // Check if the next section is in view
+            if (index < sections.length - 1 && scrollPosition >= top && scrollPosition < bottom) {
+                // Update the border color of the next menu item
+                menuLinks.forEach(function (link) {
+                    link.classList.remove('active-link'); // Remove active class from all menu items
+                });
+                menuLinks[index + 1].classList.add('active-link'); // Add active class to the next section's menu item
+            }
+        });
+    });
+</script>
+
+
+</html>

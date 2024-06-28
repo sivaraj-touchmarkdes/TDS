@@ -1,0 +1,2716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touchmark Descience</title>
+
+    <!-- Favicon -->
+    <link rel="touchmark-des-icon" sizes="180x180"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link href="./output.css" rel="stylesheet">
+    <link href="./src/input.css" rel="stylesheet">
+
+    <link href="./src/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="./src/css/owl.theme.default.min.css" rel="stylesheet">
+
+    <style>
+        /* Expanding slider */
+        @layer utilities {
+            .slider-panel.active .first {
+                display: block !important;
+            }
+
+            .slider-panel.active .second {
+                display: none !important;
+            }
+
+            .hide {
+                display: none;
+            }
+
+            .show {
+                display: block;
+            }
+        }
+
+        .expanding-slider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 600px;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .slider-container {
+            display: flex;
+            width: 100vw;
+            height: 100%;
+        }
+
+        .slider-panel {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            color: #fff;
+            cursor: pointer;
+            flex: 0.5;
+            position: relative;
+            transition: flex 150ms ease-in;
+            /* Make the flex transition faster */
+        }
+
+        .slider-panel h3 {
+            font-size: 24px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            opacity: 0;
+        }
+
+        .slider-panel.active {
+            flex: 5;
+        }
+
+        .slider-panel.active h3 {
+            opacity: 1;
+            transition: opacity 100ms ease-in 100ms;
+            /* Make the opacity transition faster */
+        }
+
+        .hide {
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            .slider-container {
+                width: 100vw;
+            }
+
+            .slider-panel:nth-of-type(5),
+            .slider-panel:nth-of-type(5) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hide-only {
+                display: block;
+            }
+        }
+
+        .group:hover img {
+            transform: scale(1.1);
+        }
+
+        .transition-transform {
+            transition: transform 100ms;
+            /* Make the transform transition faster */
+        }
+
+        .fast-transform {
+            transition: transform 100ms, opacity 100ms;
+            /* Make the transform and opacity transition faster */
+        }
+
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        /* Navbar */
+        .overflow-x-hidden {
+            overflow-x: hidden;
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:overflow-x-auto {
+                overflow-x: hidden;
+            }
+        }
+
+        .border-blue {
+            border-color: #0A3B7C;
+        }
+
+        .bg-scroll-white {
+            background-color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-text-black {
+                color: black !important;
+            }
+        }
+
+        .underline-transition {
+            position: relative;
+        }
+
+        .underline-transition::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background-color: transparent;
+            transition: background-color 0.5s ease;
+        }
+
+        .underline-transition:hover::after {
+            background-color: #0A3B7C;
+        }
+
+        .full-dropdown {
+            width: -webkit-fill-available;
+        }
+
+        @media (max-width: 638px) {
+            .mobile-full {
+                height: 989px;
+            }
+        }
+
+        /* Adjust the navbar for tablet screens (768px) */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            #navbar {
+                background-color: white !important;
+            }
+
+            #navbar-collapse-columns .hs-dropdown button {
+                color: black !important;
+            }
+
+            .border-white {
+                border-color: #0A3B7C !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="overflow-x-hidden lg:overflow-x-auto">
+
+        <!--Navbar-->
+        <header id="navbar"
+            class="fixed flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full text-sm py-4 sm:py-0 bg-transparent bg-white sm:bg-transparent">
+            <nav class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8"
+                aria-label="Global">
+                <div class="relative sm:flex sm:items-center pt-2">
+                    <div class="flex items-center justify-between">
+                        <a class="flex-none text-xl font-semibold dark:text-white -mt-3" href="./index.html">
+                            <img src="./src/assets/img/touchmark-logowhite.svg" class="h-8" id="logo">
+                        </a>
+                        <div class="sm:hidden">
+                            <button type="button"
+                                class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 text-gray-800 disabled:opacity-50 disabled:pointer-events-none"
+                                data-hs-collapse="#navbar-collapse-columns" aria-controls="navbar-collapse-columns"
+                                aria-label="Toggle navigation">
+                                <svg class="hs-collapse-open:hidden flex-shrink-0" fill="none" height="24"
+                                    viewBox="0 0 40 40" width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10513594">
+                                    <g clip-rule="evenodd" fill="#000" fill-rule="evenodd">
+                                        <path
+                                            d="m3.75 10c0-.69036.55964-1.25 1.25-1.25h30c.6904 0 1.25.55964 1.25 1.25 0 .6904-.5596 1.25-1.25 1.25h-30c-.69036 0-1.25-.5596-1.25-1.25z">
+                                        </path>
+                                        <path
+                                            d="m3.75 30c0-.6904.55964-1.25 1.25-1.25h30c.6904 0 1.25.5596 1.25 1.25s-.5596 1.25-1.25 1.25h-30c-.69036 0-1.25-.5596-1.25-1.25z">
+                                        </path>
+                                        <path
+                                            d="m10.4167 20c0-.6904.5596-1.25 1.25-1.25h23.3333c.6904 0 1.25.5596 1.25 1.25s-.5596 1.25-1.25 1.25h-23.3333c-.6904 0-1.25-.5596-1.25-1.25z">
+                                        </path>
+                                    </g>
+                                </svg>
+                                <svg class="hs-collapse-open:block hidden flex-shrink-0 size-4" version="1.1"
+                                    id="fi_722133" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" x="0px" y="0px"
+                                    viewBox="0 0 307.2 307.2" style="enable-background:new 0 0 307.2 307.2;"
+                                    xml:space="preserve">
+                                    <g>
+                                        <g>
+                                            <polygon
+                                                points="307.2,24.136 283.064,0 153.6,129.469 24.136,0 0,24.136 129.464,153.6 0,283.064 24.136,307.2 153.6,177.736 283.064,307.2 307.2,283.064 177.736,153.6">
+                                            </polygon>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="navbar-collapse-columns"
+                    class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block">
+                    <div
+                        class="flex flex-col gap-y-7 sm:gap-y-0 mt-10 sm:flex-row sm:items-center sm:justify-end sm:mt-0 px-5 lg:px-0 sm:ps-5 mobile-full">
+        
+                        <!--who we are-->
+                        <div class="hs-dropdown group [--strategy:static] lg:lg:h-14 sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover]">
+                            <a href="./about-us.html"><button type="button"
+                                    class="font-inter font-semibold lg:font-normal uppercase sm:p-3 flex items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                    Who we are
+                                </button></a>
+                            <div class="border-white mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                            </div>
+                        </div>
+                        <!--who we are-->
+        
+        
+                        <div class="border-b border-black/10 lg:hidden block"></div>
+        
+                        <!--what we do-->
+                        <div
+                            class="hs-dropdown group lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                            <a href="#">
+                                <button type="button"
+                                    class="font-inter font-semibold lg:font-normal  uppercase sm:p-3 flex justify-between items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                    what we do
+                                    <svg class="ms-1 flex-shrink-0 size-4 group-hover:-rotate-180"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="m6 9 6 6 6-6" />
+                                    </svg>
+                                </button>
+                            </a>
+        
+                            <div class="border-white mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                            </div>
+        
+                            <div
+                                class="hs-dropdown-menu transition-[opacity,margin] sm:border duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 hidden z-10 top-full end-0 sm:w-[75rem] bg-white sm:shadow-md py-3 sm:px-2 dark:bg-neutral-800 sm:dark:border dark:border-neutral-700 dark:divide-neutral-700 full-dropdown">
+        
+                                <div class="lg:block hidden flex items-center justify-start">
+                                    <h1 class="font-semibold font-gellix text-black text-xl ml-7 pt-2">
+                                        Services
+                                    </h1>
+                                </div>
+        
+                                <div class="sm:grid sm:grid-cols-4 p-2 lg:p-7">
+        
+                                    <div class="flex flex-col">
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./t&c-service.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Technology
+                                                & Consulting</span>
+                                        </a>
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./cloud.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Cloud</span>
+                                        </a>
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./s&c-service.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Sales
+                                                & commerce</span>
+                                        </a>
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./mv-service.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Metaverse</span>
+                                        </a>
+                                    </div>
+        
+                                    <div class="flex flex-col">
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./d&a-service.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Data
+                                                & Analytics</span>
+                                        </a>
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./ai&ml-service.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">AI
+                                                & ML</span>
+                                        </a>
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./rpa-service.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Robotic
+                                                Process Automation</span>
+                                        </a>
+                                    </div>
+        
+                                    <div class="lg:block hidden">
+                                        <div class="flex space-x-5">
+                                            <div class="border-gray-700 opacity-35 border-l"></div>
+                                            <div class="space-y-4 px-5">
+                                                <h1 class="uppercase text-black text-sm font-gellix font-semibold">
+                                                    Featured</h1>
+                                                <h3 class="mt-3 text-sm font-gellix font-semibold">Touchmark
+                                                    Quarterly</h3>
+                                                <p class="mt-2 text-xs font-inter">Silicon Valley pioneer Reid
+                                                    Hoffman explains
+                                                    why
+                                                    we should view
+                                                    generative AI as a “steam engine of the mind” that promises to
+                                                    profoundly alter our professional and personal lives.</p>
+                                                <ul class="mt-3 space-y-1 text-[#194F97] text-xs underline">
+                                                    <li class="inline-flex justify-start items-center font-inter font-semibold">
+                                                        <svg fill="none" height="16" class="text-[194F97] -rotate-90"
+                                                            viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"
+                                                            id="fi_10486492">
+                                                            <path
+                                                                d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                                fill="currentColor"></path>
+                                                        </svg><span class="pl-2">Business Building</span>
+                                                    </li>
+                                                    <li class="inline-flex justify-start items-center font-semibold">
+                                                        <svg fill="none" height="16" class="text-[#194F97] -rotate-90"
+                                                            viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"
+                                                            id="fi_10486492">
+                                                            <path
+                                                                d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                                fill="currentColor"></path>
+                                                        </svg><span class="pl-2">Quantum Black, AI by
+                                                            Touchmark</span>
+                                                    </li>
+                                                    <li class="inline-flex justify-start items-center font-semibold">
+                                                        <svg fill="none" height="16" class="text-[#194F97] -rotate-90"
+                                                            viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"
+                                                            id="fi_10486492">
+                                                            <path
+                                                                d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                                fill="currentColor"></path>
+                                                        </svg><span class="pl-2">Cloud Technology</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="lg:block hidden">
+                                        <div class="relative p-5">
+                                            <img src="./src/assets/img/navbar-img-service.jpg">
+                                        </div>
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+        
+                        </div>
+                        <!--what we do-->
+        
+        
+                        <div class="border-b border-black/10 lg:hidden block"></div>
+        
+                        <!--Industries-->
+                        <div
+                            class="hs-dropdown group lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                            <button type="button"
+                                class="font-inter font-semibold lg:font-normal  uppercase sm:p-3 flex justify-between items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                Industries
+                                <svg class="ms-1 flex-shrink-0 size-4 lg:group-hover:-rotate-180"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+        
+                            <div class="border-white mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                            </div>
+        
+                            <div
+                                class="hs-dropdown-menu transition-[opacity,margin] sm:border duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 hidden z-10 top-full end-0 sm:w-[75rem] bg-white sm:shadow-md py-5 sm:px-2 dark:bg-neutral-800 sm:dark:border dark:border-neutral-700 dark:divide-neutral-700 full-dropdown">
+        
+                                <div class="lg:block hidden flex items-center justify-start">
+                                    <h1 class="font-semibold font-gellix text-black text-xl ml-7 pt-2">
+                                        Industries
+                                    </h1>
+                                </div>
+        
+                                <div class="sm:grid sm:grid-cols-4 p-2 lg:p-5">
+        
+                                    <div class="flex flex-col">
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./areo.industry.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Aerospace
+                                                & Defence</span>
+                                        </a>
+        
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./bfsi-industry.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">BFSI</span>
+                                        </a>
+        
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./fmcg-industry.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Fast-Moving
+                                                Consumer Goods</span>
+                                        </a>
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./real-estate-industry.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                Real Estate</span>
+                                        </a>
+        
+        
+        
+                                    </div>
+        
+                                    <div class="flex flex-col">
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./hc-industry.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                Healthcare</span>
+                                        </a>
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./engg-industry.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                Engineering</span>
+                                        </a>
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./mining-industry.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                Mining</span>
+                                        </a>
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./gt-industry.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                Geospatial Tech</span>
+                                        </a>
+        
+                                    </div>
+        
+                                    <div class="flex flex-col">
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./m&e-industry.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                Media and Entertainment</span>
+                                        </a>
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./t&t-industry.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                Travel and Tourism</span>
+                                        </a>
+        
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="./es&g-industry.html">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Environmental,
+                                                social, and governance</span>
+                                        </a>
+        
+                                    </div>
+        
+                                    <div class="lg:block hidden">
+                                        <div class="p-5 -mt-5">
+                                            <img src="./src/assets/img/navbar-img-industry.jpg">
+                                        </div>
+                                    </div>
+        
+                                </div>
+                            </div>
+        
+                        </div>
+        
+                        <div class="border-b border-black/10 lg:hidden block"></div>
+        
+                        <!--case study-->
+                        <div
+                            class="md:hidden lg:block block hs-dropdown group lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                            <a href="./index.html#casestudy">
+                                <button type="button"
+                                    class="font-inter font-semibold lg:font-normal uppercase sm:p-3 flex items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                    Case Studies
+                                </button>
+                            </a>
+        
+                            <div class="border-white mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                            </div>
+        
+                        </div>
+        
+                        <div class="border-b border-black/10 lg:hidden block"></div>
+        
+                        <!--Insights-->
+                        <div
+                            class="hs-dropdown lg:h-14 group [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                            <button type="button"
+                                class="font-inter font-semibold lg:font-normal uppercase sm:p-3 flex justify-between items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                Insights
+                                <svg class="ms-1 flex-shrink-0 size-4 lg:group-hover:-rotate-180"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+        
+                            <div class="border-white mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                            </div>
+        
+        
+                            <div
+                                class="hs-dropdown-menu transition-[opacity,margin] sm:border duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 hidden z-10 top-full sm:w-48 bg-white sm:shadow-md py-2 sm:px-2 dark:bg-neutral-800 sm:dark:border dark:border-neutral-700 dark:divide-neutral-700">
+                                <div class="flex flex-col">
+                                    
+                                    <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start" href="#">
+                                        <span
+                                            class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                            Case Study</span>
+                                    </a>
+
+                                    <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start" href="#">
+                                        <span
+                                            class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                            Client & Partners</span>
+                                    </a>
+                                    
+                                    <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start" href="#">
+                                        <span
+                                            class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                            Blogs</span>
+                                    </a>
+        
+                                    <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start" href="#">
+                                        <span
+                                            class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                            Podcast</span>
+                                    </a>
+        
+                                    <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start" href="#">
+                                        <span
+                                            class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                            E-Books</span>
+                                    </a>
+        
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="border-b border-black/10 lg:hidden block"></div>
+        
+                        <!--clients & Partners-->
+                        <div
+                            class="md:hidden lg:block block hs-dropdown group lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                            <a href="./client&partner.html">
+                                <button type="button"
+                                    class="font-inter font-semibold lg:font-normal uppercase sm:p-3 flex items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                    Clients & Partners
+                                </button>
+                            </a>
+        
+                            <div class="border-white mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                            </div>
+        
+                        </div>
+        
+                        <div class="border-b border-black/10 lg:hidden block"></div>
+        
+                        <!--Contact-Us-->
+                        <div
+                            class="hs-dropdown lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] lg:ml-14 mt-2">
+                            <a href="./contact-us.html">
+                                <button type="button"
+                                    class="py-2 px-3 inline-flex items-center text-gray-100 bg-[#043E8C] text-base lg:text-sm font-semibold lg:font-normal">
+                                    Contact Us
+                                </button>
+                            </a>
+                        </div>
+        
+                    </div>
+                </div>
+
+                </div>
+            </nav>
+        </header>
+        <!--Navbar-->
+
+        <!---Start : Hero Banner---->
+        <section>
+            <div
+                class="relative h-auto w-full flex items-center justify-center text-center bg-gradient-to-r from-[#194F97] to-[#216CD0]">
+                <img src="./src/assets/img/home/hero-banner-image.png"
+                    class="absolute -right-1 lg:bottom-[-30px] xl:bottom-[-34px] 2xl:bottom-[-72px] lg:block hidden lg:w-[650px] lg:h-[520px] xl:w-[650px] xl:h-[520px] 2xl:w-[870px] 2xl:h-[700px]">
+                <div
+                    class="z-10 xl:max-w-screen-2xl 2xl:max-w-screen-2xl lg:max-w-screen-lg lg:px-8 px-3 mx-auto pt-8 xl:py-32 lg:py-52 flex justify-center items-center">
+                    <div class="grid grid-cols-12 gap-4 mt-12 lg:mt-3 xl:mt-6 2xl:mt-12">
+                        <div class="lg:col-span-6 col-span-12 text-white text-left">
+                            <h1 class="mt-4 2xl:text-6xl xl:text-4xl lg:text-4xl text-3xl font-gellix">Empowering Brands
+                                And Customers Through Innovative Solutions</h1>
+                            <p
+                                class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-10 2xl:text-2xl xl:text-lg lg:text-lg text-sm font-inter font-regular">
+                                Only a
+                                structured
+                                approach can help to build a system, placing proper system will increase the
+                                productivity, this energy will convert into proven results</p>
+                            <a href="#"
+                                class="relative overflow-hidden border border-gray-100 px-3 py-2 inline-flex justify-center items-center group mt-7 lg:mt-8 xl:mt-8 2xl:mt-10">
+                                <span
+                                    class="relative z-10 text-white group-hover:text-black transition-colors duration-300 text-base">Learn
+                                    More</span>
+                                <svg fill="none" height="24"
+                                    class="relative z-10 ml-2 text-white -rotate-90 group-hover:text-black transition-colors duration-300"
+                                    viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                                <span
+                                    class="absolute inset-0 bg-white transition-transform duration-500 transform -translate-x-full group-hover:translate-x-0"></span>
+                            </a>
+                        </div>
+                        <div class="col-span-12 block lg:hidden">
+                            <img src="./src/assets/img/home/hero-banner-image.png" class="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---End : Hero Banner---->
+
+
+        <!---Start : About Us - Hero Banner---->
+        <section>
+            <div class="lg:block hidden relative lg:h-[508px] 2xl:h-[628px] h-auto w-full flex items-center justify-center text-left bg-cover bg-center"
+                style="background-image:url('./src/assets/img/home/about-section-background.svg');">
+                <div
+                    class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-1 xl:px-4 2xl:px-1">
+                    <div class="grid grid-cols-12">
+                        <div class="col-span-12 lg:col-span-6">
+                            <div class="2xl:px-7 xl:px-5 lg:px-3 lg:py-12 xl:py-20 2xl:py-24">
+                                <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-medium">About
+                                    us
+                                </h3>
+                                <h1
+                                    class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 2xl:text-6xl xl:text-4xl lg:text-4xl text-3xl font-semibold font-gellix">
+                                    Innovative Solutions Connecting Brands and Customers</h1>
+                                <p
+                                    class="mt-3 lg:mt-5 xl:mt-7 2xl:mt-10 font-inter 2xl:text-lg xl:text-base lg:text-sm text-xs">
+                                    We provide full-service IT consulting, digital marketing, and software development.
+                                    Our objective is to use automation and rich media to close the gap that exists
+                                    between brands and consumers.</p>
+                                <a href="#"
+                                    class="relative overflow-hidden border border-[#194F97] px-3 py-2 inline-flex justify-center items-center group mt-3 lg:mt-8 xl:mt-8 2xl:mt-10">
+                                    <span
+                                        class="relative z-10 text-[#194F97] group-hover:text-white transition-colors text-base">Learn
+                                        More</span>
+                                    <svg fill="none" height="24"
+                                        class="relative z-10 ml-2 text-[#194F97] -rotate-90 group-hover:text-white transition-colors"
+                                        viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                        id="fi_10486492">
+                                        <path
+                                            d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                    <span
+                                        class="absolute inset-0 bg-[#194F97] transition-transform duration-2000 transform -translate-x-full group-hover:translate-x-0"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-span-12 lg:col-span-6">
+                            <div class="2xl:px-10 xl:px-7 lg:px-5 lg:py-12 xl:py-20 2xl:py-24">
+                                <div class="grid grid-cols-6 gap-x-5 relative text-white">
+                                    <div class="col-span-2">
+                                        <div class="grid grid-rows-2 gap-y-6">
+                                            <div class="row-span-1">
+                                                <h1
+                                                    class="2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl font-gellix font-semibold">
+                                                    280+</h1>
+                                                <h5
+                                                    class="2xl:text-xl xl:text-lg lg:text-base text-sm font-gellix mt-2 lg:mt-2 xl:mt-2 2xl:mt-2.5">
+                                                    Employes</h5>
+                                                <p
+                                                    class="font-inter 2xl:text-base xl:text-sm lg:text-sm text-xs mt-2 lg:mt-2 xl:mt-2 2xl:mt-3">
+                                                    We employ over 280.</p>
+                                            </div>
+                                            <div class="row-span-1">
+                                                <h1
+                                                    class="2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl font-gellix font-semibold">
+                                                    3500+</h1>
+                                                <h5
+                                                    class="2xl:text-xl xl:text-lg lg:text-base text-sm font-gellix mt-2 lg:mt-2 xl:mt-2 2xl:mt-2.5">
+                                                    Projects</h5>
+                                                <p
+                                                    class="font-inter 2xl:text-base xl:text-sm lg:text-sm text-xs mt-2 lg:mt-2 xl:mt-2 2xl:mt-3">
+                                                    More than 3,500 successful Projects</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-4 absolute -right-5 bottom-5 lg:-right-10 lg:-bottom-24">
+                                        <h1
+                                            class="2xl:text-[300px] xl:text-[275px] lg:text-[250px] text-[155px] font-gellix font-semibold">
+                                            15+</h1>
+                                        <h5
+                                            class="2xl:text-5xl xl:text-4xl lg:text-3xl text-2xl font-semibold font-gellix mt-0 lg:mt-2 xl:mt-2 2xl:mt-2.5">
+                                            Years</h5>
+                                        <p
+                                            class="font-inter 2xl:text-2xl xl:text-xl lg:text-lg text-base mt-2 lg:mt-2 xl:mt-2 2xl:mt-3">
+                                            Of experience in Lorem ipsum det.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--mobile-->
+            <div class="lg:hidden block relative h-auto w-full flex items-center justify-center text-left">
+                <div class="mx-auto">
+                    <div class="grid grid-cols-12">
+                        <div class="col-span-12 bg-[#F1FBFF]">
+                            <div class="px-4 py-6">
+                                <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-medium">About
+                                    us
+                                </h3>
+                                <h1
+                                    class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 2xl:text-6xl xl:text-4xl lg:text-4xl text-3xl font-semibold font-gellix">
+                                    Innovative Solutions Connecting Brands and Customers</h1>
+                                <p class="mt-3 lg:mt-5 xl:mt-7 2xl:mt-10 font-inter text-base">We provide full-service
+                                    IT
+                                    consulting, digital marketing, and software development. Our objective is to use
+                                    automation and rich media to close the gap that exists between brands and consumers.
+                                </p>
+                                <a href="#"
+                                    class="border hover:bg-[#194F97] border-[#194F97] px-3 py-2 inline-flex justify-center items-center group mt-7 lg:mt-3 xl:mt-5 2xl:mt-10">
+                                    <h3 class="text-[#194F97] group-hover:text-white text-base">Learn More</h3>
+                                    <svg fill="none" height="24"
+                                        class="ml-2 text-[#194F97] -rotate-90 group-hover:text-white"
+                                        viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                        id="fi_10486492">
+                                        <path
+                                            d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-span-12 bg-[#0A3B7C] text-white px-4 py-6">
+                            <div class="grid grid-rows-12 space-y-10 relative">
+                                <div class="row-span-6">
+                                    <h1 class="text-9xl font-gellix font-semibold">
+                                        15+</h1>
+                                    <h5 class="text-lg font-gellix mt-2">
+                                        Years</h5>
+                                    <p class="text-base mt-2 lg:mt-2 xl:mt-2 font-inter 2xl:mt-3">
+                                        Of experience in Lorem ipsum det.</p>
+                                </div>
+                                <div class="row-span-6">
+                                    <div class="grid grid-cols-12 gap-4">
+                                        <div class="col-span-6">
+                                            <h1 class="text-4xl font-gellix font-semibold">
+                                                280+</h1>
+                                            <h5 class="text-xl font-gellix mt-2 lg:mt-2 xl:mt-2 2xl:mt-2.5">
+                                                Employes</h5>
+                                            <p class="text-base mt-2 lg:mt-2 font-inter font-regular xl:mt-2 2xl:mt-3">
+                                                We have 280 successful Employes</p>
+                                        </div>
+                                        <div class="col-span-6">
+                                            <h1 class="text-4xl font-gellix font-semibold">
+                                                3500+</h1>
+                                            <h5 class="text-xl font-inter font-gellix mt-2 lg:mt-2 xl:mt-2 2xl:mt-2.5">
+                                                Projects</h5>
+                                            <p class="text-base mt-2 lg:mt-2 font-inter font-regular xl:mt-2 2xl:mt-3">
+                                                More than 3,500 successful Projects</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---End : About Us - Hero Banner---->
+
+
+        <!--Start : Elevate your experience with us-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24">
+            <div class="grid grid-cols-12 lg:gap-4">
+                <div class="lg:col-span-4 col-span-12">
+                    <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-medium">Our Clients</h3>
+                    <h1
+                        class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 2xl:text-6xl xl:text-4xl lg:text-4xl text-3xl font-semibold font-gellix">
+                        Elevate your experience with us</h1>
+                </div>
+                <div class="lg:col-span-2 col-span-0"></div>
+                <div class="lg:col-span-6 col-span-12 flex justify-start items-center">
+                    <div class="lg:mt-0 mt-3">
+                        <p class="text-[14px] lg:text-sm xl:text-sm 2xl:text-base font-inter">Touchmark Descience
+                            may help you improve your job and personal success by providing cutting-edge tools and
+                            skilled coaching. We can do incredible things and reach new heights when we work together!
+                        </p>
+                        <a href="#" class="lg:block hidden">
+                            <div
+                                class="relative overflow-hidden border border-[#194F97] px-3 py-2 inline-flex justify-center items-center group mt-7 lg:mt-8 xl:mt-8 2xl:mt-10">
+                                <span
+                                    class="relative z-10 text-[#194F97] group-hover:text-white transition-colors text-base">
+                                    View all</span>
+                                <svg fill="none" height="24"
+                                    class="relative z-10 ml-2 text-[#194F97] -rotate-90 group-hover:text-white transition-colors"
+                                    viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                                <span
+                                    class="absolute inset-0 bg-[#194F97] transition-transform duration-2000 transform -translate-x-full group-hover:translate-x-0"></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--Desktop-->
+            <div class="lg:block hidden">
+                <div class="grid grid-cols-4 lg:pt-12 xl:pt-16 2xl:pt-24">
+                    <div
+                        class="flex justify-center items-center border border-t-0 border-l-0 border-r-1 border-b-1 p-5 lg:p-7 xl:p-14 2xl:p-10">
+                        <img src="./src/assets/img/home/colcola-icons.svg" style="height: 40px;">
+                    </div>
+                    <div class="flex justify-center items-center border border-t-0 p-5 lg:p-7 xl:p-14 2xl:p-10">
+                        <img src="./src/assets/img/home/sidbi-icons.svg" style="height: 50px;">
+                    </div>
+                    <div class="flex justify-center items-center border border-t-0 p-5 lg:p-7 xl:p-14 2xl:p-10">
+                        <img src="./src/assets/img/home/rupinis-icons.svg" style="height: 40px;">
+                    </div>
+                    <div
+                        class="flex justify-center items-center border border-t-0 border-r-0 border-l-1 border-b-1 p-5 lg:p-7 xl:p-14 2xl:p-10">
+                        <img src="./src/assets/img/home/expleo-icon.svg" style="height: 45px;">
+                    </div>
+                    <div
+                        class="flex justify-center items-center border border-b-0 border-l-0 border-r-1 border-t-1 p-5 lg:p-7 xl:p-10 2xl:p-8">
+                        <img src="./src/assets/img/home/dvi-icons.svg" style="height: 80px;">
+                    </div>
+                    <div class="flex justify-center items-center border border-b-0 p-5 lg:p-7 xl:p-14 2xl:p-10">
+                        <img src="./src/assets/img/home/rbl-icons.svg" style="height: 50px;">
+                    </div>
+                    <div class="flex justify-center items-center border border-b-0 p-5 lg:p-7 xl:p-14 2xl:p-10">
+                        <img src="./src/assets/img/home/hayakawa-icons.svg" style="height: 50px;">
+                    </div>
+                    <div
+                        class="flex justify-center items-center border border-b-0 border-l-1 border-r-0 border-t-1 p-5 lg:p-7 xl:p-14 2xl:p-10">
+                        <img src="./src/assets/img/home/tag-icons.svg" style="height: 50px;">
+                    </div>
+                </div>
+            </div>
+            <!--mobile-->
+            <div class="lg:hidden block">
+                <div class="grid grid-cols-2 pt-5 lg:pt-32 xl:pt-40 2xl:pt-48">
+                    <div
+                        class="flex justify-center items-center border border-t-0 border-l-0 border-r-1 border-b-1 p-7">
+                        <img src="./src/assets/img/home/colcola-icons.svg" style="height: 35px;">
+                    </div>
+                    <div class="flex justify-center items-center border border-t-0 border-r-0 p-7">
+                        <img src="./src/assets/img/home/sidbi-icons.svg" style="height: 35px;">
+                    </div>
+                    <div class="flex justify-center items-center border border-t-0 border-l-0 p-7">
+                        <img src="./src/assets/img/home/rupinis-icons.svg" style="height: 35px;">
+                    </div>
+                    <div
+                        class="flex justify-center items-center border border-t-0 border-r-0 border-l-1 border-b-1 p-7">
+                        <img src="./src/assets/img/home/expleo-icon.svg" style="height: 35px;">
+                    </div>
+
+                    <div
+                        class="flex justify-center items-center border border-b-0 border-l-0 border-r-1 border-t-1 p-5">
+                        <img src="./src/assets/img/home/dvi-icons.svg" style="height: 35px;">
+                    </div>
+                    <div class="flex justify-center items-center border border-b-0 border-r-0 p-5">
+                        <img src="./src/assets/img/home/rbl-icons.svg" style="height: 35px;">
+                    </div>
+                    <div class="flex justify-center items-center border border-b-0 border-l-0 p-5">
+                        <img src="./src/assets/img/home/hayakawa-icons.svg" style="height: 35px;">
+                    </div>
+                    <div
+                        class="flex justify-center items-center border border-b-0 border-l-1 border-r-0 border-t-1 p-5">
+                        <img src="./src/assets/img/home/tag-icons.svg" style="height: 35px;">
+                    </div>
+
+                </div>
+                <a href="#"
+                    class="lg:hidden block relative overflow-hidden border border-[#194F97] px-3 py-2 inline-flex justify-center items-center group mt-7">
+                    <span class="relative z-10 text-[#194F97] group-hover:text-white transition-colors text-base">
+                        View all</span>
+                    <svg fill="none" height="24"
+                        class="relative z-10 ml-2 text-[#194F97] -rotate-90 group-hover:text-white transition-colors"
+                        viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                        <path d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                            fill="currentColor"></path>
+                    </svg>
+                    <span
+                        class="absolute inset-0 bg-[#194F97] transition-transform duration-2000 transform -translate-x-full group-hover:translate-x-0"></span>
+                </a>
+            </div>
+        </section>
+        <!--End : Elevate your experience with us-->
+
+
+        <!--start : Check out Our Case Studies-->
+        <!-- <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 text-black bg-white py-14 lg:py-10 xl:py-16 2xl:py-24">
+            <div class="grid grid-cols-12 lg:gap-4">
+                <div class="lg:col-span-3 col-span-12">
+                    <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-medium">Projects</h3>
+                    <h1
+                        class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 text-2xl lg:text-2xl xl:text-4xl 2xl:text-5xl font-semibold font-gellix">
+                        Check out Our Case Studies</h1>
+                </div>
+                <div class="lg:col-span-3 col-span-0"></div>
+                <div class="lg:col-span-6 col-span-12 flex justify-start items-center">
+                    <p class="text-[14px] lg:text-sm xl:text-sm 2xl:text-base mt-5 font-inter">Established enterprises
+                        and
+                        emerging startups need a perfect balance of strategy, technology, analytics, and knowhow to
+                        solve
+                        everyday business challenges rises and emerging startups need a perfect balance of strategy,
+                        technology, analytics, and knowhow to solve everyday business.</p>
+                </div>
+            </div>
+            <div class="pt-8 lg:pt-16 xl:pt-20 2xl:pt-24">
+                --desktop--
+                <div class="lg:block hidden">
+                    <div class="expanding-slider">
+                        <div class="slider-container">
+                            -- Panel 1 --
+                            <div class="slider-panel active flex justify-center items-center"
+                                style="background-color: #6D2678;">
+                                <div class="first show">
+                                    <div class="grid grid-cols-9 gap-10 px-5">
+                                        <div class="col-span-5 hide-only">
+                                            <img src="./src/assets/img/home/cs-01.png"
+                                                class="transition-transform fast-transform overflow-hidden">
+                                        </div>
+                                        <div class="col-span-4">
+                                            <div class="flex justify-between items-start">
+                                                <h1
+                                                    class="text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-semibold font-gellix">
+                                                    RUPINIS</h1>
+                                                <div class="-mt-20">
+                                                    <img src="./src/assets/img/home/rupinis-logo.png"
+                                                        class="p-20 mt-1 ml-16">
+                                                </div>
+                                            </div>
+                                            <div class="text-sm lg:text-sm xl:text-base 2xl:text-lg space-y-2.5 -mt-10">
+                                                <h1
+                                                    class="font-gellix font-semibold 2xl:text-2xl xl:text-xl lg:text-lg">
+                                                    Revolutionizing Customer Relationship Management for a Leading
+                                                    Beauty Chain</h1>
+                                                <p>Our goal is to become the preeminent online forum that brings people
+                                                    together from all walks of life via thought-provoking conversations,
+                                                    creating a worldwide community centred around mutual respect,
+                                                    curiosity, and development.</p>
+                                            </div>
+                                            <a href="./rupinis-cs-01.html" class="flex justify-between items-center">
+                                                <div
+                                                    class="text-white border px-3 py-2 inline-flex justify-center items-center mt-5">
+                                                    View Case Study
+                                                    <img src="./src/assets/img/home/arrow.png" class="ml-3">
+                                                </div>
+                                                <img src="./src/assets/img/home/rupini-vector-big.svg"
+                                                    class="mt-24 -ml-24">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="second hide grid grid-rows-5 gap-3 h-5/6">
+                                    <div class="row-span-1 flex justify-center items-start p-3">
+                                        <img src="./src/assets/img/home/rupinis-icon-small.svg">
+                                    </div>
+                                    <div class="row-span-3 flex justify-center items-center">
+                                        <h1
+                                            class="uppercase text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl -rotate-90 font-gellix font-semibold text-white">
+                                            rupini's</h1>
+                                    </div>
+                                    <div class="row-span-1 flex justify-center items-center p-5">
+                                        <img src="./src/assets/img/home/rupinis-laptop-icon-02.svg">
+                                    </div>
+                                </div>
+                            </div>
+                            -- Panel 2 --
+                            <div class="slider-panel flex justify-center items-center"
+                                style="background-color: #3AA0C0;">
+                                <div class="first hide">
+                                    <div class="grid grid-cols-9 gap-10 px-5">
+                                        <div class="col-span-5"><img src="./src/assets/img/home/cs-03.png"
+                                                class="transition-transform fast-transform overflow-hidden"></div>
+                                        <div class="col-span-4">
+                                            <div class="flex justify-between items-start">
+                                                <h1
+                                                    class="uppercase text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-semibold font-gellix">
+                                                    SIDBI</h1>
+                                                <div class="-mt-20">
+                                                    <img src="./src/assets/img/home/sidbi-icon-big.svg"
+                                                        class="p-20 mt-1 ml-16">
+                                                </div>
+                                            </div>
+                                            <div class="text-sm lg:text-sm xl:text-base 2xl:text-lg space-y-2.5 -mt-10">
+                                                <h1
+                                                    class="font-gellix font-semibold 2xl:text-2xl xl:text-xl lg:text-lg">
+                                                    Revolutionizing Customer Relationship Management for a Leading
+                                                    Beauty Chain</h1>
+                                                <p>Our goal is to become the preeminent online forum that brings people
+                                                    together from all walks of life via thought-provoking conversations,
+                                                    creating a worldwide community centred around mutual respect,
+                                                    curiosity, and development.</p>
+                                            </div>
+                                            <a href="./sidbi-cs-02.html" class="flex justify-between items-center">
+                                                <div
+                                                    class="text-white border px-3 py-2 inline-flex justify-center items-center mt-5">
+                                                    View Case Study
+                                                    <img src="./src/assets/img/home/arrow.png" class="ml-3">
+                                                </div>
+                                                <img src="./src/assets/img/home/sidbi-vector-big.svg"
+                                                    class="mt-12 -ml-24 p-5">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="second grid grid-rows-5 gap-3 h-5/6 w-36">
+                                    <div class="row-span-1 flex justify-center items-start p-3">
+                                        <img src="./src/assets/img/home/sidbi-icon-small.svg">
+                                    </div>
+                                    <div class="row-span-3 flex justify-center items-center">
+                                        <h1
+                                            class="text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl -rotate-90 font-gellix font-semibold text-white">
+                                            SIDBI</h1>
+                                    </div>
+                                    <div class="row-span-1 flex justify-center items-center p-5">
+                                        <img src="./src/assets/img/home/sidbi-vector-small.svg">
+                                    </div>
+                                </div>
+                            </div>
+                            -- Panel 3 --
+                            <div class="slider-panel flex justify-center items-center"
+                                style="background-color: #E03C40;">
+                                <div class="first hide">
+                                    <div class="grid grid-cols-9 gap-10 px-5">
+                                        <div class="col-span-5"><img src="./src/assets/img/home/cs-04.png"
+                                                class="transition-transform fast-transform overflow-hidden"></div>
+                                        <div class="col-span-4">
+                                            <div class="flex justify-between items-start">
+                                                <h1
+                                                    class="uppercase text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-semibold font-gellix">
+                                                    DVI HOLIDAYS</h1>
+                                                <div class="">
+                                                    <img src="./src/assets/img/home/dvi-logo-big.svg"
+                                                        class="p-20 -mt-20 ml-16">
+                                                </div>
+                                            </div>
+                                            <div class="text-sm lg:text-sm xl:text-base 2xl:text-lg space-y-2.5 -mt-10">
+                                                <h1
+                                                    class="font-gellix font-semibold 2xl:text-2xl xl:text-xl lg:text-lg">
+                                                    Revolutionizing Customer Relationship Management for a Leading
+                                                    Beauty Chain</h1>
+                                                <p>Our goal is to become the preeminent online forum that brings people
+                                                    together from all walks of life via thought-provoking conversations,
+                                                    creating a worldwide community centred around mutual respect,
+                                                    curiosity, and development.</p>
+                                            </div>
+                                            <a href="./dvi-cs-03.html" class="flex justify-between items-center">
+                                                <div
+                                                    class="text-white border px-3 py-2 inline-flex justify-center items-center mt-5">
+                                                    View Case Study
+                                                    <img src="./src/assets/img/home/arrow.png" class="ml-3">
+                                                </div>
+                                                <img src="./src/assets/img/home/dvi-vector-big.svg"
+                                                    class="mt-10 -ml-24 p-5">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="second grid grid-rows-5 gap-3 h-5/6">
+                                    <div class="row-span-1 flex justify-center items-start p-3">
+                                        <img src="./src/assets/img/home/dvi-logo-small.svg">
+                                    </div>
+                                    <div class="row-span-3 flex justify-center items-center">
+                                        <h1
+                                            class="text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl -rotate-90 font-gellix font-semibold text-white">
+                                            DVI</h1>
+                                    </div>
+                                    <div class="row-span-1 flex justify-center items-center p-5">
+                                        <img src="./src/assets/img/home/dvi-vector-small.svg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            --mobile--
+                <div class="lg:hidden block">
+                    <div class="mx-auto">
+                        --panel-01--
+                        <div class="transition-all duration-200 bg-[#6D2678] shadow-lg cursor-pointer">
+                            <button type="button" id="question1" data-state="closed"
+                                class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                                <img src="./src/assets/img/home/rupinis-iconmobile.svg">
+                                <img src="./src/assets/img/home/rupinis-mobile-icon-02.svg">
+                            </button>
+                            <div id="answer1" style="display:none"
+                                class="bg-[#6D2678] px-4 pb-5 sm:px-6 sm:pb-6 text-white">
+                                <h2 class="text-xl font-gellix font-semibold">RUPINIS</h2>
+                                <h2 class="font-gellix font-semibold text-base mt-5">Revolutionizing Customer
+                                    Relationship Management for a Leading Beauty Chain</h2>
+                                <p class="text-sm mt-2.5">Discover how we helped Chain of Saloon achieve operational
+                                    excellence and business growth by integrating their CRM, POS, inventory, and more
+                                    into a single platform. Our solutions boosted sales, reduced pilferage, and enhanced
+                                    customer engagement.</p>
+                                <a href="/"
+                                    class="inline-flex justify-start items-center mt-5 text-[#ffff] font-inter font-semibold border border-white text-sm px-3 py-2">
+                                    Learn More
+                                    <svg fill="none" height="24"
+                                        class="ml-2 text-[#ffff] -rotate-45 transform group-hover:translate-x-1 transition-all duration-300"
+                                        viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                        id="fi_10486492">
+                                        <path
+                                            d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        --panel-02--
+                        <div class="transition-all duration-200 bg-[#3AA0C0] shadow-lg cursor-pointer">
+                            <button type="button" id="question3" data-state="closed"
+                                class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                                <img src="./src/assets/img/home/sidbi-iconmobile.png">
+                                <img src="./src/assets/img/home/sidbi-mobile-icon-02.svg">
+                            </button>
+                            <div id="answer3" style="display:none"
+                                class="bg-[#2EC2F1] text-white px-4 pb-5 sm:px-6 sm:pb-6">
+                                <h2 class="text-xl font-gellix font-semibold">SIDBI</h2>
+                                <h2 class="font-gellix font-semibold text-base mt-5">Revolutionizing Customer
+                                    Relationship Management for a Leading Beauty Chain</h2>
+                                <p class="text-sm mt-2.5">Discover how we helped Chain of Saloon achieve operational
+                                    excellence and business growth by integrating their CRM, POS, inventory, and more
+                                    into a single platform. Our solutions boosted sales, reduced pilferage, and enhanced
+                                    customer engagement.</p>
+                                <a href="/"
+                                    class="inline-flex justify-start items-center mt-5 text-[#ffff] font-inter font-semibold border border-white text-sm px-3 py-2">
+                                    Learn More
+                                    <svg fill="none" height="24"
+                                        class="ml-2 text-[#ffff] -rotate-45 transform group-hover:translate-x-1 transition-all duration-300"
+                                        viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                        id="fi_10486492">
+                                        <path
+                                            d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        --panel03--
+                        <div class="transition-all duration-200 bg-[#E03C40] shadow-lg cursor-pointer">
+                            <button type="button" id="question4" data-state="closed"
+                                class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                                <img src="./src/assets/img/home/dvi-mobile-icon.svg" class="w-12 h-12 -mt-6 pt-3">
+                                <img src="./src/assets/img/home/dvi-mobile-icon-02.svg">
+                            </button>
+                            <div id="answer4" style="display:none"
+                                class="px-4 pb-5 sm:px-6 sm:pb-6 bg-[#9443D7] text-white">
+                                <h2 class="text-xl font-gellix font-semibold">DVI HOLIDAYS</h2>
+                                <h2 class="font-gellix font-semibold text-base mt-5">Revolutionizing Customer
+                                    Relationship Management for a Leading Beauty Chain</h2>
+                                <p class="text-sm mt-2.5">Discover how we helped Chain of Saloon achieve operational
+                                    excellence and business growth by integrating their CRM, POS, inventory, and more
+                                    into a single platform. Our solutions boosted sales, reduced pilferage, and enhanced
+                                    customer engagement.</p>
+                                <a href="/"
+                                    class="inline-flex justify-start items-center mt-5 text-[#ffff] font-inter font-semibold border border-white text-sm px-3 py-2">
+                                    Learn More
+                                    <svg fill="none" height="24"
+                                        class="ml-2 text-[#ffff] -rotate-45 transform group-hover:translate-x-1 transition-all duration-300"
+                                        viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                        id="fi_10486492">
+                                        <path
+                                            d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!--End :Check out Our Case Studies-->
+
+
+        <!--Start : Recent Blogs-->
+        <!-- <section class="text-white bg-[#1354AA]">
+            <div
+                class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-20 2xl:py-24">
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="lg:col-span-6 col-span-12">
+                        <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base font-medium">Blogs</h3>
+                        <h1
+                            class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 text-2xl lg:text-2xl xl:text-4xl 2xl:text-5xl font-semibold font-gellix">
+                            Recent Blogs</h1>
+                        <p class="text-sm lg:text-sm xl:text-sm 2xl:text-base mt-2 lg:mt-3 xl:mt-4 2xl:mt-5">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam Duis aute irure dolor in
+                            reprehenderit in
+                            voluptate velit.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-6 col-span-12 flex justify-end items-end">
+                        <div>
+                            <a href="#"
+                                class="bg-white inline-flex justify-center items-center border text-[#1C95C9] px-3 py-2">
+                                <h3>View all</h3>
+                                <img src="./src/assets/img/home/lite-blue-arrow.svg" class="ml-2">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 gap-4 pt-14 lg:pt-16 xl:pt-20 2xl:pt-24">
+                    <div class="lg:col-span-6 col-span-12 overflow-hidden">
+                        <img src="./src/assets/img/home/blog-image.svg"
+                            class="transition-transform transform-gpu hover:scale-110 duration-500">
+                    </div>
+                    <div class="lg:col-span-1 col-span-0"></div>
+                    <div class="lg:col-span-5 col-span-12">
+                        <div class="flex justify-start items-start space-x-3">
+                            <div class="border rounded-3xl px-3 py-2 text-white border-white uppercase text-sm">
+                                Technology
+                            </div>
+                            <div class="border rounded-3xl px-3 py-2 text-white border-white uppercase text-sm">AR/VR
+                            </div>
+                            <div class="px-3 py-2 text-sm">10 MIN TO READ</div>
+                        </div>
+                        <div class="space-y-3 pt-3 lg:pt-5 xl:pt-7 2xl:pt-10">
+                            <h2 class="font-gellix font-semibold text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+                                Cultivating a
+                                Global Hub for Thoughtful Discourse and Community Connection Through AR/VR Technology
+                            </h2>
+                            <p class="font-inter text-sm lg:text-sm xl:text-base 2xl:text-lg">Lorem ipsum dolor sit
+                                amet,
+                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                aliquip
+                                ex ea c</p>
+                        </div>
+                        <div class="pt-8 lg:pt-10 xl:pt-12 2xl:pt-14">
+                            <a href="#"
+                                class="border hover:bg-white border-white px-3 py-2 inline-flex justify-center items-center group">
+                                <h3 class="text-white group-hover:text-black">Learn More</h3>
+                                <svg fill="none" height="24" class="ml-2 text-white -rotate-90 group-hover:text-black"
+                                    viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 gap-8 pt-8 lg:pt-10 xl:pt-12 2xl:pt-14">
+                    <div class="lg:col-span-4 col-span-12 border p-5 group">
+                        <div class="flex justify-start items-start space-x-3">
+                            <div class="border rounded-3xl px-3 py-2 text-white border-white uppercase text-sm">
+                                Technology
+                            </div>
+                            <div class="border rounded-3xl px-3 py-2 text-white border-white uppercase text-sm">AR/VR
+                            </div>
+                            <div class="px-3 py-2 text-sm">10 MIN TO READ</div>
+                        </div>
+                        <div class="pt-3 lg:pt-5 xl:pt-5 2xl:pt-7">
+                            <h2 class="font-gellix font-semibold text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                                Cultivating a
+                                Global Hub for Thoughtful Discourse and Community Connection Through AR/VR Technology
+                            </h2>
+                            <p
+                                class="font-inter text-xs lg:text-sm xl:text-sm 2xl:text-base pt-2 lg:pt-2.5 xl:pt-3 2xl:pt-5">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea c
+                            </p>
+                        </div>
+                        <div class="pt-3 lg:pt-5 xl:pt-7 2xl:pt-10 overflow-hidden">
+                            <img src="./src/assets/img/home/blog-image-inner-01.png"
+                                class="transition-transform duration-500 transform group-hover:scale-110">
+                        </div>
+                        <div class="pt-8 lg:pt-10 xl:pt-12 2xl:pt-14">
+                            <a href="#" class="inline-flex justify-center items-center group">
+                                <h3 class="underline font-gellix text-sm lg:text-sm xl:text-base 2xl:text-lg">Learn more
+                                </h3>
+                                <svg fill="none" height="24"
+                                    class="ml-2 text-white -rotate-45 transform group-hover:translate-x-1 transition-all duration-300"
+                                    viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 col-span-12 border p-5">
+                        <div class="flex justify-start items-start space-x-3">
+                            <div class="border rounded-3xl px-3 py-2 text-white border-white uppercase text-sm">
+                                Technology
+                            </div>
+                            <div class="border rounded-3xl px-3 py-2 text-white border-white uppercase text-sm">AR/VR
+                            </div>
+                            <div class="px-3 py-2 text-sm">10 MIN TO READ</div>
+                        </div>
+                        <div class="pt-3 lg:pt-5 xl:pt-5 2xl:pt-7">
+                            <h2 class="font-gellix font-semibold text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                                Cultivating a
+                                Global Hub for Thoughtful Discourse and Community Connection Through AR/VR Technology
+                            </h2>
+                            <p
+                                class="font-inter text-xs lg:text-sm xl:text-sm 2xl:text-base pt-2 lg:pt-2.5 xl:pt-3 2xl:pt-5">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea c</p>
+                        </div>
+                        <div class=" pt-3 lg:pt-5 xl:pt-7 2xl:pt-10 overflow-hidden">
+                            <img src="./src/assets/img/home/blog-image-inner-02.png"
+                                class="transition-transform hover:scale-110 duration-500">
+                        </div>
+                        <div class="pt-8 lg:pt-10 xl:pt-12 2xl:pt-14">
+
+                            <a href="#" class="inline-flex justify-center items-center group">
+                                <h3 class="underline font-gellix text-sm lg:text-sm xl:text-base 2xl:text-lg">Learn more
+                                </h3>
+                                <svg fill="none" height="24"
+                                    class="ml-2 text-white -rotate-45 transform group-hover:translate-x-1 transition-all duration-300"
+                                    viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 col-span-12 border p-5">
+                        <div class="flex justify-start items-start space-x-3">
+                            <div class="border rounded-3xl px-3 py-2 text-white border-white uppercase text-sm">
+                                Technology
+                            </div>
+                            <div class="border rounded-3xl px-3 py-2 text-white border-white uppercase text-sm">AR/VR
+                            </div>
+                            <div class="px-3 py-2 text-sm">10 MIN TO READ</div>
+                        </div>
+                        <div class="pt-3 lg:pt-5 xl:pt-5 2xl:pt-7">
+                            <h2 class="font-gellix font-semibold text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                                Cultivating a
+                                Global Hub for Thoughtful Discourse and Community Connection Through AR/VR Technology
+                            </h2>
+                            <p
+                                class="font-inter text-xs lg:text-sm xl:text-sm 2xl:text-base pt-2 lg:pt-2.5 xl:pt-3 2xl:pt-5">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea c</p>
+                        </div>
+                        <div class=" pt-3 lg:pt-5 xl:pt-7 2xl:pt-10 overflow-hidden">
+                            <img src="./src/assets/img/home/blog-image-inner-03.png"
+                                class="transition-transform hover:scale-110 duration-500">
+                        </div>
+                        <div class="pt-8 lg:pt-10 xl:pt-12 2xl:pt-14">
+                            <a href="#" class="inline-flex justify-center items-center group">
+                                <h3 class="underline font-gellix text-sm lg:text-sm xl:text-base 2xl:text-lg">Learn
+                                    more
+                                </h3>
+                                <svg fill="none" height="24"
+                                    class="ml-2 text-white -rotate-45 transform group-hover:translate-x-1 transition-all duration-300"
+                                    viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!--End : Recent Blogs-->
+
+
+        <!--Start : Check out Our Case Studies-->
+        <section id="casestudy"
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24">
+            <div class="relative">
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="lg:col-span-3 col-span-12">
+                        <div>
+                            <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-medium">Projects
+                            </h3>
+                            <h1
+                                class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 2xl:text-6xl xl:text-4xl lg:text-4xl text-3xl font-semibold font-gellix">
+                                Check out Our Case Studies</h1>
+                        </div>
+                    </div>
+                    <div class="col-span-9 lg:block hidden"></div>
+                </div>
+
+                <div class="grid grid-cols-12 gap-4 mt-5 lg:mt-16 xl:mt-20 2xl:mt-24">
+
+                    <div class="lg:col-span-4 col-span-12">
+                        <a href="./rupinis-cs-01.html" class="block">
+                            <div class="relative overflow-hidden group">
+                                <img src="./src/assets/img/home/cs-01-final.png"
+                                    class="transition-transform group-hover:scale-110 duration-500 h-full lg:w-auto w-full">
+                                <div class="absolute top-0 right-0">
+                                    <div class="inline-flex justify-start items-center space-x-3 p-5">
+                                        <h3 class="bg-white px-3 py-1 rounded-3xl text-black text-xs uppercase">BEAUTY
+                                        </h3>
+                                        <h3 class="bg-white px-3 py-1 rounded-3xl text-black text-xs uppercase">SALOON
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 flex justify-end items-end">
+                                    <div
+                                        class="w-full bg-gradient-to-t from-[#9152a8b6] to-transparent p-5 transition-opacity duration-300 group-hover:from-[#9152A8] group-hover:to-transparent">
+                                        <p class="2xl:text-base xl:text-base lg:text-xs text-white font-inter">RUPINIS
+                                        </p>
+                                        <div class="flex justify-start items-end">
+                                            <h1
+                                                class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl text-white font-gellix font-semibold pt-2">
+                                                Revolutionizing Customer Relationship Management...</h1>
+                                            <a href="./rupinis-cs-01.html">
+                                                <svg fill="none" height="28"
+                                                    class="-rotate-90 bg-white rounded-full text-[#194F97] transition-colors duration-300"
+                                                    viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"
+                                                    id="fi_10486492">
+                                                    <path
+                                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                        fill="currentColor"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="lg:col-span-4 col-span-12 lg:-mt-24 xl:-mt-24 2xl:-mt-32">
+                        <a href="./dvi-cs-03.html" class="block">
+                            <div class="relative overflow-hidden group">
+                                <img src="./src/assets/img/home/cs-02-final.png"
+                                    class="transition-transform group-hover:scale-110 duration-500 h-full lg:w-auto w-full">
+                                <div class="absolute top-0 right-0">
+                                    <div class="inline-flex justify-start items-center space-x-3 p-5">
+                                        <h3 class="bg-white px-3 py-1 rounded-3xl text-black text-xs uppercase">
+                                            Travel</h3>
+                                        <h3 class="bg-white px-3 py-1 rounded-3xl text-black text-xs uppercase">
+                                            Tourism</h3>
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 flex justify-end items-end">
+                                    <div
+                                        class="w-full bg-gradient-to-t from-[#dd4a45ce] to-transparent p-5 transition-opacity duration-300 group-hover:from-[#DD4B45] group-hover:to-black/0">
+                                        <p class="2xl:text-base xl:text-base lg:text-xs text-white font-inter">DVI
+                                            HOLIDAYS</p>
+                                        <div class="flex justify-start items-end">
+                                            <h1
+                                                class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl text-white font-gellix font-semibold pt-2">
+                                                Revolutionizing Customer Relationship Management...</h1>
+                                            <a href="./dvi-cs-03.html">
+                                                <svg fill="none" height="28"
+                                                    class="-rotate-90 bg-white rounded-full text-[#194F97] transition-colors duration-300"
+                                                    viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"
+                                                    id="fi_10486492">
+                                                    <path
+                                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                        fill="currentColor"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="lg:col-span-4 col-span-12 lg:-mt-52 xl:-mt-52 2xl:-mt-60">
+                        <a href="./sidbi-cs-02.html" class="block">
+                            <div class="relative overflow-hidden group">
+                                <img src="./src/assets/img/home/cs-03-final.png"
+                                    class="transition-transform group-hover:scale-110 duration-500 h-full lg:w-auto w-full">
+                                <div class="absolute top-0 right-0">
+                                    <div class="inline-flex justify-start items-center space-x-3 p-5">
+                                        <h3 class="bg-white px-3 py-1 rounded-3xl text-black text-xs uppercase">
+                                            BANKING</h3>
+                                        <h3 class="bg-white px-3 py-1 rounded-3xl text-black text-xs uppercase">
+                                            FINANCE</h3>
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 flex justify-end items-end">
+                                    <div
+                                        class="w-full bg-gradient-to-t from-[#58a2b8ce] to-transparent p-5 transition-opacity duration-300 group-hover:from-[#58A1B8] group-hover:to-black/0">
+                                        <p class="2xl:text-base xl:text-base lg:text-xs text-white font-inter">SIDBI</p>
+                                        <div class="flex justify-start items-end">
+                                            <h1
+                                                class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl text-white font-gellix font-semibold pt-2">
+                                                Revolutionizing Customer Relationship Management...</h1>
+                                            <a href="./sidbi-cs-02.html">
+                                                <svg fill="none" height="28"
+                                                    class="-rotate-90 bg-white rounded-full text-[#194F97] transition-colors duration-300"
+                                                    viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"
+                                                    id="fi_10486492">
+                                                    <path
+                                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                        fill="currentColor"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!--End : Check out Our Case Studies-->
+
+
+        <!--Start : Fuel your mind with E-books and downloads-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24">
+            <div class="grid grid-cols-12 lg:gap-4">
+                <div class="lg:col-span-5 xl:col-span-5 2xl:col-span-6 col-span-12">
+                    <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-medium">E-Books</h3>
+                    <h1
+                        class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 2xl:text-6xl xl:text-4xl lg:text-4xl text-3xl font-semibold font-gellix">
+                        Fuel your mind with E-books and downloads</h1>
+                </div>
+                <div class="lg:col-span-1 2xl:col-span-1 col-span-0"></div>
+                <div class="lg:col-span-6 xl:col-span-6 2xl:col-span-5 col-span-12 flex justify-start items-center">
+                    <p class="text-[14px] lg:text-sm xl:text-sm 2xl:text-base mt-5 lg:mt-10 font-inter">Established
+                        enterprises
+                        and
+                        emerging startups need a perfect balance of strategy, technology, analytics, and knowhow to
+                        solve
+                        everyday business challenges rises and emerging startups need a perfect balance of strategy,
+                        technology, analytics, and know how to solve everyday business .</p>
+                </div>
+            </div>
+            <div class="flex justify-center items-center">
+                <div class="grid grid-cols-12 gap-4 pt-5 lg:pt-16 xl:pt-20 2xl:pt-24">
+                    <div class="col-span-12 lg:col-span-4">
+                        <div class="relative overflow-hidden">
+                            <img src="./src/assets/img/home/e-book-01.svg"
+                                class="transition-transform hover:scale-105 duration-300">
+                            <div class="absolute bottom-10">
+                                <div
+                                    class="bg-[#194F97] p-5 w-64 lg:w-72 xl:w-80 2xl:w-96 h-44 lg:h-48 xl:h-52 2xl:h-56">
+                                    <h3
+                                        class="text-white font-gellix font-semibold text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
+                                        Cultivating a Global Hub for Thoughtful Discourse Community.</h3>
+                                    <div class="mt-3 lg:mt-5 xl:mt-7 2xl:mt-10"></div>
+                                    <a href="#" class="">
+                                        <h2
+                                            class="border px-3 py-2 inline-flex text-white justify-start items-center text-base">
+                                            Download PDF
+                                            <img src="./src/assets/img/home/download-icon.svg" class="ml-2">
+                                        </h2>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 lg:col-span-4 lg:pt-14 xl:pt-16 2xl:pt-20">
+                        <div class="relative overflow-hidden">
+                            <img src="./src/assets/img/home/e-book-02.svg"
+                                class="transition-transform transform-gpu hover:scale-105 duration-300">
+                            <div class="absolute bottom-10">
+                                <div
+                                    class="bg-[#194F97] p-5 w-64 lg:w-72 xl:w-80 2xl:w-96 h-44 lg:h-48 xl:h-52 2xl:h-56">
+                                    <h3
+                                        class="text-white font-gellix font-semibold text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
+                                        Cultivating a Global Hub for Thoughtful Discourse Community.</h3>
+                                    <div class="mt-3 lg:mt-5 xl:mt-7 2xl:mt-10"></div>
+                                    <a href="#" class="">
+                                        <h2
+                                            class="border px-3 py-2 inline-flex text-white justify-start items-center text-base">
+                                            Download PDF
+                                            <img src="./src/assets/img/home/download-icon.svg" class="ml-2">
+                                        </h2>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 lg:col-span-4">
+                        <div class="relative overflow-hidden">
+                            <img src="./src/assets/img/home/e-book-03.svg"
+                                class="transition-transform transform-gpu hover:scale-105 duration-300">
+                            <div class="absolute bottom-10">
+                                <div
+                                    class="bg-[#194F97] p-5 w-64 lg:w-72 xl:w-80 2xl:w-96 h-44 lg:h-48 xl:h-52 2xl:h-56">
+                                    <h3
+                                        class="text-white font-gellix font-semibold text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
+                                        Cultivating a Global Hub for Thoughtful Discourse Community.</h3>
+                                    <div class="mt-3 lg:mt-5 xl:mt-7 2xl:mt-10"></div>
+                                    <a href="#" class="">
+                                        <h2
+                                            class="border px-3 py-2 inline-flex text-white justify-start items-center text-base">
+                                            Download PDF
+                                            <img src="./src/assets/img/home/download-icon.svg" class="ml-2">
+                                        </h2>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End : Fuel your mind with E-books and downloads-->
+
+
+        <!--Start : Building trust through experience.-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto py-14 lg:py-16 xl:py-16 2xl:py-24">
+            <div class="grid grid-cols-12 lg:gap-4 px-4 md:px-6 lg:px-8">
+                <div class="lg:col-span-4 col-span-12">
+                    <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-medium">Testimonials</h3>
+                    <h1
+                        class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 2xl:text-6xl xl:text-4xl lg:text-4xl text-3xl font-semibold font-gellix">
+                        Building trust through experience.</h1>
+                </div>
+                <div class="lg:col-span-8 col-span-12 lg:block hidden">
+                </div>
+            </div>
+            <div>
+                <div id="one-time" class="owl-carousel owl-theme 2xl:mt-16 xl:mt-14 lg:mt-12 mt-10 md:px-6 lg:px-8">
+                    <!--Item-01-->
+                    <div class="border bg-[#F1F2FF] grid grid-cols-6 gap-10 lg:p-7 p-5">
+                        <div class="lg:col-span-2 col-span-6">
+                            <div
+                                class="lg:block hidden flex lg:flex-col justify-between items-center h-full lg:space-y-1 space-y-3">
+                                <img src="./src/assets/img/home/hayakawa-icon-testimonial.png" class="mb-auto">
+                                <img src="./src/assets/img/home/hayakawa-icon-testimonial-02.png" class="mt-auto">
+                            </div>
+                            <div class="lg:hidden block">
+                                <img src="./src/assets/img/home/hayakawa-icon-testimonial-02-mob.png" class="">
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 col-span-6 flex justify-start items-center relative">
+                            <div class="flex flex-col justify-between items-center h-full">
+                                <div class="relative">
+                                    <div class="h-4 w-5 lg:w-5 lg:h-7 absolute left-0 ml-0 lg:-ml-8 lg:-mt-0 -mt-5">
+                                        <img src="./src/assets/img/home/qutation-black-testimonial.png"
+                                            class="h-4 w-5 lg:h-5 lg:w-7">
+                                    </div>
+                                    <h1 class="font-gellix font-semibold text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
+                                        I have been travelling with them for so long, happy to see their growth. 
+                                    </h1>
+                                </div>
+                                <div>
+                                    <p
+                                        class="font-inter 2xl:text-base xl:text-xs lg:text-xs text-sm mt-2 lg:mt-2.5 xl:mt-3 2xl:mt-5">
+                                        We have been working with Touchmark Descience over the last 5 years for the
+                                        continual development of our softwares. The staff that have been assigned to our
+                                        project have been highly skilled, intelligent, hard-working, innovative and
+                                        completely reliable.
+                                    </p>
+                                </div>
+                                <div class="pt-5 lg:pt-5 xl:pt-7 2xl:pt-11">
+                                    <div class="w-full flex justify-between items-center relative">
+                                        <div class="lg:ml-0 -ml-0">
+                                            <h1
+                                                class="font-semibold font-gellix text-sm lg:text-base xl:text-base 2xl:text-xl">
+                                                S P Chenthilkumar</h1>
+                                            <p
+                                                class="2xl:text-[14px] xl:text-[12px] lg:text-[10px] text-[12px] font-inter 2xl:mt-[12px] xl:mt-[10px] lg:mt-[8px] mt-[6px]">
+                                                Founder, Hayakawa Japanese Language School & Cultural Center</p>
+                                        </div>
+                                        <div class="absolute right-0 -mt-16">
+                                            <img src="./src/assets/img/home/qutation-testimonial.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Item-02-->
+                    <div class="border bg-[#FFF6F7] grid grid-cols-6 gap-10 lg:p-7 p-5">
+                        <div class="lg:col-span-2 col-span-6">
+                            <div
+                                class="lg:block hidden flex flex-col justify-between items-center h-full lg:space-y-1 space-y-3">
+                                <img src="./src/assets/img/home/alpha-icon-testimonial.png" class="mb-auto">
+                                <img src="./src/assets/img/home/alpha-icon-testimonial-02.png" class="mt-auto">
+                            </div>
+                            <div class="lg:hidden block">
+                                <img src="./src/assets/img/home/alpha-icon-testimonial-02-mob.png" class="">
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 col-span-6 flex justify-start items-center relative">
+                            <div class="flex flex-col justify-between items-center h-full">
+                                <div class="relative">
+                                    <div class="w-5 h-7 absolute left-0 lg:-ml-8 ml-0 lg:-mt-0 -mt-5">
+                                        <img src="./src/assets/img/home/qutation-black-testimonial.png" class="h-5 w-7">
+                                    </div>
+                                    <h1 class="font-gellix font-semibold text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
+                                        The team at Touchmark Descience is the best that I have worked with</h1>
+                                </div>
+                                <div>
+                                    <p
+                                        class="font-inter 2xl:text-base xl:text-xs lg:text-xs text-sm mt-2 lg:mt-2.5 xl:mt-3 2xl:mt-5">
+                                        I have been involved in different projects for major businesses across
+                                        Asia-Pacific regions and when it comes to IT, the team at Touchmark Descience is
+                                        the best that I have worked with. They are efficient and use best practices in
+                                        the industry to make sure they produce quality results.
+                                    </p>
+                                </div>
+                                <div class="pt-5 lg:pt-5 xl:pt-7 2xl:pt-11">
+                                    <div class="inline-flex justify-between items-center relative">
+                                        <div class="">
+                                            <h1
+                                                class="font-semibold font-gellix text-sm lg:text-base xl:text-base 2xl:text-xl">
+                                                Jill Wong</h1>
+                                            <p
+                                                class="2xl:text-[14px] xl:text-[12px] lg:text-[10px] text-[12px] font-inter 2xl:mt-[12px] xl:mt-[10px] lg:mt-[8px] mt-[6px]">
+                                                Alpha Property Management, Auckland, New Zealand<span
+                                                    class="text-transparent">Alpha Property Management, Auckland,</span>
+                                            </p>
+                                        </div>
+                                        <div class="absolute right-0 -mt-16">
+                                            <img src="./src/assets/img/home/qutation-testimonial.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Item-03-->
+                    <div class="border bg-[#F8F9FF] grid grid-cols-6 gap-10 lg:p-7 p-5">
+                        <div class="lg:col-span-2 col-span-6">
+                            <div
+                                class="lg:block hidden flex flex-col justify-between items-center h-full lg:space-y-1 space-y-3">
+                                <img src="./src/assets/img/home/tantra-icon-testimonial.png" class="mb-auto">
+                                <img src="./src/assets/img/home/tantra-icon-testimonial-02.png" class="mt-auto">
+                            </div>
+                            <div class="lg:hidden block">
+                                <img src="./src/assets/img/home/tantra-icon-testimonial-02-mob.png" class="">
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 col-span-6 flex justify-start items-center relative">
+                            <div class="flex flex-col justify-between items-center h-full">
+                                <div class="relative">
+                                    <div class="w-5 h-7 absolute left-0 lg:-ml-8 ml-0 lg:-mt-0 -mt-5">
+                                        <img src="./src/assets/img/home/qutation-black-testimonial.png" class="h-5 w-7">
+                                    </div>
+                                    <h1 class="font-gellix font-semibold text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
+                                        I have been travelling with them for so long, happy to see their growth. </h1>
+                                </div>
+                                <div>
+                                    <p
+                                        class="font-inter 2xl:text-base xl:text-xs lg:text-xs text-sm mt-2 lg:mt-2.5 xl:mt-3 2xl:mt-5">
+                                        We have been working with Touchmark Descience over the last 5 years for the
+                                        continual development of our softwares. The staff that have been assigned to our
+                                        project have been highly skilled, intelligent, hard-working, innovative and
+                                        completely reliable.
+                                    </p>
+                                </div>
+                                <div class="pt-5 lg:pt-5 xl:pt-7 2xl:pt-11">
+                                    <div class="flex justify-between items-center relative">
+                                        <div class="lg:ml-0 -ml-0">
+                                            <h1
+                                                class="font-semibold font-gellix text-sm lg:text-base xl:text-base 2xl:text-xl">
+                                                JK Saravana</h1>
+                                            <p
+                                                class="2xl:text-[14px] xl:text-[12px] lg:text-[10px] text-[12px] font-inter 2xl:mt-[12px] xl:mt-[10px] lg:mt-[8px] mt-[6px]">
+                                                Chairman & Founder, Tantra Inc - Group of Companies, Singapore</p>
+                                        </div>
+                                        <div class="absolute right-0 -mt-16">
+                                            <img src="./src/assets/img/home/qutation-testimonial.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Item-04-->
+                    <div class="border bg-[#F4FFFE] grid grid-cols-6 gap-10 lg:p-7 p-5">
+                        <div class="lg:col-span-2 col-span-6">
+                            <div
+                                class="lg:block hidden flex flex-col justify-between items-center h-full lg:space-y-1 space-y-3">
+                                <img src="./src/assets/img/home/armtech-icon-testimonial.png" class="mb-auto">
+                                <img src="./src/assets/img/home/armtech-icon-testimonial-02.png" class="mt-auto">
+                            </div>
+                            <div class="lg:hidden block">
+                                <img src="./src/assets/img/home/armtech-icon-testimonial-02-mob.png" class="">
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 col-span-6 flex justify-start items-center relative">
+                            <div class="flex flex-col justify-between items-center h-full">
+                                <div class="relative">
+                                    <div class="w-5 h-7 absolute left-0 lg:-ml-8 ml-0 lg:-mt-0 -mt-5">
+                                        <img src="./src/assets/img/home/qutation-black-testimonial.png" class="h-5 w-7">
+                                    </div>
+                                    <h1 class="font-gellix font-semibold text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
+                                        The product helped us to increase our productivity as well as a business owner. 
+                                    </h1>
+                                </div>
+                                <div>
+                                    <p
+                                        class="font-inter 2xl:text-base xl:text-xs lg:text-xs text-sm mt-2 lg:mt-2.5 xl:mt-3 2xl:mt-5">
+                                        We have been working with Touchmark Descience for the past 6 years, the service
+                                        they offer was
+                                        remarkable. Recently we deployed an AMC ERP system, which addresses most of our
+                                        real time
+                                        challenges.
+                                    </p>
+                                </div>
+                                <div class="pt-5 lg:pt-5 xl:pt-7 2xl:pt-11">
+                                    <div class="flex justify-between items-center relative">
+                                        <div>
+                                            <h1
+                                                class="font-semibold font-gellix text-sm lg:text-base xl:text-base 2xl:text-xl">
+                                                Sathish Kumar</h1>
+                                            <p
+                                                class="2xl:text-[14px] xl:text-[12px] lg:text-[10px] text-[12px] font-inter 2xl:mt-[12px] xl:mt-[10px] lg:mt-[8px] mt-[6px]">
+                                                CEO, Armtech Computer Services Pvt Ltd<span
+                                                    class="text-transparent">CEO, Armtech Computer Services Pvt
+                                                    Ltd</span></p>
+                                        </div>
+                                        <div class="absolute right-0 -mt-16">
+                                            <img src="./src/assets/img/home/qutation-testimonial.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End : Building trust through experience.-->
+
+
+        <!--Start : Read Touchmark Descience Blogs-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:pb-16 xl:pb-16 2xl:py-24 text-black bg-white">
+
+            <div class="grid grid-cols-12 lg:gap-4">
+                <div class="lg:col-span-4 xl:col-span-5 2xl:col-span-6 col-span-12">
+                    <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-inter font-medium">
+                        Descience Blogs</h3>
+                    <h1
+                        class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 2xl:text-6xl xl:text-4xl lg:text-4xl text-3xl font-gellix font-semibold">
+                        Read Touchmark Descience Blogs</h1>
+                </div>
+                <div class="lg:col-span-8  lg:block hidden">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-2 lg:gap-4 xl:gap-4 2xl:gap-8 pt-10 lg:pt-8 xl:pt-12 2xl:pt-24">
+
+                <div class="lg:col-span-6 col-span-12 relative overflow-hidden group">
+                    <img src="./src/assets/img/areospace-industry/grid-img-01.png"
+                        class="transition-transform group-hover:scale-110 duration-500 lg:w-auto w-full">
+
+                    <div class="absolute top-0 right-0">
+                        <div class="inline-flex justify-start items-center space-x-3 p-5">
+                            <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white text-xs">
+                                DEFENCE</h3>
+                            <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white text-xs">
+                                AEROSPACE</h3>
+                        </div>
+                    </div>
+
+                    <div class="absolute inset-0 flex justify-end items-end">
+                        <div
+                            class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0 w-full">
+                            <div>
+                                <p class="2xl:text-sm xl:text-xs lg:text-xs text-white font-inter">29 June 2024</p>
+                                <h1
+                                    class="text-white font-semibold font-gellix text-lg lg:text-xl xl:text-xl 2xl:text-2xl pt-2">
+                                    Breakthroughs in Aerospace Technology Transforming
+                                </h1>
+                                <a href="#" class="inline-flex justify-start items-center space-x-2 pt-5">
+                                    <h1 class="text-white underline text-base font-gellix font-semibold">Learn more</h1>
+                                    <svg fill="none" height="24"
+                                        class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1"
+                                        viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                        id="fi_10486492">
+                                        <path
+                                            d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 col-span-12 grid grid-rows-2 gap-4">
+
+                    <div class="lg:row-span-1 row-span-2 grid grid-cols-2 gap-4">
+
+                        <div class="lg:col-span-1 col-span-2 relative overflow-hidden group">
+                            <img src="./src/assets/img/areospace-industry/grid-img-02.png"
+                                class="transition-transform group-hover:scale-125 duration-500 h-full lg:w-auto w-full">
+                            <div class="absolute top-0 right-0">
+                                <div class="inline-flex justify-start items-center space-x-3 p-5">
+                                    <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white text-xs">
+                                        AEROSPACE</h3>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex justify-end items-end">
+                                <div
+                                    class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0 w-full">
+                                    <p class="2xl:text-sm xl:text-xs lg:text-xs text-white font-inter">29 June 2024</p>
+                                    <h1
+                                        class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl text-white font-gellix font-semibold pt-2">
+                                        Breakthroughs in Aerospace Technology</h1>
+                                    <a href="#" class="inline-flex justify-start items-center space-x-2 pt-5">
+                                        <h1 class="text-white underline text-base font-gellix font-semibold">Learn more
+                                        </h1>
+                                        <svg fill="none" height="24"
+                                            class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1"
+                                            viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                            id="fi_10486492">
+                                            <path
+                                                d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-1 col-span-2 relative overflow-hidden group">
+                            <img src="./src/assets/img/areospace-industry/grid-img-03.png"
+                                class="transition-transform group-hover:scale-125 duration-500 h-full lg:w-auto w-full">
+                            <div class="absolute top-0 right-0">
+                                <div class="inline-flex justify-start items-center space-x-3 p-5">
+                                    <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white text-xs">DEFENCE</h3>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex justify-end items-end">
+                                <div
+                                    class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0 w-full">
+                                    <p class="2xl:text-sm xl:text-xs lg:text-xs text-white font-inter">29 June 2024</p>
+                                    <h1
+                                        class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl text-white font-gellix font-semibold pt-2">
+                                        Breakthroughs in Aerospace Technology</h1>
+                                    <a href="#" class="inline-flex justify-start items-center space-x-2 pt-5">
+                                        <h1 class="text-white underline text-base font-gellix font-semibold">Learn more
+                                        </h1>
+                                        <svg fill="none" height="24"
+                                            class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1"
+                                            viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                            id="fi_10486492">
+                                            <path
+                                                d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="lg:block hidden lg:row-span-1 row-span-2 relative overflow-hidden group">
+                        <img src="./src/assets/img/areospace-industry/grid-img-04.png"
+                            class="transition-transform group-hover:scale-110 duration-500 h-full lg:w-auto w-full">
+                        <div class="absolute top-0 right-0">
+                            <div class="inline-flex justify-start items-center space-x-3 p-5">
+                                <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white text-xs">
+                                    DEFENCE</h3>
+                                <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white text-xs">
+                                    AEROSPACE</h3>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 flex justify-end items-end">
+                            <div
+                                class="w-full bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0">
+                                <p class="2xl:text-sm xl:text-sm lg:text-xs text-white font-inter">29 June 2024</p>
+                                <h1
+                                    class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl text-white font-gellix font-semibold pt-2">
+                                    Breakthroughs in Aerospace Technology Transforming</h1>
+                                <a href="#" class="inline-flex justify-start items-center space-x-2 pt-5">
+                                    <h1 class="text-white underline text-base font-gellix font-semibold">Learn more</h1>
+                                    <svg fill="none" height="24"
+                                        class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1"
+                                        viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                        id="fi_10486492">
+                                        <path
+                                            d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--mobile grid-->
+                    <div class="lg:hidden block row-span-1 grid grid-cols-2 gap-4">
+                        <div class="lg:col-span-1 col-span-2 relative overflow-hidden group">
+                            <img src="./src/assets/img/areospace-industry/grid-img-02.png"
+                                class="transition-transform group-hover:scale-125 duration-500 h-full lg:w-auto w-full">
+                            <div class="absolute top-0 right-0">
+                                <div class="inline-flex justify-start items-center space-x-3 p-5">
+                                    <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white text-xs">
+                                        AEROSPACE</h3>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex justify-end items-end">
+                                <div
+                                    class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0 w-full">
+                                    <p class="2xl:text-sm xl:text-xs lg:text-xs text-white font-inter">29 June 2024</p>
+                                    <h1
+                                        class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl text-white font-gellix font-semibold pt-2">
+                                        Breakthroughs in Aerospace Technology</h1>
+                                    <a href="#" class="inline-flex justify-start items-center space-x-2 pt-5">
+                                        <h1 class="text-white underline text-base font-gellix font-semibold">Learn more
+                                        </h1>
+                                        <svg fill="none" height="24"
+                                            class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1"
+                                            viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                            id="fi_10486492">
+                                            <path
+                                                d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="lg:block hidden lg:col-span-3 col-span-12 relative overflow-hidden group">
+                    <img src="./src/assets/img/areospace-industry/grid-img-05.png"
+                        class="transition-transform group-hover:scale-125 duration-500 lg:w-auto w-full">
+                    <div class="absolute top-0 right-0">
+                        <div class="inline-flex justify-start items-center space-x-3 p-5">
+                            <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white text-xs">
+                                AEROSPACE</h3>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 flex justify-end items-end">
+                        <div
+                            class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0 w-full">
+                            <p class="2xl:text-sm xl:text-sm lg:text-xs text-white font-inter">29 June 2024</p>
+                            <h1
+                                class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl text-white font-gellix font-semibold pt-2">
+                                Breakthroughs in Aerospace Technology</h1>
+                            <a href="#" class="inline-flex justify-start items-center space-x-2 pt-1">
+                                <h1 class="text-white underline text-base font-gellix font-semibold">Learn more</h1>
+                                <svg fill="none" height="24"
+                                    class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1" viewBox="0 0 24 24"
+                                    width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:block hidden lg:col-span-3 col-span-12 relative overflow-hidden group">
+                    <img src="./src/assets/img/areospace-industry/grid-img-06.png"
+                        class="transition-transform group-hover:scale-125 duration-500 lg:w-auto w-full">
+                    <div class="absolute top-0 right-0">
+                        <div class="inline-flex justify-start items-center space-x-3 p-5">
+                            <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white text-xs">
+                                AEROSPACE</h3>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 flex justify-end items-end">
+                        <div
+                            class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0 w-full">
+                            <p class="2xl:text-sm xl:text-sm lg:text-xs text-white font-inter">29 June 2024</p>
+                            <h1
+                                class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl text-white font-gellix font-semibold pt-2">
+                                Breakthroughs in Aerospace Technology</h1>
+                            <a href="#" class="inline-flex justify-start items-center space-x-2 pt-1">
+                                <h1 class="text-white underline text-base font-gellix font-semibold">Learn more</h1>
+                                <svg fill="none" height="24"
+                                    class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1" viewBox="0 0 24 24"
+                                    width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:block hidden lg:col-span-3 col-span-12 relative overflow-hidden group">
+                    <img src="./src/assets/img/areospace-industry/grid-img-07.png"
+                        class="transition-transform group-hover:scale-125 duration-500 lg:w-auto w-full">
+                    <div class="absolute top-0 right-0">
+                        <div class="inline-flex justify-start items-center space-x-3 p-5">
+                            <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white text-xs">
+                                SPACE</h3>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 flex justify-end items-end">
+                        <div
+                            class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0 w-full">
+                            <p class="2xl:text-sm xl:text-sm lg:text-xs text-white font-inter">29 June 2024</p>
+                            <h1
+                                class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl text-white font-gellix font-semibold pt-2">
+                                Breakthroughs in Aerospace Technology</h1>
+                            <a href="#" class="inline-flex justify-start items-center space-x-2 pt-1">
+                                <h1 class="text-white underline text-base font-gellix font-semibold">Learn more</h1>
+                                <svg fill="none" height="24"
+                                    class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1" viewBox="0 0 24 24"
+                                    width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:block hidden lg:col-span-3 col-span-12 relative overflow-hidden group">
+                    <img src="./src/assets/img/areospace-industry/grid-img-08.png"
+                        class="transition-transform group-hover:scale-125 duration-500 lg:w-auto w-full">
+                    <div class="absolute top-0 right-0">
+                        <div class="inline-flex justify-start items-center space-x-3 p-5">
+                            <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white text-xs">
+                                SPACE</h3>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 flex justify-end items-end">
+                        <div
+                            class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0 w-full">
+                            <p class="2xl:text-sm xl:text-sm lg:text-xs text-white font-inter">29 June 2024</p>
+                            <h1
+                                class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl text-white font-gellix font-semibold pt-2">
+                                Breakthroughs in Aerospace Technology</h1>
+                            <a href="#" class="inline-flex justify-start items-center space-x-2 pt-1">
+                                <h1 class="text-white underline text-base font-gellix font-semibold">Learn more</h1>
+                                <svg fill="none" height="24"
+                                    class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1" viewBox="0 0 24 24"
+                                    width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <!--End : Read Touchmark Descience Blogs-->
+
+
+        <!--Start : Footer-->
+        <footer class="bg-[#043E8C]">
+            <div
+                class="space-y-8 py-16 lg:space-y-16 2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 font-inter">
+
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="lg:col-span-4 col-span-12">
+                        <div class="block lg:flex justify-start items-center gap-2 -mt-5 lg:mt-0">
+                            <h1
+                                class="2xl:text-3xl xl:text-2xl lg:text-xl text-xl font-gellix font-semibold text-white">
+                                Follow Our Social
+                                Networks</h1>
+                            <div class="flex justify-start lg:justify-center items-center space-x-2 lg:mt-0 mt-4">
+                                <img src="./src/assets/img/home/icons/linkedin-icon.svg" class="h-10">
+                                <img src="./src/assets/img/home/icons/instagram-icon.svg" class="h-10">
+                                <img src="./src/assets/img/home/icons/twitter-icon.svg" class="h-10">
+                                <img src="./src/assets/img/home/icons/fb-icon.svg" class="h-10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 lg:block hidden"></div>
+                    <div class="lg:col-span-3 col-span-12 lg:mt-0 mt-5">
+                        <h1 class="2xl:text-3xl xl:text-2xl lg:text-xl text-xl font-gellix font-semibold text-white">Be
+                            the First one to hear
+                            About Updates</h1>
+                    </div>
+                    <div class="lg:col-span-4 col-span-12">
+                        <div class="max-w-md mx-auto overflow-hidden md:max-w-xl -ml-3 lg:ml-0">
+                            <div class="md:flex">
+                                <div class="w-full p-3">
+                                    <div class="relative"> <input type="text"
+                                            class="bg-white h-14 w-full px-4 pr-20 focus:outline-none hover:cursor-pointer placeholder:black"
+                                            name="" placeholder="Enter Your Email">
+                                        <button
+                                            class="h-10 bg-[#194F97] absolute top-2 text-sm right-2 px-3 text-white hover:bg-blue-700 flex justify-start items-center space-x-3">Subscribe
+                                            <svg fill="none" height="24"
+                                                class="ml-2 text-gray-100 -rotate-45 transform group-hover:translate-x-1 transition-all duration-300"
+                                                viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                                id="fi_10486492">
+                                                <path
+                                                    d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                    fill="currentColor"></path>
+                                            </svg></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-t border-white/30"></div>
+
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-6 -mt-14">
+
+                    <div class="text-white w-full col-span-2">
+
+                        <a href="./index.html">
+                            <div class="">
+                                <img src="./src/assets/img/touchmark-logowhite.svg" class="h-10">
+                            </div>
+                        </a>
+
+                        <p
+                            class="mt-5 lg:mt-8 xl:mt-10 2xl:mt-14 text-sm lg:text-sm xl:text-sm 2xl:text-base text-white font-inter">
+                            Innovative Solutions Connecting Brands and Customers We provide full-service IT consulting,
+                            digital
+                            marketing, and software development. Our objective is to use automation and rich media to
+                            close the gap that
+                            exists between brands and consumers.
+                        </p>
+
+                        <div class="mt-7 lg:mt-10 xl:mt-10 2xl:mt-10 flex justify-start items-center space-x-3">
+                            <img src="./src/assets/img/home/icons/phone-icon.svg">
+                            <h3 class="font-inter font-semibold text-base lg:text-sm xl:text-sm 2xl:text-base">+91 44
+                                4065
+                                2648</h3>
+                        </div>
+
+                        <div class="mt-5 lg:mt-5 xl:mt-5 2xl:mt-5 flex justify-start items-center space-x-3">
+                            <img src="./src/assets/img/home/icons/mail-icon.svg">
+                            <h3 class="font-inter font-semibold text-base lg:text-sm xl:text-sm 2xl:text-base">
+                                info@touchmarkdes.com</h3>
+                        </div>
+
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-3">
+
+                        <div class="flex justify-start lg:justify-center items-start">
+                            <div>
+                                <p
+                                    class="font-semibold font-gellix text-white text-lg lg:text-lg xl:text-xl 2xl:text-2xl">
+                                    Quick Links
+                                </p>
+                                <ul class="mt-5 space-y-3 text-sm font-inter font-regular">
+                                    <li>
+                                        <a href="./about-us.html"
+                                            class="text-white/80 font-inter font-regular transition hover:text-white">
+                                            Who
+                                            we
+                                            are </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"
+                                            class="text-white/80 font-inter font-regular transition hover:text-white">
+                                            What we do </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./index.html#casestudy"
+                                            class="text-white/80 font-inter font-regular transition hover:text-white">
+                                            Case Studies </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"
+                                            class="text-white/80 font-inter font-regular transition hover:text-white">
+                                            Blogs </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"
+                                            class="text-white/80 font-inter font-regular transition hover:text-white">
+                                            E-Books </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./client&partner.html"
+                                            class="text-white/80 font-inter font-regular transition hover:text-white">
+                                            Clients and Partners
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./contact-us.html"
+                                            class="text-white/80 font-inter font-regular transition hover:text-white">
+                                            Contact us </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-start lg:justify-center items-start">
+                            <div>
+                                <p
+                                    class="font-semibold font-gellix text-white text-lg lg:text-lg xl:text-xl 2xl:text-2xl">
+                                    Services</p>
+                                <ul class="mt-5 space-y-3 text-sm font-inter font-regular">
+                                    <li>
+                                        <a href="./t&c-service.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">Technology
+                                            Consulting</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./cloud.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Cloud
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./s&c-service.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Sales & Commerce
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./mv-service.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Metaverse </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./d&a-service.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Data & Analytics
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./ai&ml-service.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            AI & ML </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./rpa-service.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Robotic Process
+                                            Automation </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-start lg:justify-center items-start">
+                            <div>
+                                <p
+                                    class="font-semibold font-gellix text-white text-lg lg:text-lg xl:text-xl 2xl:text-2xl">
+                                    Industries
+                                </p>
+                                <ul class="mt-5 space-y-3 text-sm font-regular font-inter">
+                                    <li>
+                                        <a href="./areo.industry.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Aerospace & Defence
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./bfsi-industry.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            BFSI </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./es&g-industry.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Environmental,
+                                            social, and governance </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./fmcg-industry.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Fast-Moving Consumer
+                                            Goods </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./hc-industry.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Healthcare </a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="./mining-industry.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Mining </a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="./gt-industry.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Geospatial Tech </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./m&e-industry.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Media and
+                                            Entertainment </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./real-estate-industry.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Real Estate </a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="./t&t-industry.html"
+                                            class="text-white/80 font-inter font-regular hover:text-white transition">
+                                            Travel and Tourism 
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="border border-t border-white/30"></div>
+                    <div
+                        class="text-white block lg:flex justify-center items-center text-center lg:space-y-0 space-y-3 lg:space-x-5 pt-10">
+                        <h3 class="text-[12px]">© 2010-2024 Touchmark Descience Pvt. Ltd</h3>
+                        <div class="flex justify-center items-center space-x-3 text-[12px]">
+                            <h3>Terms of Use</h3>
+                            <h3>┃</h3>
+                            <h3>Privacy Policy</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+        <!--End : Footer-->
+
+    </div>
+
+</body>
+
+<script src="./src/js/alpine-v2.8.2.js" defer></script>
+
+<script src="./src/js/jquery-3.7.1.min.js"></script>
+<script src="./src/js/owl.carousel.min.js"></script>
+
+
+<script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
+
+<script src="./src/js/preline.min.js"></script>
+
+
+<!--Navbar-->
+<script>
+   window.addEventListener('scroll', function () {
+    var header = document.querySelector('#navbar');
+    var logo = document.querySelector('#logo');
+    var desktopLogo = './src/assets/img/touchmark-logowhite.svg';
+    var mobileLogo = './src/assets/img/tds-color-logo.png';
+
+    if (header) {
+        header.classList.toggle('bg-scroll-white', window.scrollY > 0);
+    }
+
+    if (logo) {
+        if (window.innerWidth <= 768) {
+            logo.src = mobileLogo;
+        } else {
+            logo.src = window.scrollY > 0 ? mobileLogo : desktopLogo;
+        }
+    }
+
+    var navLinks = document.querySelectorAll('#navbar-collapse-columns .hs-dropdown button');
+    navLinks.forEach(function (link) {
+        link.classList.toggle('text-white', window.scrollY <= 0);
+        link.classList.toggle('text-black', window.scrollY > 0);
+    });
+
+    var borders = document.querySelectorAll('.border-white');
+    borders.forEach(function (borderDiv) {
+        borderDiv.classList.toggle('border-blue', window.scrollY > 0);
+    });
+});
+
+window.dispatchEvent(new Event('scroll'));
+
+</script>
+
+
+<!--Slider-->
+<script>
+    $(document).ready(function () {
+        $("#one-time").owlCarousel({
+            loop: true,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    margin: 0  // No margin on mobile devices
+                },
+                600: {
+                    items: 1,
+                    margin: 20  // Margin for devices with width 600px and above
+                },
+                1000: {
+                    items: 2,
+                    margin: 20  // Margin for devices with width 1000px and above
+                }
+            }
+        });
+    });
+</script>
+
+
+<!--expanding slider-->
+<!-- <script>
+    const panels = document.querySelectorAll('.slider-panel');
+
+    panels.forEach(panel => {
+        panel.addEventListener('click', () => {
+            removeActiveClasses();
+            panel.classList.add('active');
+            togglePanelContent(panel, true);
+        });
+    });
+
+    function removeActiveClasses() {
+        panels.forEach(panel => {
+            if (panel.classList.contains('active')) {
+                togglePanelContent(panel, false);
+            }
+            panel.classList.remove('active');
+        });
+    }
+
+    function togglePanelContent(panel, isActive) {
+        const firstContent = panel.querySelector('.first');
+        const secondContent = panel.querySelector('.second');
+
+        if (isActive) {
+            firstContent.classList.remove('hide');
+            secondContent.classList.add('hide');
+        } else {
+            firstContent.classList.add('hide');
+            secondContent.classList.remove('hide');
+        }
+    }
+
+    // Initialize to show 'second' for all non-active panels
+    panels.forEach(panel => {
+        if (!panel.classList.contains('active')) {
+            const firstContent = panel.querySelector('.first');
+            const secondContent = panel.querySelector('.second');
+            firstContent.classList.add('hide');
+            secondContent.classList.remove('hide');
+        }
+    });
+</script> -->
+
+
+<!--expanding slider mobile-->
+<!-- <script>
+    // JavaScript to toggle the answers and rotate the arrows
+    var activeIndex = null;
+    document.querySelectorAll('[id^="question"]').forEach(function (button, index) {
+        button.addEventListener('click', function () {
+            var answer = document.getElementById('answer' + (index + 1));
+            var arrow = document.getElementById('arrow' + (index + 1));
+
+            // Close all other answers except the current one
+            document.querySelectorAll('[id^="answer"]').forEach(function (ans, i) {
+                if (i !== index) {
+                    ans.style.display = 'none';
+                    var otherArrow = document.getElementById('arrow' + (i + 1));
+                    if (otherArrow) {
+                        otherArrow.style.transform = 'rotate(-180deg)';
+                    }
+                }
+            });
+
+            if (activeIndex !== null && activeIndex !== index) {
+                var prevAnswer = document.getElementById('answer' + (activeIndex + 1));
+                var prevArrow = document.getElementById('arrow' + (activeIndex + 1));
+                prevAnswer.style.display = 'none';
+                prevArrow.style.transform = 'rotate(-180deg)';
+            }
+
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+                arrow.style.transform = 'rotate(0deg)';
+                activeIndex = index;
+            } else {
+                answer.style.display = 'none';
+                arrow.style.transform = 'rotate(-180deg)';
+                activeIndex = null;
+            }
+        });
+    });
+</script> -->
+
+
+</html>

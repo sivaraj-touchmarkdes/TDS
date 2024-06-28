@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="Touchmark" href="#" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOG</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link href="./output.css" rel="stylesheet">
+    <link href="../src/input.css" rel="stylesheet">
+
+    <!-- // Link rel // -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+
+    <style>
+        .background-animate {
+            background-size: 400%;
+
+            -webkit-animation: AnimationName 3s ease infinite;
+            -moz-animation: AnimationName 3s ease infinite;
+            animation: AnimationName 3s ease infinite;
+        }
+
+        @keyframes AnimationName {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Define hover effects */
+        .hover-effect {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .hover-effect:hover {
+            background-color: #1C95C9;
+            color: #fff;
+        }
+
+        .hover-effect:hover #arrowPath {
+            fill: #fff;
+        }
+    </style>
+
+</head>
+
+<body class="font-gellix bg-gradient-to-r from-[#009ADC] via-[#1A4A93] to-[#1A4A93] background-animate">
+
+    <!--start header-->
+    <header class="fixed w-full top-0 z-20">
+        <nav id="header" class="border-gray-200 py-2.5">
+            <div
+                class="flex flex-wrap items-center justify-between xl:max-w-screen-xl 2xl:max-w-screen-2xl lg:max-w-screen-lg px-4 mx-auto">
+                <a href="#" class="flex items-center">
+                    <img src="../src/assets/img/tds-color-logo.png" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
+                </a>
+                <div class="flex items-center lg:order-2">
+                    <a href="/"
+                        class="text-white bg-[#009ADC] focus:ring-4 font-medium rounded-3xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 focus:outline-none">Let's
+                        Talk</a>
+                    <button data-collapse-toggle="mobile-menu-2" type="button"
+                        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="mobile-menu-2" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <li>
+                            <a href="#"
+                                class="navbartext block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#009ADC] lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="navbartext block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#009ADC] lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Company</a>
+                        </li>
+                        <li>
+                            <a href="./rupinis-casestudy.html"
+                                class="navbartext block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#009ADC] lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Case
+                                Study</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="navbartext block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#009ADC] lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="navbartext block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#009ADC] lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--End header-->
+
+
+    <!-- Start : Hero Video Banner -->
+    <section class="flex">
+        <div
+            class="xl:max-w-screen-2xl 2xl:max-w-screen-2xl lg:max-w-screen-lg lg:px-8 mx-auto py-8 lg:py-24 text-white">
+            <div class="pt-12 lg:pt-0">
+                <div class="flex justify-center">
+                    <h3 class="">Home</h3>
+                    <div class="border-2 rounded-full border-r ml-2"></div>
+                    <h3 class="ml-2">Blogs</h3>
+                </div>
+                <h1 class="text-4xl font-semibold mt-2">Descience Blogs</h1>
+            </div>
+        </div>
+    </section>
+    <!-- End : Hero Video Banner -->
+
+
+    <!--Start : Descience Blogs-->
+    <section class="bg-white rounded-t-3xl text-black">
+
+        <div class="lg:max-w-screen-2xl lg:px-8 px-3 mx-auto py-8 lg:py-24">
+
+            <!---Start : Discover Nice Articles Here-->
+            <div class="grid grid-cols-12">
+
+                <div class="lg:col-span-6 col-span-12 space-y-2">
+                    <h1 class="lg:text-5xl text-2xl text-[#484848] font-semibold">Discover Nice Articles Here</h1>
+                    <p class="lg:text-base text-sm text-[#666666]">Businesses are turning to technology for increased
+                        productivity, but addressing IT challenges requires investments in operational costs.</p>
+                </div>
+
+                <div class="lg:col-span-6 col-span-12 lg:mt-0 mt-5">
+                    <div class="flex justify-between items-center">
+                        <div class="lg:block hidden">
+                        </div>
+                        <div>
+                            <ul class="flex justify-center items-end space-x-3">
+                                <li>
+                                    <img src="../src/assets/img/blog/icons/linkedin-icon.svg">
+                                </li>
+                                <li>
+                                    <img src="../src/assets/img/blog/icons/spotify-icon.svg">
+                                </li>
+                                <li>
+                                    <img src="../src/assets/img/blog/icons/instagram-icon.svg">
+                                </li>
+                                <li>
+                                    <img src="../src/assets/img/blog/icons/facebook-icon.svg">
+                                </li>
+                                <li>
+                                    <img src="../src/assets/img/blog/icons/youtube-icon.svg">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--- End : Discover Nice Articles Here-->
+
+            <!--Start : Blog Layer - 01-->
+            <div class="grid grid-cols-12 gap-8 mt-20">
+                <!------>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <!------>
+            </div>
+            <!-- End  : Blog Layer - 01-->
+
+
+            <!--Start : Blog Layer - 02-->
+            <div class="grid grid-cols-12 gap-8 mt-16">
+                <!------>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <!------>
+            </div>
+            <!-- End  : Blog Layer - 02-->
+
+
+            <!--Start : Blog Layer - 03-->
+            <div class="grid grid-cols-12 gap-8 mt-16">
+                <!------>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <!------>
+            </div>
+            <!-- End  : Blog Layer - 03-->
+
+
+            <!--Start : Blog Layer - 04-->
+            <div class="grid grid-cols-12 gap-8 mt-16">
+                <!------>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-3">
+                    <img src="../src/assets/img/blog/blog-01.png" class="lg:w-auto w-full">
+                    <div class="text-[#232323] font-bold flex space-x-2 mt-5">
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Artificial
+                            Intelligence</p>
+                        <p class="px-2 py-1 border border-[#1C95C9] rounded-2xl lg:text-[11px] text-[8px]">Machine
+                            Learning</p>
+                    </div>
+                    <div class="mt-6 space-y-5">
+                        <h1 class="text-xl font-bold text-[#2E2E2E]">Exploring the World of Machine Learning</h1>
+                        <p class="text-base text-[#3E3E3E]">This phrase captures the essence of machine learning, which
+                            involves teaching machines to
+                            learn from data and make intelligent decisions...</p>
+                    </div>
+                    <div class="mt-10 flex justify-start items-center space-x-3">
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/calendar-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">24/03/2024</h3>
+                        </div>
+                        <div class="flex justify-start items-center space-x-2">
+                            <img src="../src/assets/img/blog/icons/clock-icon.svg">
+                            <h3 class="text-[#3E3E3E] font-semibold text-sm">7-min read</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-5 flex justify-center items-center border border-[#1C95C9] bg-white text-[#1C95C9] hover-effect py-2 space-x-3 rounded-3xl">
+                        <h3 class="text-base font-semibold">Read More</h3>
+                        <svg version="1.1" id="fi_545682" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path id="arrowPath"
+                                        d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068 c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557 l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104 c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                                        fill="#1C95C9"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <!------>
+            </div>
+            <!-- End  : Blog Layer - 04-->
+
+
+            <!----Start : Switching Button ---->
+            <ol class="flex justify-center gap-x-3 text-xs font-medium mt-20">
+
+                <li>
+                    <a href="#"
+                        class="inline-flex size-8 items-center justify-center rounded border border-[#1C95C9] bg-white text-[#1C95C9] rtl:rotate-180">
+                        <span class="sr-only">Prev Page</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                        class="block size-8 rounded border border-[#1C95C9] bg-white text-center leading-8 text-gray-900">
+                        1
+                    </a>
+                </li>
+
+                <li class="block size-8 rounded bg-[#1C95C9] text-center leading-8 text-white">
+                    2
+                </li>
+
+                <li>
+                    <a href="#"
+                        class="block size-8 rounded border border-[#1C95C9] bg-white text-center leading-8 text-gray-900">
+                        3
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                        class="block size-8 rounded border border-[#1C95C9] bg-white text-center leading-8 text-gray-900">
+                        4
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                        class="block size-8 rounded border border-[#1C95C9] bg-white text-center leading-8 text-gray-900">
+                        5
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                        class="inline-flex size-8 items-center justify-center rounded border border-[#1C95C9] bg-white text-[#1C95C9] rtl:rotate-180">
+                        <span class="sr-only">Next Page</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </li>
+
+            </ol>
+            <!---- End  : Switching Button ---->
+
+        </div>
+
+    </section>
+    <!--End : Descience Blogs-->
+
+
+    <!--start Footer-->
+    <footer class="bg-white">
+        <div
+            class="xl:max-w-screen-2xl 2xl:max-w-screen-2xl lg:max-w-screen-lg lg:px-8 mx-auto py-8 lg:py-24 text-black bg-white">
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class=" hover:underline">About</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Careers</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Brand Center</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Discord Server</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Twitter</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Facebook
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Privacy Policy</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Licensing</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Terms</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class=" hover:underline">About</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Careers</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Brand Center</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">iOS</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Android</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Windows</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">MacOS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End Footer-->
+
+</body>
+
+<script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+
+<!----header--->
+<script>
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('header');
+        var companyLinks = document.querySelectorAll('.navbartext');
+
+        // Change background color of header
+        if (window.scrollY > 0) {
+            header.classList.add('bg-white');
+        } else {
+            header.classList.remove('bg-white');
+        }
+
+        // Change text color of company links
+        var textColorClass = window.scrollY > 0 ? 'text-black' : 'text-white';
+        companyLinks.forEach(function (link) {
+            link.classList.remove('text-white', 'text-black');
+            link.classList.add(textColorClass);
+        });
+    });
+</script>
+<!----header--->
+
+
+</html>

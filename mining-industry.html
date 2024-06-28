@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="Touchmark" href="#" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining</title>
+
+
+    <!-- Favicon -->
+    <link rel="touchmark-des-icon" sizes="180x180"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link href="./output.css" rel="stylesheet">
+    <link href="./src/input.css" rel="stylesheet">
+
+    <link href="./src/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="./src/css/owl.theme.default.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <style>
+        /*Navbar*/
+        .overflow-x-hidden {
+            overflow-x: hidden;
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:overflow-x-auto {
+                overflow-x: hidden;
+            }
+        }
+
+        .bg-scroll-white {
+            background-color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        @media (max-width: 576px) {
+            .mobile-text-black {
+                color: black !important;
+            }
+        }
+
+        .full-dropdown {
+            width: -webkit-fill-available;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .mobile-full {
+                height: 989px;
+            }
+        }
+
+
+        .scrollbar-hidden::-webkit-scrollbar {
+            display: none;
+        }
+
+        /*Forward scroll runnning first*/
+        .scroll-container {
+            height: 400px;
+            /* Adjust height as needed */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scroll-content {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* Forward-wise vertical scroll */
+        }
+
+        .scroll-item {
+            margin-top: 4px;
+        }
+
+        /*Forward scroll runnning first*/
+
+
+        /*Reverse scroll runnning first*/
+        .scroll-container-rev {
+            height: 400px;
+            /* Adjust height as needed */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scroll-content-rev {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+            /* Reverse-wise vertical scroll */
+        }
+
+        .scroll-item-rev {
+            margin-top: 4px;
+        }
+
+        /*Reverse scroll runnning first*/
+
+
+        /*Forward scroll runnning Second*/
+        .scroll-container-2 {
+            height: 400px;
+            /* Adjust height as needed */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scroll-content-2 {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* Forward-wise vertical scroll */
+        }
+
+        .scroll-item-2 {
+            margin-top: 4px;
+        }
+
+        /*Forward scroll runnning Second*/
+
+        @media (max-width: 640px) {
+            .overflow-x-hidden-mobile {
+                overflow-x: hidden;
+            }
+        }
+
+        /* Define hover effect */
+        .hover-container:hover svg path {
+            fill: white;
+        }
+
+        .font-inter {
+            font-family: "Inter", sans-serif;
+        }
+
+        .text-stroke {
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #9CD1E9;
+            text-stroke-width: 1px;
+            text-stroke-color: #ffff;
+        }
+
+        .text-stroke:hover {
+            -webkit-text-stroke-width: 0;
+            text-stroke-width: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="overflow-x-hidden-mobile">
+
+        <!--start header-->
+        <header id="navbar"
+            class="fixed flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full text-sm py-4 sm:py-0 bg-white">
+            <nav class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 lg:drop-shadow-lg"
+                aria-label="Global">
+                <div class="relative sm:flex sm:items-center pt-2">
+
+                    <div class="flex items-center justify-between">
+                        <a class="flex-none text-xl font-semibold dark:text-white -mt-3" href="./index.html">
+                            <img src="./src/assets/img/touchmark-logowhite.svg" class="h-8" id="logo">
+                        </a>
+
+                        <div class="sm:hidden">
+                            <button type="button"
+                                class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 text-gray-800 disabled:opacity-50 disabled:pointer-events-none"
+                                data-hs-collapse="#navbar-collapse-columns" aria-controls="navbar-collapse-columns"
+                                aria-label="Toggle navigation">
+                                <svg class="hs-collapse-open:hidden flex-shrink-0" fill="none" height="24"
+                                    viewBox="0 0 40 40" width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10513594">
+                                    <g clip-rule="evenodd" fill="#000" fill-rule="evenodd">
+                                        <path
+                                            d="m3.75 10c0-.69036.55964-1.25 1.25-1.25h30c.6904 0 1.25.55964 1.25 1.25 0 .6904-.5596 1.25-1.25 1.25h-30c-.69036 0-1.25-.5596-1.25-1.25z">
+                                        </path>
+                                        <path
+                                            d="m3.75 30c0-.6904.55964-1.25 1.25-1.25h30c.6904 0 1.25.5596 1.25 1.25s-.5596 1.25-1.25 1.25h-30c-.69036 0-1.25-.5596-1.25-1.25z">
+                                        </path>
+                                        <path
+                                            d="m10.4167 20c0-.6904.5596-1.25 1.25-1.25h23.3333c.6904 0 1.25.5596 1.25 1.25s-.5596 1.25-1.25 1.25h-23.3333c-.6904 0-1.25-.5596-1.25-1.25z">
+                                        </path>
+                                    </g>
+                                </svg>
+                                <svg class="hs-collapse-open:block hidden flex-shrink-0 size-4" version="1.1"
+                                    id="fi_722133" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" x="0px" y="0px"
+                                    viewBox="0 0 307.2 307.2" style="enable-background:new 0 0 307.2 307.2;"
+                                    xml:space="preserve">
+                                    <g>
+                                        <g>
+                                            <polygon points="307.2,24.136 283.064,0 153.6,129.469 24.136,0 0,24.136 129.464,153.6 0,283.064 24.136,307.2 153.6,177.736 
+                                                283.064,307.2 307.2,283.064 177.736,153.6 		"></polygon>
+                                        </g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="navbar-collapse-columns"
+                        class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block">
+                        <div
+                            class="flex flex-col gap-y-7 sm:gap-y-0 mt-10 sm:flex-row sm:items-center sm:justify-end sm:mt-0 px-5 lg:px-0 sm:ps-5 mobile-full">
+
+                            <!--who we are-->
+                            <div
+                                class="hs-dropdown group [--strategy:static] lg:lg:h-14 sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover]">
+                                <a href="./about-us.html"><button type="button"
+                                        class="font-inter font-semibold lg:font-normal uppercase sm:p-3 flex items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                        Who we are
+                                    </button></a>
+                                <div
+                                    class="border-[#0A3B7C] mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                                </div>
+                            </div>
+                            <!--who we are-->
+
+
+                            <div class="border-b border-black/10 lg:hidden block"></div>
+
+                            <!--what we do-->
+                            <div
+                                class="hs-dropdown group lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                                <a href="#">
+                                    <button type="button"
+                                        class="font-inter font-semibold lg:font-normal  uppercase sm:p-3 flex justify-between items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                        what we do
+                                        <svg class="ms-1 flex-shrink-0 size-4 group-hover:-rotate-180"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </button>
+                                </a>
+
+                                <div
+                                    class="border-[#0A3B7C] mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                                </div>
+
+                                <div
+                                    class="hs-dropdown-menu transition-[opacity,margin] sm:border duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 hidden z-10 top-full end-0 sm:w-[75rem] bg-white sm:shadow-md py-3 sm:px-2 dark:bg-neutral-800 sm:dark:border dark:border-neutral-700 dark:divide-neutral-700 full-dropdown">
+
+                                    <div class="lg:block hidden flex items-center justify-start">
+                                        <h1 class="font-semibold text-black text-xl ml-7 pt-2">
+                                            Services
+                                        </h1>
+                                    </div>
+
+                                    <div class="sm:grid sm:grid-cols-4 p-2 lg:p-7">
+
+                                        <div class="flex flex-col">
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./t&c-service.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Technology
+                                                    & Consulting</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./cloud.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Cloud</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./s&c-service.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Sales
+                                                    & commerce</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./mv-service.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Metaverse</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="flex flex-col">
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./d&a-service.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Data
+                                                    & Analytics</span>
+                                            </a>
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./ai&ml-service.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">AI
+                                                    & ML</span>
+                                            </a>
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./rpa-service.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Robotic
+                                                    Process Automation</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="lg:block hidden">
+                                            <div class="flex space-x-5">
+                                                <div class="border-gray-700 opacity-35 border-l"></div>
+                                                <div class="space-y-4">
+                                                    <h1 class="uppercase text-black text-sm font-gellix font-semibold">
+                                                        Featured</h1>
+                                                    <h3 class="mt-3 text-sm font-semibold">Touchmark Quarterly</h3>
+                                                    <p class="mt-2 text-xs">Silicon Valley pioneer Reid Hoffman explains
+                                                        why
+                                                        we should view
+                                                        generative AI as a “steam engine of the mind” that promises to
+                                                        profoundly alter our professional and personal lives.</p>
+                                                    <ul class="mt-3 space-y-1 text-[#194F97] text-xs underline">
+                                                        <li
+                                                            class="inline-flex justify-start items-center font-semibold">
+                                                            <svg fill="none" height="16"
+                                                                class="text-[#194F97] -rotate-90" viewBox="0 0 24 24"
+                                                                width="16" xmlns="http://www.w3.org/2000/svg"
+                                                                id="fi_10486492">
+                                                                <path
+                                                                    d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                                    fill="currentColor"></path>
+                                                            </svg><span class="pl-3">Business Building</span>
+                                                        </li>
+                                                        <li
+                                                            class="inline-flex justify-start items-center font-semibold">
+                                                            <svg fill="none" height="16"
+                                                                class="text-[#194F97] -rotate-90" viewBox="0 0 24 24"
+                                                                width="16" xmlns="http://www.w3.org/2000/svg"
+                                                                id="fi_10486492">
+                                                                <path
+                                                                    d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                                    fill="currentColor"></path>
+                                                            </svg><span class="pl-3">Quantum Black, AI by
+                                                                Touchmark</span>
+                                                        </li>
+                                                        <li
+                                                            class="inline-flex justify-start items-center font-semibold">
+                                                            <svg fill="none" height="16"
+                                                                class="text-[#194F97] -rotate-90" viewBox="0 0 24 24"
+                                                                width="16" xmlns="http://www.w3.org/2000/svg"
+                                                                id="fi_10486492">
+                                                                <path
+                                                                    d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                                    fill="currentColor"></path>
+                                                            </svg><span class="pl-3">Cloud Technology</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="lg:block hidden">
+                                            <div class="relative p-5">
+                                                <img src="./src/assets/img/navbar-img-service.jpg">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!--what we do-->
+
+
+                            <div class="border-b border-black/10 lg:hidden block"></div>
+
+                            <!--Industries-->
+                            <div
+                                class="hs-dropdown group lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                                <button type="button"
+                                    class="font-inter font-semibold lg:font-semibold uppercase sm:p-3 flex justify-between items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                    Industries
+                                    <svg class="ms-1 flex-shrink-0 size-4 lg:group-hover:-rotate-180"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="m6 9 6 6 6-6" />
+                                    </svg>
+                                </button>
+
+                                <div class="border-[#0A3B7C] mx-4 rounded-[100px] border-t-2 lg:block hidden">
+                                </div>
+
+                                <div
+                                    class="hs-dropdown-menu transition-[opacity,margin] sm:border duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 hidden z-10 top-full end-0 sm:w-[75rem] bg-white sm:shadow-md py-5 sm:px-2 dark:bg-neutral-800 sm:dark:border dark:border-neutral-700 dark:divide-neutral-700 full-dropdown">
+
+                                    <div class="lg:block hidden flex items-center justify-start">
+                                        <h1 class="font-semibold text-black text-xl ml-7 pt-2">
+                                            Industries
+                                        </h1>
+                                    </div>
+
+                                    <div class="sm:grid sm:grid-cols-4 p-2 lg:p-5">
+
+                                        <div class="flex flex-col">
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./areo.industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Aerospace
+                                                    & Defence</span>
+                                            </a>
+
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./bfsi-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">BFSI</span>
+                                            </a>
+
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./fmcg-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Fast-Moving
+                                                    Consumer Goods</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./real-estate-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Real Estate</span>
+                                            </a>
+
+
+
+                                        </div>
+
+                                        <div class="flex flex-col">
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./hc-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Healthcare</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./engg-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Engineering</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./mining-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Mining</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./gt-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Geospatial Tech</span>
+                                            </a>
+
+                                        </div>
+
+                                        <div class="flex flex-col">
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./m&e-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Media and Entertainment</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./t&t-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Travel and Tourism</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./es&g-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Environmental,
+                                                    social, and governance</span>
+                                            </a>
+
+                                        </div>
+
+                                        <div class="lg:block hidden">
+                                            <div class="flex space-x-10">
+                                                <div class="border-gray-700 opacity-35 border-l"></div>
+                                                <div>
+                                                    <img src="./src/assets/img/navbar-img-industry.jpg">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="border-b border-black/10 lg:hidden block"></div>
+
+
+                            <!--case study-->
+                            <div
+                                class="hs-dropdown group lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                                <a href="./index.html#casestudy">
+                                    <button type="button"
+                                        class="font-inter font-semibold lg:font-normal uppercase sm:p-3 flex items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                        Case Studies
+                                    </button>
+                                </a>
+
+                                <div
+                                    class="border-[#0A3B7C] mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                                </div>
+
+                            </div>
+
+                            <div class="border-b border-black/10 lg:hidden block"></div>
+
+                            <!--Insights-->
+                            <div
+                                class="hs-dropdown lg:h-14 group [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                                <button type="button"
+                                    class="font-inter font-semibold lg:font-normal uppercase sm:p-3 flex justify-between items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                    Insights
+                                    <svg class="ms-1 flex-shrink-0 size-4 lg:group-hover:-rotate-180"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="m6 9 6 6 6-6" />
+                                    </svg>
+                                </button>
+
+                                <div
+                                    class="border-[#0A3B7C] mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                                </div>
+
+
+                                <div
+                                    class="hs-dropdown-menu transition-[opacity,margin] sm:border duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 hidden z-10 top-full sm:w-48 bg-white sm:shadow-md py-2 sm:px-2 dark:bg-neutral-800 sm:dark:border dark:border-neutral-700 dark:divide-neutral-700">
+                                    <div class="flex flex-col">
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="#">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                Blogs</span>
+                                        </a>
+
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="#">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                Podcast</span>
+                                        </a>
+
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="#">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                E-Books</span>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-b border-black/10 lg:hidden block"></div>
+
+                            <!--clients & Partners-->
+                            <div
+                                class="hs-dropdown group lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                                <a href="./client&partner.html">
+                                    <button type="button"
+                                        class="font-inter font-semibold lg:font-normal uppercase sm:p-3 flex items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                        Clients & Partners
+                                    </button>
+                                </a>
+
+                                <div
+                                    class="border-[#0A3B7C] mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                                </div>
+
+                            </div>
+
+                            <div class="border-b border-black/10 lg:hidden block"></div>
+
+                            <!--Contact-Us-->
+                            <div
+                                class="hs-dropdown lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] lg:ml-14 mt-2">
+                                <a href="./contact-us.html">
+                                    <button type="button"
+                                        class="py-2 px-3 inline-flex items-center text-gray-100 bg-[#043E8C] text-base lg:text-sm font-semibold lg:font-normal dark:text-neutral-400 dark:hover:text-neutral-500">
+                                        Contact Us
+                                        <svg fill="none" height="24"
+                                            class="ml-2 text-gray-100 -rotate-45 transform group-hover:translate-x-1 transition-all duration-300"
+                                            viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                            id="fi_10486492">
+                                            <path
+                                                d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </button>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="border-white/50 border-t lg:block hidden"></div>
+            </nav>
+        </header>
+        <!--End header-->
+
+
+        <!---Start : About Us - Hero Banner---->
+        <section
+            class="relative lg:h-[620px] h-auto w-full flex items-center justify-center text-center bg-cover bg-center lg:mt-0 mt-10"
+            style="background-image:url('./src/assets/img/areospace-industry/hero-banner-image.svg');">
+            <div
+                class="xl:max-w-screen-2xl 2xl:max-w-screen-2xl lg:max-w-screen-lg px-4 md:px-6 lg:px-8 mx-auto py-8 lg:py-24">
+                <div class="grid grid-cols-12 lg:gap-4">
+                    <div class="lg:col-span-7 col-span-12 text-white text-left lg:pt-5">
+                        <p class="text-xs lg:text-sm xl:text-sm 2xl:text-base mt-4 font-inter">Home / Industries /
+                            Mining</p>
+                        <h1 class="mt-4 text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-gellix font-semibold">
+                            Solution for Mining</h1>
+                        <p
+                            class="mt-4 lg:mt-4 xl:mt-7 2xl:mt-10 text-base lg:text-lg xl:text-xl 2xl:text-2xl font-inter">
+                            We work with businesses to diminish their natural affect
+                            and maximize the esteem extricated from mining operations by utilizing geospatial
+                            information and prescient modeling.</p>
+                    </div>
+                    <div class="col-span-5 lg:block hidden">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---End : About Us - Hero Banner---->
+
+
+        <!--Start : Overview-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24 text-black bg-white">
+            <div class="grid grid-cols-12 gap-3">
+                <div class="2xl:col-span-5 lg:col-span-5 col-span-12 flex justify-center items-center overflow-hidden">
+                    <img src="./src/assets/img/mining/mining-overview-img.png" class="lg:block hidden w-full">
+                </div>
+                <div class="2xl:col-span-1 xl:col-span-1 lg:block hidden"></div>
+                <div class="lg:col-span-6 col-span-12 flex justify-center items-center">
+                    <div>
+                        <p class="font-inter text-[#1C95C9] 2xl:text-base xl:text-sm lg:text-sm">Overview</p>
+                        <h3
+                            class="font-gellix font-semibold 2xl:text-4xl xl:text-2xl lg:text-2xl text-xl mt-3 lg:mt-3 xl:mt-5 2xl:mt-8">
+                            Our computer program has devices for natural compliance and observing since natural
+                            supportability is another vital issue in the mining industry.</h3>
+                        <img src="./src/assets/img/mining/mining-overview-img.png" class="lg:hidden block mt-5">
+                        <ul
+                            class="2xl:pt-10 xl:pt-7 lg:pt-5 pt-3 2xl:text-base xl:text-sm lg:text-sm text-xs space-y-3 lg:space-y-2.5 xl:space-y-2.5 2xl:space-y-5 font-inter font-regular">
+                            <li>All parts of mining operations, from asset extraction to metal handling, are directed by
+                                the comprehensive administration frameworks we construct. Utilizing these advances will
+                                offer assistance you minimize working costs and increment efficiency by checking
+                                hardware execution, planning generation, and allotting specialists in an effective
+                                manner.
+                            </li>
+                            <li>In the mining industry, security is of the most extreme significance. To ensure that
+                                working environment security controls are satisfied, our innovation manages advanced
+                                observing and detailing frameworks. These contain faculty wellbeing checking frameworks,
+                                computerized caution frameworks for perilous circumstances, and real-time mining
+                                location observation. In expansion to guaranteeing adherence to industry rules and
+                                security prerequisites, our arrangements help decrease risks.
+                            </li>
+                            <li> Security, natural compliance, and operational proficiency are the fundamental
+                                objectives of
+                                our computer program arrangements for the mining segmentThis incorporates checking
+                                the impacts of mining operations on the environment, arranging squander, and making a
+                                difference to reestablish mined locales. With the utilization of our items, businesses
+                                can appear on their back for maintainable homes whereas moreover complying with natural
+                                standards.
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="relative overflow-hidden border border-[#194F97] px-3 py-2 inline-flex justify-center items-center group mt-3 lg:mt-3 xl:mt-5 2xl:mt-10">
+                            <span class="relative z-10 text-[#194F97] group-hover:text-white transition-colors">Talk to
+                                our Expert
+                            </span>
+                            <svg fill="none" height="24"
+                                class="relative z-10 ml-2 text-[#194F97] -rotate-90 group-hover:text-white transition-colors"
+                                viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                <path
+                                    d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                    fill="currentColor"></path>
+                            </svg>
+                            <span
+                                class="absolute inset-0 bg-[#194F97] transition-transform duration-2000 transform -translate-x-full group-hover:translate-x-0"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End : Overview-->
+
+
+        <!--Start : Solutions-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24 text-black bg-white">
+            <div class="grid grid-cols-12 lg:gap-4">
+                <div class="lg:col-span-4 xl:col-span-5 2xl:col-span-6 col-span-12">
+                    <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-inter font-medium">
+                        Solutions</h3>
+                    <h1
+                        class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 text-2xl lg:text-2xl xl:text-4xl 2xl:text-5xl font-gellix font-semibold">
+                        Descience’s Solution for Mining</h1>
+                </div>
+                <div class="lg:col-span-8  lg:block hidden">
+                </div>
+            </div>
+            <div>
+                <div class="2xl:pt-16 xl:pt-12 lg:pt-8 pt-4">
+                    <nav class="flex lg:space-x-5 overflow-x-scroll lg:overflow-x-hidden font-inter" aria-label="Tabs"
+                        role="tablist">
+                        <button type="button"
+                            class="hs-tab-active:font-semibold hs-tab-active:border-[#194F97] hs-tab-active:text-[#194F97] py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-base 2xl:text-2xl xl:text-xl lg:text-lg whitespace-nowrap text-slate-500 hover:text-[#194F97] focus:outline-none focus:text-[#194F97] disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-[#194F97] active"
+                            id="tabs-with-underline-item-1" data-hs-tab="#tabs-with-underline-1"
+                            aria-controls="tabs-with-underline-1" role="tab">
+                            Digital Foundation Offerings
+                        </button>
+                        <button type="button"
+                            class="hs-tab-active:font-semibold hs-tab-active:border-[#194F97] hs-tab-active:text-[#194F97] py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-base 2xl:text-2xl xl:text-xl lg:text-lg whitespace-nowrap text-slate-500 hover:text-[#194F97] focus:outline-none focus:text-[#194F97] disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-blue-500"
+                            id="tabs-with-underline-item-2" data-hs-tab="#tabs-with-underline-2"
+                            aria-controls="tabs-with-underline-2" role="tab">
+                            Core Business Offerings
+                        </button>
+                        <button type="button"
+                            class="hs-tab-active:font-semibold hs-tab-active:border-[#194F97] hs-tab-active:text-[#194F97] py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-base 2xl:text-2xl xl:text-xl lg:text-lg whitespace-nowrap text-slate-500 hover:text-[#194F97] focus:outline-none focus:text-[#194F97] disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-blue-500"
+                            id="tabs-with-underline-item-3" data-hs-tab="#tabs-with-underline-3"
+                            aria-controls="tabs-with-underline-3" role="tab">
+                            Experience-Centric Offerings
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="2xl:pt-8 xl:pt-6 lg:pt-6 pt-2">
+                    <div id="tabs-with-underline-1" role="tabpanel" aria-labelledby="tabs-with-underline-item-1">
+                        <div class="grid grid-cols-12 gap-4 mt-4 lg:mt-8 xl:mt-10 2xl:mt-12">
+                            <!--Grid - Box - 01-->
+                            <div class="lg:col-span-3 col-span-12">
+                                <div class="group">
+                                    <div
+                                        class="bg-[#D3ECFF] bg-opacity-30 text-black p-5 relative overflow-hidden group-hover:text-white group-hover:bg-[#194F97]">
+                                        <h1
+                                            class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl font-gellix font-semibold">
+                                            Operational Efficiency
+                                        </h1>
+                                        <p
+                                            class="text-[8px] lg:text-[8px] xl:text-[10px] 2xl:text-xs mt-2.5 lg:mt-2.5 xl:mt-2.5 2xl:mt-5 font-inter font-regular">
+                                            Lower operating expenses and boost productivity by implementing
+                                            all-encompassing management systems that track worker allocation, production
+                                            scheduling, and equipment performance.
+                                        </p>
+                                        <div class="group">
+                                            <!-- First element - shown by default -->
+                                            <div class="block group-hover:hidden">
+                                                <h1
+                                                    class="text-stroke font-gellix pt-2 lg:pt-2 xl:pt-2.5 2xl:pt-2.5 text-8xl lg:text-9xl xl:text-[150px] 2xl:text-[200px] text-transparent hover:text-white font-semibold ml-20">
+                                                    OE
+                                                </h1>
+                                            </div>
+
+                                            <!-- Second element - hidden by default -->
+                                            <div class="hidden group-hover:block">
+                                                <h1
+                                                    class="text-white font-gellix pt-2 lg:pt-2 xl:pt-2.5 2xl:pt-2.5 text-8xl lg:text-9xl xl:text-[150px] 2xl:text-[200px] font-semibold ml-20">
+                                                    OE
+                                                </h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid - Box - 02-->
+                            <div class="lg:col-span-3 col-span-12">
+                                <div class="group">
+                                    <div
+                                        class="bg-[#D3ECFF] bg-opacity-30 text-black p-5 relative overflow-hidden group-hover:text-white group-hover:bg-[#194F97]">
+                                        <h1
+                                            class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl font-gellix font-semibold">
+                                            Safety Monitoring
+                                        </h1>
+                                        <p
+                                            class="text-[8px] lg:text-[8px] xl:text-[10px] 2xl:text-xs mt-2.5 lg:mt-2.5 xl:mt-2.5 2xl:mt-5 font-inter font-regular">
+                                            To help you comply with safety requirements and reduce risks, ensure
+                                            workplace safety using cutting-edge monitoring and reporting systems, such
+                                            as automated hazard alert systems, real-time mining area surveillance, and
+                                            personnel health monitoring.
+                                        </p>
+                                        <div class="group">
+                                            <!-- First element - shown by default -->
+                                            <div class="block group-hover:hidden">
+                                                <h1
+                                                    class="text-stroke font-gellix pt-2 lg:pt-2 xl:pt-2.5 2xl:pt-2.5 text-8xl lg:text-9xl xl:text-[150px] 2xl:text-[200px] text-transparent hover:text-white font-semibold ml-20">
+                                                    SM
+                                                </h1>
+                                            </div>
+
+                                            <!-- Second element - hidden by default -->
+                                            <div class="hidden group-hover:block">
+                                                <h1
+                                                    class="text-white font-gellix pt-2 lg:pt-2 xl:pt-2.5 2xl:pt-2.5 text-8xl lg:text-9xl xl:text-[150px] 2xl:text-[200px] font-semibold ml-20">
+                                                    SM
+                                                </h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid - Box - 03-->
+                            <div class="lg:col-span-3 col-span-12">
+                                <div class="group">
+                                    <div
+                                        class="bg-[#D3ECFF] bg-opacity-30 text-black p-5 relative overflow-hidden group-hover:text-white group-hover:bg-[#194F97]">
+                                        <h1
+                                            class="text-lg lg:text-xl xl:text-xl 2xl:text-2xl font-gellix font-semibold">
+                                            Environmental Compliance
+                                        </h1>
+                                        <p
+                                            class="text-[8px] lg:text-[8px] xl:text-[10px] 2xl:text-xs mt-2.5 lg:mt-2.5 xl:mt-2.5 2xl:mt-5 font-inter">
+                                            To encourage environmental sustainability and regulatory compliance and to
+                                            show a commitment to sustainable practices, keep an eye on environmental
+                                            impacts, manage trash, and assist with site restoration projects.
+                                        </p>
+                                        <div class="group">
+                                            <!-- First element - shown by default -->
+                                            <div class="block group-hover:hidden">
+                                                <h1
+                                                    class="text-stroke font-gellix pt-2 lg:pt-2 xl:pt-2.5 2xl:pt-2.5 text-8xl lg:text-9xl xl:text-[150px] 2xl:text-[200px] text-transparent hover:text-white font-semibold ml-20">
+                                                    EC
+                                                </h1>
+                                            </div>
+
+                                            <!-- Second element - hidden by default -->
+                                            <div class="hidden group-hover:block">
+                                                <h1
+                                                    class="text-white font-gellix pt-2 lg:pt-2 xl:pt-2.5 2xl:pt-2.5 text-8xl lg:text-9xl xl:text-[150px] 2xl:text-[200px] font-semibold ml-20">
+                                                    EC
+                                                </h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid - Box - 04-->
+                            <div class="lg:col-span-3 col-span-12">
+                                <div class="group">
+                                    <div
+                                        class="bg-[#D3ECFF] bg-opacity-30 text-black p-5 relative overflow-hidden group-hover:text-white group-hover:bg-[#194F97]">
+                                        <h1
+                                            class="text-lg lg:text-lg xl:text-lg 2xl:text-2xl font-gellix font-semibold">
+                                            Data analytics
+                                        </h1>
+                                        <p
+                                            class="text-[8px] lg:text-[8px] xl:text-[10px] 2xl:text-xs mt-2.5 lg:mt-2.5 xl:mt-2.5 2xl:mt-5 font-inter">
+                                            Make the most of resource exploration and extraction procedures by utilizing
+                                            geospatial data and predictive analytics to reduce environmental impact and
+                                            maximize mining operations' worth.
+                                        </p>
+                                        <div class="group">
+                                            <!-- First element - shown by default -->
+                                            <div class="block group-hover:hidden">
+                                                <h1
+                                                    class="text-stroke font-gellix pt-2 lg:pt-2 xl:pt-2.5 2xl:pt-2.5 text-8xl lg:text-9xl xl:text-[150px] 2xl:text-[200px] text-transparent hover:text-white font-semibold ml-20">
+                                                    DA
+                                                </h1>
+                                            </div>
+
+                                            <!-- Second element - hidden by default -->
+                                            <div class="hidden group-hover:block">
+                                                <h1
+                                                    class="text-white font-gellix pt-2 lg:pt-2 xl:pt-2.5 2xl:pt-2.5 text-8xl lg:text-9xl xl:text-[150px] 2xl:text-[200px] font-semibold ml-20">
+                                                    DA
+                                                </h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tabs-with-underline-2" class="hidden" role="tabpanel"
+                        aria-labelledby="tabs-with-underline-item-2">
+
+                    </div>
+                    <div id="tabs-with-underline-3" class="hidden" role="tabpanel"
+                        aria-labelledby="tabs-with-underline-item-3">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End : Solutions-->
+
+
+        <!--Start : Blogs on Mining-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24 text-black bg-white">
+            <div class="grid grid-cols-12 lg:gap-4">
+                <div class="lg:col-span-4 xl:col-span-5 2xl:col-span-6 col-span-12">
+                    <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-inter font-medium">
+                        Blogs on Mining</h3>
+                    <h1
+                        class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 text-2xl lg:text-2xl xl:text-4xl 2xl:text-6xl font-gellix font-semibold">
+                        Descience’s Solution for Aerospace and Defence</h1>
+                </div>
+                <div class="lg:col-span-8  lg:block hidden">
+                </div>
+            </div>
+            <div class="grid grid-cols-12 gap-2 lg:gap-4 xl:gap-4 2xl:gap-8 pt-4 lg:pt-8 xl:pt-12 2xl:pt-24">
+
+                <div class="lg:col-span-6 col-span-12 relative overflow-hidden group">
+                    <img src="./src/assets/img/areospace-industry/grid-img-01.png"
+                        class="transition-transform group-hover:scale-110 duration-500 lg:w-auto w-full">
+
+                    <div class="absolute top-0 right-0">
+                        <div class="inline-flex justify-start items-center space-x-3 p-5">
+                            <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white">DEFENCE</h3>
+                            <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white">AEROSPACE</h3>
+                        </div>
+                    </div>
+
+                    <div class="absolute inset-0 flex justify-end items-end">
+                        <div
+                            class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0">
+                            <div>
+                                <p class="2xl:text-sm xl:text-xs lg:text-xs text-white font-inter">29 June 2024</p>
+                                <h1
+                                    class="text-white font-semibold font-gellix text-base lg:text-lg xl:text-xl 2xl:text-3xl pt-2">
+                                    Breakthroughs in Aerospace Technology Transforming Global Defense Systems and
+                                    Security Worldwide
+                                </h1>
+                                <p class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-white font-inter pt-4">
+                                    Our goal is to become the preeminent online forum that brings people together from
+                                    all walks of life via thought-provoking conversations, creating a worldwide
+                                    community centred around mutual respect, curiosity, and development.
+                                </p>
+                                <a href="#" class="inline-flex justify-start items-center space-x-2 pt-5">
+                                    <h1 class="text-white underline text-lg font-semibold">Learn more</h1>
+                                    <svg fill="none" height="24"
+                                        class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1"
+                                        viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                        id="fi_10486492">
+                                        <path
+                                            d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 col-span-12 grid grid-rows-2 gap-4">
+
+                    <div class="lg:row-span-1 row-span-2 grid grid-cols-2 gap-4">
+
+                        <div class="lg:col-span-1 col-span-2 relative overflow-hidden group">
+                            <img src="./src/assets/img/areospace-industry/grid-img-02.png"
+                                class="transition-transform group-hover:scale-125 duration-500 h-full lg:w-auto w-full">
+                            <div class="absolute top-0 right-0">
+                                <div class="inline-flex justify-start items-center space-x-3 p-5">
+                                    <h3
+                                        class="bg-[#194F97] px-3 py-1 rounded-3xl text-white 2xl:text-sm xl:text-xs text-xs">
+                                        AEROSPACE</h3>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex justify-end items-end">
+                                <div
+                                    class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0">
+                                    <p class="2xl:text-sm xl:text-xs lg:text-xs text-white font-inter">29 June 2024</p>
+                                    <h1
+                                        class="2xl:text-lg xl:text-base lg:text-sm text-white font-gellix font-semibold pt-2">
+                                        Breakthroughs in Aerospace Technology</h1>
+                                    <a href="#" class="inline-flex justify-start items-center space-x-2 pt-1">
+                                        <h1 class="text-white underline 2xl:text-lg xl:text-base text-sm font-semibold">
+                                            Learn more</h1>
+                                        <svg fill="none" height="24"
+                                            class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1"
+                                            viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                            id="fi_10486492">
+                                            <path
+                                                d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-1 col-span-2 relative overflow-hidden group">
+                            <img src="./src/assets/img/areospace-industry/grid-img-03.png"
+                                class="transition-transform group-hover:scale-125 duration-500 h-full lg:w-auto w-full">
+                            <div class="absolute top-0 right-0">
+                                <div class="inline-flex justify-start items-center space-x-3 p-5">
+                                    <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white text-xs">DEFENCE</h3>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex justify-end items-end">
+                                <div
+                                    class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0">
+                                    <p class="2xl:text-sm xl:text-xs lg:text-xs text-white font-inter">29 June 2024</p>
+                                    <h1
+                                        class="2xl:text-lg xl:text-base lg:text-sm text-white font-gellix font-semibold pt-2">
+                                        Breakthroughs in Aerospace Technology</h1>
+                                    <a href="#" class="inline-flex justify-start items-center space-x-2 pt-1">
+                                        <h1
+                                            class="text-white underline 2xl:text-lg xl:text-base lg:text-sm font-semibold">
+                                            Learn more</h1>
+                                        <svg fill="none" height="24"
+                                            class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1"
+                                            viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                            id="fi_10486492">
+                                            <path
+                                                d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="lg:row-span-1 row-span-2 relative overflow-hidden group">
+                        <img src="./src/assets/img/areospace-industry/grid-img-04.png"
+                            class="transition-transform group-hover:scale-110 duration-500 h-full lg:w-auto w-full">
+                        <div class="absolute top-0 right-0">
+                            <div class="inline-flex justify-start items-center space-x-3 p-5">
+                                <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white">DEFENCE</h3>
+                                <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white">AEROSPACE</h3>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 flex justify-end items-end">
+                            <div
+                                class="w-full bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0">
+                                <p class="2xl:text-sm xl:text-sm lg:text-xs text-white font-inter">29 June 2024</p>
+                                <h1
+                                    class="2xl:text-xl xl:text-lg lg:text-base text-white font-gellix font-semibold pt-2">
+                                    Breakthroughs in Aerospace Technology Transforming</h1>
+                                <a href="#" class="inline-flex justify-start items-center space-x-2 pt-2.5">
+                                    <h1 class="text-white underline text-lg font-semibold">Learn more</h1>
+                                    <svg fill="none" height="24"
+                                        class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1"
+                                        viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                        id="fi_10486492">
+                                        <path
+                                            d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="lg:col-span-3 col-span-12 relative overflow-hidden group">
+                    <img src="./src/assets/img/areospace-industry/grid-img-05.png"
+                        class="transition-transform group-hover:scale-125 duration-500 lg:w-auto w-full">
+                    <div class="absolute top-0 right-0">
+                        <div class="inline-flex justify-start items-center space-x-3 p-5">
+                            <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white">AEROSPACE</h3>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 flex justify-end items-end">
+                        <div
+                            class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0">
+                            <p class="2xl:text-sm xl:text-sm lg:text-xs text-white font-inter">29 June 2024</p>
+                            <h1 class="2xl:text-xl xl:text-lg lg:text-base text-white font-gellix font-semibold pt-2">
+                                Breakthroughs in Aerospace Technology</h1>
+                            <a href="#" class="inline-flex justify-start items-center space-x-2 pt-1">
+                                <h1 class="text-white underline text-lg font-semibold">Learn more</h1>
+                                <svg fill="none" height="24"
+                                    class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1" viewBox="0 0 24 24"
+                                    width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3 col-span-12 relative overflow-hidden group">
+                    <img src="./src/assets/img/areospace-industry/grid-img-06.png"
+                        class="transition-transform group-hover:scale-125 duration-500 lg:w-auto w-full">
+                    <div class="absolute top-0 right-0">
+                        <div class="inline-flex justify-start items-center space-x-3 p-5">
+                            <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white">AEROSPACE</h3>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 flex justify-end items-end">
+                        <div
+                            class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0">
+                            <p class="2xl:text-sm xl:text-sm lg:text-xs text-white font-inter">29 June 2024</p>
+                            <h1 class="2xl:text-xl xl:text-lg lg:text-base text-white font-gellix font-semibold pt-2">
+                                Breakthroughs in Aerospace Technology</h1>
+                            <a href="#" class="inline-flex justify-start items-center space-x-2 pt-1">
+                                <h1 class="text-white underline text-lg font-semibold">Learn more</h1>
+                                <svg fill="none" height="24"
+                                    class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1" viewBox="0 0 24 24"
+                                    width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3 col-span-12 relative overflow-hidden group">
+                    <img src="./src/assets/img/areospace-industry/grid-img-07.png"
+                        class="transition-transform group-hover:scale-125 duration-500 lg:w-auto w-full">
+                    <div class="absolute top-0 right-0">
+                        <div class="inline-flex justify-start items-center space-x-3 p-5">
+                            <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white">SPACE</h3>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 flex justify-end items-end">
+                        <div
+                            class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0">
+                            <p class="2xl:text-sm xl:text-sm lg:text-xs text-white font-inter">29 June 2024</p>
+                            <h1 class="2xl:text-xl xl:text-lg lg:text-base text-white font-gellix font-semibold pt-2">
+                                Breakthroughs in Aerospace Technology</h1>
+                            <a href="#" class="inline-flex justify-start items-center space-x-2 pt-1">
+                                <h1 class="text-white underline text-lg font-semibold">Learn more</h1>
+                                <svg fill="none" height="24"
+                                    class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1" viewBox="0 0 24 24"
+                                    width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3 col-span-12 relative overflow-hidden group">
+                    <img src="./src/assets/img/areospace-industry/grid-img-08.png"
+                        class="transition-transform group-hover:scale-125 duration-500 lg:w-auto w-full">
+                    <div class="absolute top-0 right-0">
+                        <div class="inline-flex justify-start items-center space-x-3 p-5">
+                            <h3 class="bg-[#194F97] px-3 py-1 rounded-3xl text-white">SPACE</h3>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 flex justify-end items-end">
+                        <div
+                            class="bg-gradient-to-t from-black/45 to-transparent p-5 transition-opacity duration-300 group-hover:from-black/90 group-hover:to-black/0">
+                            <p class="2xl:text-sm xl:text-sm lg:text-xs text-white font-inter">29 June 2024</p>
+                            <h1 class="2xl:text-xl xl:text-lg lg:text-base text-white font-gellix font-semibold pt-2">
+                                Breakthroughs in Aerospace Technology</h1>
+                            <a href="#" class="inline-flex justify-start items-center space-x-2 pt-1">
+                                <h1 class="text-white underline text-lg font-semibold">Learn more</h1>
+                                <svg fill="none" height="24"
+                                    class="ml-2 text-[#ffff] -rotate-45 group-hover:text-white mt-1" viewBox="0 0 24 24"
+                                    width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                                    <path
+                                        d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--End : Blogs on Mining-->
+
+
+        <!--Start : case study-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24 text-black bg-white">
+            <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-12 lg:col-span-6 inline-flex place-content-center order-3 lg:order-1">
+                    <img src="./src/assets/img/areospace-industry/case-study-img.png">
+                </div>
+                <div class="col-span-1 lg:order-1 order-2 lg:block hidden"></div>
+                <div class="col-span-12 lg:col-span-5  order-1 lg:order-3">
+                    <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-inter font-medium">
+                        Case study</h3>
+                    <h1
+                        class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-gellix font-semibold">
+                        “Rupini’s OM”
+                        Revolutionizing Customer Relationship Management for a Leading Beauty Chain</h1>
+                    <p class="2xl:pt-7 xl:pt-5 lg:pt-3 pt-2 2xl:text-lg xl:text-base lg:text-sm text-sm font-inter">
+                        Discover how we helped Chain of Saloon achieve operational excellence and business growth by
+                        integrating their CRM, POS, inventory, and more into a single platform. Our solutions boosted
+                        sales, reduced pilferage, and enhanced customer engagement.
+                    </p>
+                    <a href="#"
+                        class="border hover:bg-[#194F97] border-[#194F97] px-3 py-2 inline-flex justify-center items-center group mt-3 lg:mt-3 xl:mt-5 2xl:mt-10">
+                        <h3 class="text-[#194F97] group-hover:text-white">View Case Study</h3>
+                        <svg fill="none" height="24" class="ml-2 text-[#194F97] -rotate-45 group-hover:text-white"
+                            viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10486492">
+                            <path d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                fill="currentColor"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!--End : case study-->
+
+
+        <!--Start : Testimonials-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24 text-black bg-white">
+            <div class="grid grid-cols-12 lg:gap-4">
+                <div class="lg:col-span-5 col-span-12">
+                    <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-inter font-medium">
+                        Testimonials</h3>
+                    <h1
+                        class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 text-2xl lg:text-2xl xl:text-4xl 2xl:text-6xl font-gellix font-semibold">
+                        Client Speak</h1>
+                    <p class="2xl:text-base xl:text-sm lg:text-sm text-xs 2xl:mt-10 xl:mt-8 lg:mt-5 mt-3">Here is a
+                        glimpse of what customers and leading industry experts have to say about us.</p>
+                </div>
+                <div class="lg:col-span-7 lg:block hidden">
+                </div>
+            </div>
+            <div class="grid grid-cols-12 gap-4 bg-[#F3F8FA] relative 2xl:mt-24 xl:mt-12 lg:mt-10 mt-5">
+                <div class="col-span-12 lg:col-span-6 p-10">
+                    <div>
+                        <img src="./src/assets/img/areospace-industry/icon-client-speak-black-01.png" class="h-8">
+                        <h1
+                            class="text-black 2xl:text-3xl xl:text-2xl lg:text-xl text-lg font-semibold font-gellix 2xl:pt-5 xl:pt-2.5 lg:pt-2.5 pt-2">
+                            The
+                            team at Touchmark Descience is the best that I have worked with.</h1>
+                        <p
+                            class="font-inter 2xl:text-lg xl:text-base lg:text-sm text-sm pt-2 lg:pt-2.5 xl:pt-2.5 2xl:pt-5">
+                            I have been involved in different projects for major businesses across Asia-Pacific regions
+                            and when it comes to IT, the team at Touchmark Descience is the best that I have worked
+                            with. They are efficient and use best practices in the industry to make sure they produce
+                            quality results. Their agile approach really helped us a lot. I would recommend them to
+                            anyone.</p>
+                        <div class="pt-5 border-b border-black"></div>
+                        <h1 class="font-gellix font-semibold 2xl:text-xl xl:text-lg lg:text-base text-base pt-5">JK
+                            Saravana</h1>
+                        <p class="font-inter 2xl:text-sm xl:text-sm lg:text-sm text-xs pt-2.5">Chairman & Founder,
+                            Tantra Inc - Group of Companies, Singapore</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 lg:block hidden">
+                    <img src="./src/assets/img/areospace-industry/icon-client-speak.png"
+                        class="h-16 absolute bottom-10 ml-12">
+                </div>
+                <div class="col-span-12 lg:col-span-3 flex justify-end items-end">
+                    <img src="./src/assets/img/areospace-industry/client-speak-img.png" class="">
+                </div>
+                <div class="lg:col-span-1 lg:block hidden"></div>
+            </div>
+        </section>
+        <!--Start : Testimonials-->
+
+
+
+        <!--Start : Footer-->
+        <footer class="bg-[#043E8C]">
+            <div
+                class="space-y-8 py-16 lg:space-y-16 2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8">
+
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="lg:col-span-4 col-span-12">
+                        <div class="block lg:flex justify-start items-center gap-2">
+                            <h1
+                                class="2xl:text-3xl xl:text-2xl lg:text-xl text-2xl font-gellix font-semibold text-white">
+                                Follow Our Social
+                                Networks</h1>
+                            <div class="flex justify-start lg:justify-center items-center space-x-2 lg:mt-0 mt-4">
+                                <img src="./src/assets/img/home/icons/linkedin-icon.svg" class="h-10">
+                                <img src="./src/assets/img/home/icons/instagram-icon.svg" class="h-10">
+                                <img src="./src/assets/img/home/icons/twitter-icon.svg" class="h-10">
+                                <img src="./src/assets/img/home/icons/fb-icon.svg" class="h-10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 lg:block hidden"></div>
+                    <div class="lg:col-span-3 col-span-12">
+                        <h1 class="2xl:text-3xl xl:text-2xl lg:text-xl text-2xl font-gellix font-semibold text-white">Be
+                            the First one to hear
+                            About Updates</h1>
+                    </div>
+                    <div class="lg:col-span-4 col-span-12">
+                        <div class="max-w-md mx-auto overflow-hidden md:max-w-xl -ml-3 lg:ml-0">
+                            <div class="md:flex">
+                                <div class="w-full p-3">
+                                    <div class="relative"> <input type="text"
+                                            class="bg-white h-14 w-full px-4 pr-20 focus:outline-none hover:cursor-pointer placeholder:black"
+                                            name="" placeholder="Enter Your Email">
+                                        <button
+                                            class="h-10 bg-[#194F97] absolute top-2 text-sm right-2 px-3 text-white hover:bg-blue-700 flex justify-start items-center space-x-3">Subscribe
+                                            <svg fill="none" height="24"
+                                                class="ml-2 text-gray-100 -rotate-45 transform group-hover:translate-x-1 transition-all duration-300"
+                                                viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                                id="fi_10486492">
+                                                <path
+                                                    d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                    fill="currentColor"></path>
+                                            </svg></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-t border-white/30"></div>
+
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-6 -mt-14">
+
+                    <div class="text-white w-full col-span-2">
+
+                        <div class="./index.html">
+                            <img src="./src/assets/img/touchmark-logowhite.svg" class="h-10">
+                        </div>
+
+                        <p
+                            class="mt-5 lg:mt-8 xl:mt-10 2xl:mt-14 text-xs lg:text-sm xl:text-sm 2xl:text-base text-white font-inter">
+                            Innovative Solutions Connecting Brands and Customers We provide full-service IT consulting,
+                            digital
+                            marketing, and software development. Our objective is to use automation and rich media to
+                            close the gap that
+                            exists between brands and consumers.
+                        </p>
+
+                        <div class="mt-2 lg:mt-3 xl:mt-5 2xl:mt-10 flex justify-start items-center space-x-3">
+                            <img src="./src/assets/img/home/icons/phone-icon.svg">
+                            <h3 class="font-inter font-semibold text-xs lg:text-sm xl:text-sm 2xl:text-base">+91 44 4065
+                                2648</h3>
+                        </div>
+
+                        <div class="mt-2 lg:mt-3 xl:mt-3 2xl:mt-5 flex justify-start items-center space-x-3">
+                            <img src="./src/assets/img/home/icons/mail-icon.svg">
+                            <h3 class="font-inter font-semibold text-xs lg:text-sm xl:text-sm 2xl:text-base">
+                                info@touchmarkdes.com</h3>
+                        </div>
+
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-3">
+
+                        <div class="flex justify-start lg:justify-center items-start">
+                            <div>
+                                <p
+                                    class="font-semibold font-gellix text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                                    Quick Links
+                                </p>
+                                <ul class="mt-5 space-y-3 text-sm 2xl:text-base font-inter">
+                                    <li>
+                                        <a href="./about-us.html" class="text-white transition hover:opacity-75"> Who we
+                                            are </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> What we do </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Case Studies </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Blogs </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> E-Books </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./client&partner.html" class="text-white transition hover:opacity-75">
+                                            Clients and Partners
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./contact-us.html" class="text-white transition hover:opacity-75">
+                                            Contact us </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-start lg:justify-center items-start">
+                            <div>
+                                <p
+                                    class="font-semibold font-gellix text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                                    Services</p>
+                                <ul class="mt-5 space-y-3 text-sm 2xl:text-base font-inter">
+                                    <li>
+                                        <a href="./t&c-service.html" class="text-white transition hover:opacity-75">
+                                            Technology
+                                            Consulting </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Cloud </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Sales & Commerce
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Metaverse </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Data & Analytics
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> AI & ML </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Robotic Process
+                                            Automation </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-start lg:justify-center items-start">
+                            <div>
+                                <p
+                                    class="font-semibold font-gellix text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                                    Industries
+                                </p>
+                                <ul class="mt-5 space-y-3 text-sm 2xl:text-base font-inter">
+                                    <li>
+                                        <a href="./areo.industry.html" class="text-white transition hover:opacity-75">
+                                            Aerospace & Defence
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="bfsi-industry.html" class="text-white transition hover:opacity-75">
+                                            BFSI </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./es&g-industry.html" class="text-white transition hover:opacity-75">
+                                            Environmental,
+                                            social, and governance </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./fmcg-industry.html" class="text-white transition hover:opacity-75">
+                                            Fast-Moving Consumer
+                                            Goods </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Healthcare </a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Mining </a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Geospatial Tech </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Media and
+                                            Entertainment </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Real Estate </a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Travel and Tourism 
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="border border-t border-white/30"></div>
+                    <div
+                        class="text-white block lg:flex justify-center items-center text-center lg:space-y-0 space-y-3 lg:space-x-5 pt-10">
+                        <h3>© 2010-2024 Touchmark Descience Pvt. Ltd</h3>
+                        <div class="flex justify-center items-center space-x-3">
+                            <h3>Terms of Use</h3>
+                            <h3>┃</h3>
+                            <h3>Privacy Policy</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+        <!--End : Footer-->
+
+    </div>
+
+</body>
+
+<script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
+
+<script src="./src/js/preline.min.js"></script>
+
+
+<!--Start : Navbar-->
+<script>
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('#navbar');
+        var logo = document.querySelector('#logo');
+        var desktopLogo = './src/assets/img/tds-color-logo.png';
+        var mobileLogo = './src/assets/img/tds-color-logo.png';
+
+        if (header) {
+            header.classList.toggle('bg-scroll-white', window.scrollY > 0);
+        }
+
+        if (logo) {
+            if (window.innerWidth <= 768) {
+                logo.src = mobileLogo;
+            } else {
+                logo.src = window.scrollY > 0 ? mobileLogo : desktopLogo;
+            }
+        }
+
+        var navLinks = document.querySelectorAll('#navbar-collapse-columns .hs-dropdown button');
+        navLinks.forEach(function (link) {
+            link.classList.remove('text-white');
+            link.classList.add('text-black');
+        });
+
+        var contactUsButton = document.querySelector('#navbar-collapse-columns .hs-dropdown button.contact-us');
+        if (contactUsButton) {
+            contactUsButton.classList.remove('text-black');
+            contactUsButton.classList.add('text-white');
+        }
+
+        var border = document.querySelector('.border-white');
+        if (border) {
+            border.classList.toggle('border-white', window.scrollY <= 0);
+            border.classList.toggle('border-blue', window.scrollY > 0);
+        }
+    });
+
+    window.dispatchEvent(new Event('scroll'));
+</script>
+<!--End : Navbar-->
+
+
+
+</html>

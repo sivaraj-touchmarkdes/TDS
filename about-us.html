@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="Touchmark" href="#" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+
+    <!-- Favicon -->
+    <link rel="touchmark-des-icon" sizes="180x180"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://touchmarkwf.com/timesheet/front_assets/images/logo/logoT.png">
+    <link href="./output.css" rel="stylesheet">
+    <link href="./src/input.css" rel="stylesheet">
+
+    <link href="./src/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="./src/css/owl.theme.default.min.css" rel="stylesheet">
+
+    <style>
+        /*Navbar*/
+        .overflow-x-hidden {
+            overflow-x: hidden;
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:overflow-x-auto {
+                overflow-x: hidden;
+            }
+        }
+
+        .bg-scroll-white {
+            background-color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        @media (max-width: 576px) {
+            .mobile-text-black {
+                color: black !important;
+            }
+        }
+
+        .full-dropdown {
+            width: -webkit-fill-available;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .mobile-full {
+                height: 989px;
+            }
+        }
+
+
+        /*Forward scroll runnning first*/
+        .scroll-container {
+            height: 400px;
+            /* Adjust height as needed */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scroll-content {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* Forward-wise vertical scroll */
+        }
+
+        .scroll-item {
+            margin-top: 4px;
+        }
+
+        /*Forward scroll runnning first*/
+
+
+        /*Reverse scroll runnning first*/
+        .scroll-container-rev {
+            height: 400px;
+            /* Adjust height as needed */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scroll-content-rev {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+            /* Reverse-wise vertical scroll */
+        }
+
+        .scroll-item-rev {
+            margin-top: 4px;
+        }
+
+        /*Reverse scroll runnning first*/
+
+
+        /*Forward scroll runnning Second*/
+        .scroll-container-2 {
+            height: 400px;
+            /* Adjust height as needed */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scroll-content-2 {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* Forward-wise vertical scroll */
+        }
+
+        .scroll-item-2 {
+            margin-top: 4px;
+        }
+
+        /*Forward scroll runnning Second*/
+
+        @media (max-width: 640px) {
+            .overflow-x-hidden-mobile {
+                overflow-x: hidden;
+            }
+        }
+
+        /* Define hover effect */
+        .hover-container:hover svg path {
+            fill: white;
+        }
+
+        .font-inter {
+            font-family: "Inter", sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="overflow-x-hidden-mobile">
+
+        <!--start header-->
+        <header id="navbar"
+            class="fixed flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full text-sm py-4 sm:py-0 bg-white">
+            <nav class="2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg w-full mx-auto px-4 md:px-6 lg:px-8 lg:drop-shadow-lg"
+                aria-label="Global">
+                <div class="relative sm:flex sm:items-center pt-2">
+
+                    <div class="flex items-center justify-between">
+                        <a class="flex-none text-xl font-semibold dark:text-white -mt-3" href="./index.html">
+                            <img src="./src/assets/img/touchmark-logowhite.svg" class="h-8" id="logo">
+                        </a>
+
+                        <div class="sm:hidden">
+                            <button type="button"
+                                class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 text-gray-800 disabled:opacity-50 disabled:pointer-events-none"
+                                data-hs-collapse="#navbar-collapse-columns" aria-controls="navbar-collapse-columns"
+                                aria-label="Toggle navigation">
+                                <!-- <svg class="hs-collapse-open:hidden flex-shrink-0 size-4"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="3" x2="21" y1="6" y2="6" />
+                                    <line x1="3" x2="21" y1="12" y2="12" />
+                                    <line x1="3" x2="21" y1="18" y2="18" />
+                                </svg> -->
+                                <svg class="hs-collapse-open:hidden flex-shrink-0" fill="none" height="24"
+                                    viewBox="0 0 40 40" width="24" xmlns="http://www.w3.org/2000/svg" id="fi_10513594">
+                                    <g clip-rule="evenodd" fill="#000" fill-rule="evenodd">
+                                        <path
+                                            d="m3.75 10c0-.69036.55964-1.25 1.25-1.25h30c.6904 0 1.25.55964 1.25 1.25 0 .6904-.5596 1.25-1.25 1.25h-30c-.69036 0-1.25-.5596-1.25-1.25z">
+                                        </path>
+                                        <path
+                                            d="m3.75 30c0-.6904.55964-1.25 1.25-1.25h30c.6904 0 1.25.5596 1.25 1.25s-.5596 1.25-1.25 1.25h-30c-.69036 0-1.25-.5596-1.25-1.25z">
+                                        </path>
+                                        <path
+                                            d="m10.4167 20c0-.6904.5596-1.25 1.25-1.25h23.3333c.6904 0 1.25.5596 1.25 1.25s-.5596 1.25-1.25 1.25h-23.3333c-.6904 0-1.25-.5596-1.25-1.25z">
+                                        </path>
+                                    </g>
+                                </svg>
+                                <!-- <svg class="hs-collapse-open:block hidden flex-shrink-0 size-4"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M18 6 6 18" />
+                                    <path d="m6 6 12 12" />
+                                </svg> -->
+                                <svg class="hs-collapse-open:block hidden flex-shrink-0 size-4" version="1.1"
+                                    id="fi_722133" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" x="0px" y="0px"
+                                    viewBox="0 0 307.2 307.2" style="enable-background:new 0 0 307.2 307.2;"
+                                    xml:space="preserve">
+                                    <g>
+                                        <g>
+                                            <polygon points="307.2,24.136 283.064,0 153.6,129.469 24.136,0 0,24.136 129.464,153.6 0,283.064 24.136,307.2 153.6,177.736 
+                                                283.064,307.2 307.2,283.064 177.736,153.6 		"></polygon>
+                                        </g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="navbar-collapse-columns"
+                        class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block">
+                        <div
+                            class="flex flex-col gap-y-7 sm:gap-y-0 mt-10 sm:flex-row sm:items-center sm:justify-end sm:mt-0 px-5 lg:px-0 sm:ps-5 mobile-full">
+
+                            <!--who we are-->
+                            <div
+                                class="hs-dropdown group [--strategy:static] lg:lg:h-14 sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover]">
+                                <a href="./about-us.html"><button type="button"
+                                        class="font-inter font-semibold lg:font-semibold uppercase sm:p-3 flex items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                        Who we are
+                                    </button></a>
+                                <div class="border-[#0A3B7C] mx-4 rounded-[100px] border-t-2 lg:block hidden">
+                                </div>
+                            </div>
+                            <!--who we are-->
+
+
+                            <div class="border-b border-black/10 lg:hidden block"></div>
+
+                            <!--what we do-->
+                            <div
+                                class="hs-dropdown group lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                                <a href="#">
+                                    <button type="button"
+                                        class="font-inter font-semibold lg:font-normal  uppercase sm:p-3 flex justify-between items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                        what we do
+                                        <svg class="ms-1 flex-shrink-0 size-4 group-hover:-rotate-180"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </button>
+                                </a>
+
+                                <div
+                                    class="border-[#0A3B7C] mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                                </div>
+
+                                <div
+                                    class="hs-dropdown-menu transition-[opacity,margin] sm:border duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 hidden z-10 top-full end-0 sm:w-[75rem] bg-white sm:shadow-md py-3 sm:px-2 dark:bg-neutral-800 sm:dark:border dark:border-neutral-700 dark:divide-neutral-700 full-dropdown">
+
+                                    <div class="lg:block hidden flex items-center justify-start">
+                                        <h1 class="font-semibold text-black text-xl ml-7 pt-2">
+                                            Services
+                                        </h1>
+                                    </div>
+
+                                    <div class="sm:grid sm:grid-cols-4 p-2 lg:p-7">
+
+                                        <div class="flex flex-col">
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./t&c-service.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Technology
+                                                    & Consulting</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./cloud.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Cloud</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./s&c-service.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Sales
+                                                    & commerce</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./mv-service.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Metaverse</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="flex flex-col">
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./d&a-service.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Data
+                                                    & Analytics</span>
+                                            </a>
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./ai&ml-service.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">AI
+                                                    & ML</span>
+                                            </a>
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./rpa-service.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Robotic
+                                                    Process Automation</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="lg:block hidden">
+                                            <div class="flex space-x-5">
+                                                <div class="border-gray-700 opacity-35 border-l"></div>
+                                                <div class="space-y-4">
+                                                    <h1 class="uppercase text-black text-sm font-gellix font-semibold">
+                                                        Featured</h1>
+                                                    <h3 class="mt-3 text-sm font-semibold">Touchmark Quarterly</h3>
+                                                    <p class="mt-2 text-xs">Silicon Valley pioneer Reid Hoffman explains
+                                                        why
+                                                        we should view
+                                                        generative AI as a “steam engine of the mind” that promises to
+                                                        profoundly alter our professional and personal lives.</p>
+                                                    <ul class="mt-3 space-y-1 text-[#194F97] text-xs underline">
+                                                        <li
+                                                            class="inline-flex justify-start items-center font-semibold">
+                                                            <svg fill="none" height="16"
+                                                                class="text-[#194F97] -rotate-90" viewBox="0 0 24 24"
+                                                                width="16" xmlns="http://www.w3.org/2000/svg"
+                                                                id="fi_10486492">
+                                                                <path
+                                                                    d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                                    fill="currentColor"></path>
+                                                            </svg><span class="pl-3">Business Building</span>
+                                                        </li>
+                                                        <li
+                                                            class="inline-flex justify-start items-center font-semibold">
+                                                            <svg fill="none" height="16"
+                                                                class="text-[#194F97] -rotate-90" viewBox="0 0 24 24"
+                                                                width="16" xmlns="http://www.w3.org/2000/svg"
+                                                                id="fi_10486492">
+                                                                <path
+                                                                    d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                                    fill="currentColor"></path>
+                                                            </svg><span class="pl-3">Quantum Black, AI by
+                                                                Touchmark</span>
+                                                        </li>
+                                                        <li
+                                                            class="inline-flex justify-start items-center font-semibold">
+                                                            <svg fill="none" height="16"
+                                                                class="text-[#194F97] -rotate-90" viewBox="0 0 24 24"
+                                                                width="16" xmlns="http://www.w3.org/2000/svg"
+                                                                id="fi_10486492">
+                                                                <path
+                                                                    d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                                    fill="currentColor"></path>
+                                                            </svg><span class="pl-3">Cloud Technology</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="lg:block hidden">
+                                            <div class="relative p-5">
+                                                <img src="./src/assets/img/navbar-img-service.jpg">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!--what we do-->
+
+
+                            <div class="border-b border-black/10 lg:hidden block"></div>
+
+                            <!--Industries-->
+                            <div
+                                class="hs-dropdown group lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                                <button type="button"
+                                    class="font-inter font-semibold lg:font-normal  uppercase sm:p-3 flex justify-between items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                    Industries
+                                    <svg class="ms-1 flex-shrink-0 size-4 lg:group-hover:-rotate-180"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="m6 9 6 6 6-6" />
+                                    </svg>
+                                </button>
+
+                                <div
+                                    class="border-[#0A3B7C] mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                                </div>
+
+                                <div
+                                    class="hs-dropdown-menu transition-[opacity,margin] sm:border duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 hidden z-10 top-full end-0 sm:w-[75rem] bg-white sm:shadow-md py-5 sm:px-2 dark:bg-neutral-800 sm:dark:border dark:border-neutral-700 dark:divide-neutral-700 full-dropdown">
+
+                                    <div class="lg:block hidden flex items-center justify-start">
+                                        <h1 class="font-semibold text-black text-xl ml-7 pt-2">
+                                            Industries
+                                        </h1>
+                                    </div>
+
+                                    <div class="sm:grid sm:grid-cols-4 p-2 lg:p-5">
+
+                                        <div class="flex flex-col">
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./areo.industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Aerospace
+                                                    & Defence</span>
+                                            </a>
+
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./bfsi-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">BFSI</span>
+                                            </a>
+
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./fmcg-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Fast-Moving
+                                                    Consumer Goods</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./real-estate-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Real Estate</span>
+                                            </a>
+
+
+
+                                        </div>
+
+                                        <div class="flex flex-col">
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./hc-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Healthcare</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./engg-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Engineering</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./mining-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Mining</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./gt-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Geospatial Tech</span>
+                                            </a>
+
+                                        </div>
+
+                                        <div class="flex flex-col">
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./m&e-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Media and Entertainment</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./t&t-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                    Travel and Tourism</span>
+                                            </a>
+
+                                            <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                                href="./es&g-industry.html">
+                                                <span
+                                                    class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Environmental,
+                                                    social, and governance</span>
+                                            </a>
+
+                                        </div>
+
+                                        <div class="lg:block hidden">
+                                            <div class="flex space-x-10">
+                                                <div class="border-gray-700 opacity-35 border-l"></div>
+                                                <div>
+                                                    <img src="./src/assets/img/navbar-img-industry.jpg">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="border-b border-black/10 lg:hidden block"></div>
+
+
+                            <!--case study-->
+                            <div
+                                class="hs-dropdown group lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                                <a href="./index.html#casestudy">
+                                    <button type="button"
+                                        class="font-inter font-semibold lg:font-normal uppercase sm:p-3 flex items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                        Case Studies
+                                    </button>
+                                </a>
+
+                                <div
+                                    class="border-[#0A3B7C] mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                                </div>
+
+                            </div>
+
+                            <div class="border-b border-black/10 lg:hidden block"></div>
+
+                            <!--Insights-->
+                            <div
+                                class="hs-dropdown lg:h-14 group [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                                <button type="button"
+                                    class="font-inter font-semibold lg:font-normal uppercase sm:p-3 flex justify-between items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                    Insights
+                                    <svg class="ms-1 flex-shrink-0 size-4 lg:group-hover:-rotate-180"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="m6 9 6 6 6-6" />
+                                    </svg>
+                                </button>
+
+                                <div
+                                    class="border-[#0A3B7C] mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                                </div>
+
+
+                                <div
+                                    class="hs-dropdown-menu transition-[opacity,margin] sm:border duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 hidden z-10 top-full sm:w-48 bg-white sm:shadow-md py-2 sm:px-2 dark:bg-neutral-800 sm:dark:border dark:border-neutral-700 dark:divide-neutral-700">
+                                    <div class="flex flex-col">
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="#">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                Blogs</span>
+                                        </a>
+
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="#">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                Podcast</span>
+                                        </a>
+
+                                        <a class="text-black hover:text-[#0A3B7C] flex items-center justify-start"
+                                            href="#">
+                                            <span
+                                                class="ml-3 gap-x-3.5 py-2 text-sm relative after:bg-[#0A3B7C] after:absolute after:h-0.5 after:w-0 after:bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
+                                                E-Books</span>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-b border-black/10 lg:hidden block"></div>
+
+                            <!--clients & Partners-->
+                            <div
+                                class="hs-dropdown group lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] ">
+                                <a href="./client&partner.html">
+                                    <button type="button"
+                                        class="font-inter font-semibold lg:font-normal uppercase sm:p-3 flex items-center w-full text-base lg:text-sm text-white mobile-text-black">
+                                        Clients & Partners
+                                    </button>
+                                </a>
+
+                                <div
+                                    class="border-[#0A3B7C] mx-4 rounded-[100px] group-hover:border-t-2 lg:block hidden">
+                                </div>
+
+                            </div>
+
+                            <div class="border-b border-black/10 lg:hidden block"></div>
+
+                            <!--Contact-Us-->
+                            <div
+                                class="hs-dropdown lg:h-14 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover] lg:ml-14 mt-2">
+                                <a href="./contact-us.html">
+                                    <button type="button"
+                                        class="py-2 px-3 inline-flex items-center text-gray-100 bg-[#043E8C] text-base lg:text-sm font-semibold lg:font-normal dark:text-neutral-400 dark:hover:text-neutral-500">
+                                        Contact Us
+                                    </button>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="border-white/50 border-t lg:block hidden"></div>
+            </nav>
+        </header>
+        <!--End header-->
+
+
+        <!---Start : About Us - Hero Banner---->
+        <section
+            class="relative lg:h-[620px] h-auto w-full flex items-center justify-center text-center bg-cover bg-center lg:mt-0 mt-10"
+            style="background-image:url('./src/assets/img/about/about-hero-banner.png');">
+            <div
+                class="xl:max-w-screen-2xl 2xl:max-w-screen-2xl lg:max-w-screen-lg px-4 md:px-6 lg:px-8 mx-auto py-8 lg:py-24">
+                <div class="grid grid-cols-12 lg:gap-4">
+                    <div class="lg:col-span-7 col-span-12 text-white text-left lg:pt-5">
+                        <p class="text-xs lg:text-sm xl:text-sm 2xl:text-base mt-4 font-inter">Home / Industries /
+                            Aerospace &
+                            Defence</p>
+                        <h1 class="mt-4 text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-gellix font-semibold">
+                            Explore our solutions to meet your business needs and drive growth</h1>
+                        <p
+                            class="mt-4 lg:mt-4 xl:mt-7 2xl:mt-10 text-base lg:text-lg xl:text-xl 2xl:text-2xl font-inter">
+                            Discover our tailored solutions crafted to meet your business needs and propel your growth.
+                            Partner with us to achieve your goals and drive success.</p>
+                    </div>
+                    <div class="col-span-5 lg:block hidden">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---End : About Us - Hero Banner---->
+
+
+        <!---Start : Leading with vision and experience---->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24 text-black bg-white">
+            <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-medium">About Us</h3>
+            <div class="mt-5 grid grid-cols-12 lg:gap-16">
+                <div class="lg:col-span-6 col-span-12">
+                    <h1 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-gellix font-semibold">Our goals are to
+                        enable
+                        individuals to share their expertise</h1>
+                    <div class="text-[14px] lg:text-xs xl:text-sm 2xl:text-base font-inter">
+                        <p class="mt-5 lg:mt-5 xl:mt-8 2xl:mt-10">Touchmark believes in the power of collaboration and
+                            strives to create an environment of shared success. Our experienced team of professionals is
+                            dedicated to delving into the complexities of business challenges and finding creative
+                            solutions.</P>
+                        <P class="mt-2 lg:mt-2 xl:mt-3 2xl:mt-4">We have the ability to impact consumer decisions and
+                            produce significant outcomes by crafting compelling digital experiences. Join together with
+                            us to boost your brand's online visibility and accomplish outstanding results. Together,
+                            let's influence the future.
+                        </P>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 col-span-12">
+                    <div class="grid grid-cols-6 lg:gap-2 xl:gap-4 2xl:gap-6 gap-12 mt-10 lg:mt-0">
+                        <!--count - 01-->
+                        <div class="col-span-3">
+                            <h1 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-gellix font-semibold">280+
+                            </h1>
+                            <p
+                                class="text-[#1C95C9] text-sm lg:text-sm xl:text-base 2xl:text-xl mt-2 lg:mt-2 xl:mt-3 2xl:mt-5 font-inter font-semibold">
+                                Employes</p>
+                            <p
+                                class="text-xs lg:text-sm xl:text-sm 2xl:text-base font-inter mt-2 lg:mt-2 xl:mt-3 2xl:mt-6 font-inter">
+                                We employ over 280 certified full-time professionals.</p>
+                        </div>
+                        <!--count - 02-->
+                        <div class="col-span-3">
+                            <h1 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-gellix font-semibold">3500+
+                            </h1>
+                            <p
+                                class="text-[#1C95C9] text-sm lg:text-sm xl:text-base 2xl:text-xl mt-2 lg:mt-2 xl:mt-3 2xl:mt-5 font-inter font-semibold">
+                                Projects</p>
+                            <p
+                                class="text-xs lg:text-sm xl:text-sm 2xl:text-base mt-2 lg:mt-2 xl:mt-3 2xl:mt-6 font-inter">
+                                More than 3,500 successfully implemented projects</p>
+                        </div>
+                        <!--count - 03-->
+                        <div class="col-span-3">
+                            <h1 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-gellix font-semibold">24+</h1>
+                            <p
+                                class="text-[#1C95C9] text-sm lg:text-sm xl:text-base 2xl:text-xl mt-2 lg:mt-2 xl:mt-3 2xl:mt-5 font-inter font-semibold">
+                                Experience</p>
+                            <p
+                                class="text-xs lg:text-sm xl:text-sm 2xl:text-base mt-2 lg:mt-2 xl:mt-3 2xl:mt-6 font-inter">
+                                With 24 years of experience, we've earned hundreds of awards and
+                                certificates.</p>
+                        </div>
+                        <!--count - 04-->
+                        <div class="col-span-3">
+                            <h1 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-gellix font-semibold">10+</h1>
+                            <p
+                                class="text-[#1C95C9] text-sm lg:text-sm xl:text-base 2xl:text-xl mt-2 lg:mt-2 xl:mt-3 2xl:mt-5 font-inter font-semibold">
+                                Locations</p>
+                            <p
+                                class="text-xs lg:text-sm xl:text-sm 2xl:text-base mt-2 lg:mt-2 xl:mt-3 2xl:mt-6 font-inter">
+                                Offices in 4 countries around the world - United States of
+                                America,
+                                Poland, Germany, and Ukraine.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---End : Leading with vision and experience---->
+
+
+        <!--Start : Vision and Mission-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24 text-black bg-white">
+            <div class="grid grid-cols-12 lg:gap-4">
+                <div class="lg:col-span-6 col-span-12">
+                    <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-medium">Vision and
+                        Mission</h3>
+                    <h1
+                        class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 text-2xl lg:text-2xl xl:text-4xl 2xl:text-6xl font-gellix font-semibold">
+                        Top partnerships to help
+                        accelerate change</h1>
+                </div>
+                <div class="lg:col-span-6 col-span-12 flex justify-start items-center">
+                    <p class="text-[14px] lg:text-sm xl:text-sm 2xl:text-base mt-5 font-inter font-regular">Established enterprises
+                        and emerging startups need a perfect balance of
+                        strategy, technology, analytics, and knowhow to solve everyday business challenges rises and
+                        emerging startups need a perfect balance of strategy, technology, analytics, and knowhow to
+                        solve everyday business .</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 gap-4 2xl:mt-24 xl:mt-12 mt-12">
+                <div class="lg:col-span-6 col-span-12">
+                    <div
+                        class="bg-[#F2F9FF] lg:h-[342px] xl:h-[352px] 2xl:h-[438px] hover:bg-[#194F97] text-black hover:text-white px-5 2xl:px-10 xl:px-6 lg:px-4 flex justify-between lg:gap-4 items-center overflow-x-hidden relative">
+                        <div class="2xl:w-4/6 xl:w-4/6 lg:w-4/6 lg:mb-20 xl:mb-16 2xl:mb-12">
+                            <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base">Mission</h3>
+                            <h2
+                                class="text-xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-gellix mt-2 lg:mt-2.5 xl:mt-3 2xl:mt-5 font-semibold">
+                                Cultivating a Global Hub for Thoughtful Discourse
+                                and Community Connection</h2>
+                            <p
+                                class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-7 text-xs lg:text-sm xl:text-sm 2xl:text-base font-inter font-regular">
+                                Our
+                                goal is to become the preeminent online forum that brings
+                                people together from all walks of life via thought-provoking conversations, creating a
+                                worldwide community centred around mutual respect, curiosity, and development.</p>
+                        </div>
+                        <div class="2xl:w-80 xl:w-56 absolute lg:ml-72 xl:ml-72 2xl:ml-96 mb-12 lg:block hidden mt-10">
+                            <img src="./src/assets/img/about/vision-img.svg" class="ml-16">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="lg:col-span-6 col-span-12">
+                    <div
+                        class="bg-[#F2F9FF] lg:h-[342px] xl:h-[352px] 2xl:h-[438px] hover:bg-[#194F97] text-black hover:text-white px-5 2xl:px-10 xl:px-6 lg:px-4 flex justify-between lg:gap-4 items-center overflow-x-hidden relative">
+                        <div class="2xl:w-4/6 xl:w-4/6 lg:w-4/6">
+                            <h3 class="text-base">Vision</h3>
+                            <h2
+                                class="text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-gellix mt-2 lg:mt-2.5 xl:mt-3 2xl:mt-5 font-semibold">
+                                Nurturing Safe Spaces for Dialogue, Growth, and
+                                Respectful Interaction</h2>
+                            <p
+                                class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-7 text-xs lg:text-sm xl:text-sm 2xl:text-base font-inter font-regular">
+                                Our
+                                goals are to enable individuals to share their expertise,
+                                create a safe space for candid conversations, and foster a sense of community. We are
+                                committed to ensuring accessibility, promoting growth, and maintaining respect and
+                                integrity. We strive to enhance our community by promoting creativity and teamwork,
+                                ensuring all opinions are valued.</p>
+                        </div>
+                        <div class="2xl:w-80 xl:w-56 absolute lg:ml-72 xl:ml-72 2xl:ml-96 lg:block hidden">
+                            <img src="./src/assets/img/about/mission-img.svg" class="ml-16">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End : Vision and Mission-->
+
+
+        <!--Start : From Our CEO Bharathiraja Thangappalam-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24 text-black bg-white">
+            <div class="lg:hidden block">
+                <h3 class="text-base text-[#1C95C9]">Message</h3>
+                <h1
+                    class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl font-gellix font-semibold">
+                    From
+                    Our CEO</h1>
+            </div>
+            <div class="grid grid-cols-12 gap-4">
+                <div class="lg:col-span-6 col-span-12 flex justify-start items-end order-2 lg:order-1">
+                    <div>
+                        <div class="lg:block hidden">
+                            <h3 class="text-base text-[#1C95C9]">Message</h3>
+                            <h1
+                                class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl font-gellix font-semibold">
+                                From
+                                Our CEO</h1>
+                        </div>
+                        <div class="xl:p-5 2xl:p-0"></div>
+                        <div
+                            class="mt-2 lg:mt-3 xl:mt-5 2xl:mt-8 border border-[#BED7F8] lg:p-10 xl:p-5 2xl:p-10 px-5 py-10 xl:space-y-6 2xl:space-y-3 font-inter text-sm lg:text-sm xl:text-base 2xl:text-lg font-inter">
+                            <p>With over 20 years of experience, we specialize in creating tailored IT
+                                solutions for
+                                medium-sized businesses and corporations. Our priority is aligning with your business
+                                goals,
+                                and </p>
+                            <p>we take pride in the work we do and the clients we servrem ipsum
+                                dolor sit amet,
+                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor With over 20
+                                years of
+                                experience, we specialize in creating tailored IT solutions for medium-sized businesses
+                                and
+                                corporations.</p>
+                            <p> Our priority is aligning with your business goals, and we take
+                                pride in
+                                the
+                                work we do and e pride in the work we do and the clients we servrem ipsum dolor ng with
+                                your</p>
+                            <p>
+                                business goals, and we take pride in the work we do and the clients we servrem ipsum
+                                dolor
+                                sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor With
+                                over
+                                20 years of experience.</p>
+                            <div class="mt-16 block lg:flex justify-start lg:justify-between items-center">
+                                <div class="space-y-2">
+                                    <h1 class="2xl:text-3xl xl:text-2xl lg:text-xl text-lg font-gellix font-semibold">Bharathiraja
+                                        Thangappalam</h1>
+                                    <h3 class="2xl:text-base xl:text-sm lg:text-sm text-xs font-inter font-regular">Director & CEO
+                                    </h3>
+                                </div>
+                                <div class="flex justify-start lg:justify-center items-center space-x-3 lg:mt-0 mt-5">
+                                    <img src="./src/assets/img/about/linkedin-icons.svg">
+                                    <img src="./src/assets/img/about/twitter-icons.svg">
+                                    <img src="./src/assets/img/about/facebook-icons.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 col-span-12 flex justify-end items-center order-1 lg:order-2">
+                    <div class="flex justify-end items-end">
+                        <img src="./src/assets/img/about/bharathiraja-ceo-img.svg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End : From Our CEO Bharathiraja Thangappalam-->
+
+
+        <!--Start : From Our CTO Mohanraaj Govindasamy-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6  lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24 text-black bg-white">
+            <div class="lg:hidden block">
+                <h3 class="text-base text-[#1C95C9]">Why Touchmark Descience</h3>
+                <h1
+                    class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl font-gellix font-semibold">
+                    Lets hear from our CTO</h1>
+            </div>
+            <div class="grid grid-cols-12 gap-4">
+                <div class="lg:col-span-6 col-span-12 flex justify-center items-end">
+                    <img src="./src/assets/img/about/mohanraaj-cto-img.svg">
+                </div>
+                <div class="lg:col-span-6 col-span-12 flex justify-start items-end">
+                    <div>
+                        <div class="lg:block hidden">
+                            <h3 class="text-base text-[#1C95C9]">Why Touchmark Descience</h3>
+                            <h1
+                                class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl font-gellix font-semibold">
+                                Lets hear from our CTO</h1>
+                        </div>
+                        <div class="xl:p-5 2xl:p-0"></div>
+                        <div
+                            class="mt-3 lg:mt-5 xl:mt-8 2xl:mt-10 border border-[#BED7F8] lg:p-10 xl:p-5 2xl:p-10 px-5 py-10 xl:space-y-6 2xl:space-y-3 text-sm lg:text-sm xl:text-base 2xl:text-lg font-inter font-regular">
+                            <p>With over 20 years of experience, we specialize in creating tailored IT
+                                solutions for
+                                medium-sized businesses and corporations. Our priority is aligning with your business
+                                goals,
+                                and </p>
+                            <p>we take pride in the work we do and the clients we servrem ipsum
+                                dolor sit amet,
+                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor With over 20
+                                years of
+                                experience, we specialize in creating tailored IT solutions for medium-sized businesses
+                                and
+                                corporations.</p>
+                            <p> Our priority is aligning with your business goals, and we take
+                                pride in
+                                the
+                                work we do and e pride in the work we do and the clients we servrem ipsum dolor ng with
+                                your</p>
+                            <p>
+                                business goals, and we take pride in the work we do and the clients we servrem ipsum
+                                dolor
+                                sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor With
+                                over
+                                20 years of experience.</p>
+                            <div class="mt-16 block lg:flex justify-start lg:justify-between items-center">
+                                <div class="space-y-2">
+                                    <h1 class="2xl:text-3xl xl:text-2xl lg:text-xl text-lg font-gellix font-semibold">Mohanraaj
+                                        Govindasamy
+                                    </h1>
+                                    <h3 class="2xl:text-base xl:text-sm lg:text-sm text-xs font-inter font-regular">Director & Chief
+                                        - Software Production
+                                    </h3>
+                                </div>
+                                <div class="flex justify-start lg:justify-center items-center space-x-3 lg:mt-0 mt-5">
+                                    <img src="./src/assets/img/about/linkedin-icons.svg">
+                                    <img src="./src/assets/img/about/twitter-icons.svg">
+                                    <img src="./src/assets/img/about/facebook-icons.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!--End : From Our CTO Mohanraaj Govindasamy-->
+
+
+        <!--Start : Top partnerships to help accelerate change-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24 text-black bg-white">
+            <div class="grid grid-cols-12 lg:gap-4">
+                <div class="lg:col-span-5 2xl:col-span-5 xl:col-span-6 col-span-12">
+                    <h3 class="text-xs lg:text-sm xl:text-sm 2xl:text-base text-[#1C95C9] font-medium">Our Clients
+                    </h3>
+                    <h1
+                        class="mt-3 lg:mt-3 xl:mt-5 2xl:mt-8 text-2xl lg:text-2xl xl:text-4xl 2xl:text-5xl font-semibold font-gellix">
+                        Top partnerships to help accelerate change</h1>
+                    <p
+                        class="text-[14px] lg:text-sm xl:text-sm 2xl:text-base mt-3 lg:mt-5 xl:mt-7 2xl:mt-10 font-inter font-regular">
+                        Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut
+                        enim ad minim veniam Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                </div>
+                <div class="lg:col-span-1 2xl:col-span-1 hidden xl:hidden lg:block 2xl:block"></div>
+                <div
+                    class="lg:col-span-6 2xl:col-span-6 xl:col-span-6 col-span-12 lg:flex justify-between items-center">
+                    <div class="lg:flex justify-between items-center">
+                        <div class="border border-t-0 p-10">
+                            <img src="./src/assets/img/clients/top-client-001.svg" class="lg:pt-0 pt-6">
+                        </div>
+                        <div class="border border-t-0 p-10">
+                            <img src="./src/assets/img/clients/top-client-002.svg" class="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End : Top partnerships to help accelerate change-->
+
+
+        <!--Start : Life at Touchmark-->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24 text-black bg-white">
+            <div class="grid grid-cols-12 lg:gap-4">
+                <div class="lg:col-span-6 col-span-12">
+                    <h3 class="text-base text-[#1C95C9] font-inter font-medium">Explore</h3>
+                    <h1
+                        class="mt-2 lg:mt-2 xl:mt-2.5 2xl:mt-5 text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl font-gellix font-semibold">
+                        Life at Touchmark</h1>
+                </div>
+                <div class="lg:col-span-6 col-span-12 flex justify-start items-center">
+                    <p class="text-[14px] lg:text-sm xl:text-base 2xl:text-xl mt-5 font-inter font-regular">Introducing the Brilliant
+                        Minds Driving Touchmark Descience Forward: Get
+                        to Know Our Exceptional Team</p>
+                </div>
+            </div>
+
+            <!--Desktop-->
+            <div class="lg:block hidden">
+                <div id="one-time" class="owl-carousel owl-theme mt-16">
+                    <div class="w-full relative">
+                        <img src="./src/assets/img/about/arumugam-it-delivery-head-img.svg">
+                        <div
+                            class="absolute lg:top-32 lg:left-96 lg:ml-80 lg:px-20 lg:mt-10 xl:top-28 xl:left-72 xl:ml-52 xl:px-8 xl:mt-8 2xl:top-32 2xl:left-96 2xl:ml-80 2xl:px-20 2xl:mt-10 text-black">
+                            <h1 class="lg:text-xl xl:text-2xl 2xl:text-3xl font-gellix font-semibold">Arumugam</h1>
+                            <h3 class="lg:mt-2 xl:mt-3 2xl:mt-5 lg:text-xs xl:text-sm 2xl:text-base font-inter font-regular">Project Success
+                                Manager<h3>
+                                    <h2
+                                        class="lg:text-sm xl:text-base 2xl:text-xl font-gellix font-semibold lg:mt-4 xl:mt-6 2xl:mt-8">
+                                        How we Deliver a Project :</h2>
+                                    <p
+                                        class="lg:text-base xl:text-sm 2xl:text-base lg:mt-2 xl:mt-3 2xl:mt-6 font-inter font-regular">
+                                        With over 20 years of
+                                        experience,
+                                        we specialize in creating tailored IT solutions for
+                                        medium-sized businesses and corporations. Our priority is aligning with your
+                                        business goals, and we take pride in the work we do and the clients we servrem
+                                        ipsum
+                                        dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labor With over 20 years of experience, we specialize in creating tailored IT
+                                        solutions for medium-sized businesses and corporations. Our priority is aligning
+                                        with your business goals, and we take pride in the work we do and e pride in the
+                                        work we do and the clients we servrem ipsum dolor ng with your business goals,
+                                        and
+                                        we take pride in the work we do and the clients we servrem ipsum dolor sit amet,
+                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor With over
+                                        20
+                                        years of experience.
+                                    </p>
+                        </div>
+                    </div>
+                    <div class="w-full relative">
+                        <img src="./src/assets/img/about/ariyapan-project-success-img.svg">
+                        <div
+                            class="absolute lg:top-32 lg:right-96 lg:mr-80 lg:px-20 lg:mt-10 xl:top-28 xl:right-72 xl:mr-52 xl:px-8 xl:mt-8 2xl:top-32 2xl:right-96 2xl:mr-80 2xl:px-20 2xl:mt-10 text-black">
+                            <h1 class="lg:text-xl xl:text-2xl 2xl:text-3xl font-gellix font-semibold">Ariyappan P</h1>
+                            <h3 class="lg:mt-2 xl:mt-3 2xl:mt-5 lg:text-xs xl:text-sm 2xl:text-base font-inter font-regular">Project Success
+                                Manager<h3>
+                                    <h2
+                                        class="lg:text-sm xl:text-base 2xl:text-xl lg:mt-4 xl:mt-6 2xl:mt-8 font-gellix font-semibold">
+                                        How we Deliver a Project :</h2>
+                                    <p
+                                        class="lg:text-base xl:text-sm 2xl:text-base lg:mt-2 xl:mt-3 2xl:mt-6 font-inter font-regular">
+                                        With over 20 years of
+                                        experience,
+                                        we specialize in creating tailored IT solutions for
+                                        medium-sized businesses and corporations. Our priority is aligning with your
+                                        business goals, and we take pride in the work we do and the clients we servrem
+                                        ipsum
+                                        dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labor With over 20 years of experience, we specialize in creating tailored IT
+                                        solutions for medium-sized businesses and corporations. Our priority is aligning
+                                        with your business goals, and we take pride in the work we do and e pride in the
+                                        work we do and the clients we servrem ipsum dolor ng with your business goals,
+                                        and
+                                        we take pride in the work we do and the clients we servrem ipsum dolor sit amet,
+                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor With over
+                                        20
+                                        years of experience.
+                                    </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Mobile-->
+            <div class="lg:hidden block">
+                <div id="one-time-mob" class="owl-carousel owl-theme mt-8">
+                    <div class="w-screen relative">
+                        <img src="./src/assets/img/about/arumugam-it-delivery-head-img-mob.png">
+                        <div class="absolute px-3 py-3 top-0 text-black">
+                            <h1 class="text-xl font-gellix font-semibold">Arumugam M</h1>
+                            <h3 class="mt-2 text-sm font-inter">IT Delivery Head<h3>
+                                    <h2 class="text-base font-gellix font-semibold mt-2.5">How we Deliver a Project :</h2>
+                                    <p class="text-xs mt-3 font-inter font-regular">With over 20 years of
+                                        experience,
+                                        we specialize in creating tailored IT solutions for
+                                        medium-sized businesses and corporations. Our priority is aligning with your
+                                        business goals, and we take pride in the work we do and the clients we servrem
+                                        ipsum
+                                        dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labor With over 20 years of experience, we specialize in creating tailored IT
+                                        solutions for medium-sized businesses and corporations. Our priority is aligning
+                                        with your business goals, and we take pride in the work we do and e pride in the
+                                        work we do and the clients we servrem ipsum dolor ng with your business goals,
+                                        and
+                                        we take pride in the work we do and the clients we servrem ipsum dolor sit amet,
+                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor With over
+                                        20
+                                        years of experience.
+                                    </p>
+                        </div>
+                    </div>
+                    <div class="w-screen relative">
+                        <img src="./src/assets/img/about/ariyappan-project-success-manager-img-mob.png">
+                        <div class="absolute px-3 py-3 top-0 text-black">
+                            <h1 class="text-xl font-gellix font-semibold">Arumugam M</h1>
+                            <h3 class="mt-2 text-sm font-inter font-regular">IT Delivery Head<h3>
+                                    <h2 class="text-base font-gellix font-semibold mt-2.5">How we Deliver a Project :</h2>
+                                    <p class="text-xs mt-3 font-inter font-regular">With over 20 years of
+                                        experience,
+                                        we specialize in creating tailored IT solutions for
+                                        medium-sized businesses and corporations. Our priority is aligning with your
+                                        business goals, and we take pride in the work we do and the clients we servrem
+                                        ipsum
+                                        dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labor With over 20 years of experience, we specialize in creating tailored IT
+                                        solutions for medium-sized businesses and corporations. Our priority is aligning
+                                        with your business goals, and we take pride in the work we do and e pride in the
+                                        work we do and the clients we servrem ipsum dolor ng with your business goals,
+                                        and
+                                        we take pride in the work we do and the clients we servrem ipsum dolor sit amet,
+                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor With over
+                                        20
+                                        years of experience.
+                                    </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!--End : Life at Touchmark-->
+
+
+        <!--Start : Our Team-->
+        <!-- <section
+            class="xl:max-w-screen-2xl 2xl:max-w-screen-2xl lg:max-w-screen-lg px-4 md:px-6 lg:px-8 mx-auto py-8 lg:py-10 xl:py-12 2xl:py-24 text-black bg-white">
+            <div class="grid grid-cols-12 lg:gap-4">
+                <div class="lg:col-span-5 col-span-12">
+                    <h3 class="text-base text-[#1C95C9] font-medium">Life at Touchmark</h3>
+                    <h1
+                        class="mt-2 lg:mt-2 xl:mt-2.5 2xl:mt-5 text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl font-semibold">
+                        Each and every one of them is a pleasure to work with</h1>
+                </div>
+                <div class="col-span-1 lg:block hidden"></div>
+                <div class="lg:col-span-5 col-span-12">
+                    <p class="text-[14px] lg:text-sm xl:text-base 2xl:text-xl mt-5 font-inter">Introducing the Brilliant
+                        Minds Driving Touchmark Descience Forward: Get to
+                        Know
+                        Our Exceptional Team</p>
+                </div>
+                <div class="col-span-1 lg:block hidden"></div>
+            </div>
+            <div id="owl-carousel" class="owl-carousel owl-theme mt-16">
+                --item-1--
+                <div class="item p-3">
+                    <div>
+                        <img src="./src/assets/img/about/rohini-slider-img.png">
+                        <div class="mt-5 space-y-2.5">
+                            <h1 class="text-base lg:text-base xl:text-lg 2xl:text-xl font-semibold">Rohini K</h1>
+                            <p class="text-xs lg:text-sm xl:text-sm 2xl:text-base font-inter">Programmer Analyst</p>
+                        </div>
+                    </div>
+                </div>
+                --item-2--
+                <div class="item p-3">
+                    <div>
+                        <img src="./src/assets/img/about/pushparaj-slider-img.svg">
+                        <div class="mt-5 space-y-2.5">
+                            <h1 class="text-base lg:text-base xl:text-lg 2xl:text-xl font-semibold">Pushparaj B</h1>
+                            <p class="text-xs lg:text-sm xl:text-sm 2xl:text-base font-inter">Senior UI/UX Designer</p>
+                        </div>
+                    </div>
+                </div>
+                --item-3--
+                <div class="item p-3">
+                    <div>
+                        <img src="./src/assets/img/about/pavithren-slider-img.svg">
+                        <div class="mt-5 space-y-2.5">
+                            <h1 class="text-base lg:text-base xl:text-lg 2xl:text-xl font-semibold">Pavithren G</h1>
+                            <p class="text-xs lg:text-sm xl:text-sm 2xl:text-base font-inter">Programmer Analyst</p>
+                        </div>
+                    </div>
+                </div>
+                --item-4--
+                <div class="item p-3">
+                    <div>
+                        <img src="./src/assets/img/about/srisankari-slider-img.svg">
+                        <div class="mt-5 space-y-2.5">
+                            <h1 class="text-base lg:text-base xl:text-lg 2xl:text-xl font-semibold">Sri Sankari S C</h1>
+                            <p class="text-xs lg:text-sm xl:text-sm 2xl:text-base font-inter">Programmer Analyst</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!--End : Our Team-->
+
+
+        <!---Start : Our clients---->
+        <section>
+            <div class="relative lg:h-[686px] h-full lg:w-full flex items-center justify-center text-center bg-cover bg-center"
+                style="background-image:url('./src/assets/img/about/bg-scroll-logo.png');">
+                <div
+                    class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24">
+                    <div class="grid grid-cols-12 lg:gap-4 lg:mt-0 mt-4">
+                        <div class="lg:col-span-5 col-span-12 text-white text-left flex justify-start items-center">
+                            <div>
+                                <p class="text-sm font-inter font-regular text-white">
+                                    Our Partners
+                                </p>
+                                <h1
+                                    class="mt-2 lg:mt-2 xl:mt-3 2xl:mt-4 text-2xl lg:text-3xl xl:text-5xl 2xl:text-5xl font-gellix font-semibold">
+                                    Elevate your experience with us</h1>
+                                <p
+                                    class="mt-3 lg:mt-5 xl:mt-8 2xl:mt-10 text-sm lg:text-sm xl:text-sm 2xl:text-base font-inter font-regular">
+                                    Touchmark Descience may help you improve your job and personal success by providing
+                                    cutting-edge tools and skilled coaching. We can do incredible things and reach new
+                                    heights when we work together!</p>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-7 col-span-12">
+                            <div class="lg:h-96 h-72 lg:mt-0 mt-8 scrollbar-hidden overflow-hidden">
+                                <div class="grid grid-cols-6 gap-4">
+
+                                    <div class="scroll-container col-span-2 space-y-2">
+                                        <div class="scroll-content">
+                                            <img src="./src/assets/img/about/coca-cola-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/tag-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/sidbi-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/rupinis-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/rare-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/tag-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/sidbi-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/rupinis-logo.png" class="mt-3">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-span-2 space-y-2 scroll-container-rev">
+                                        <div class="scroll-content-rev" id="scrollContentRev">
+                                            <img src="./src/assets/img/about/coca-cola-logo.png" class="mb-3">
+                                            <img src="./src/assets/img/about/tag-logo.png" class="mb-3">
+                                            <img src="./src/assets/img/about/sidbi-logo.png" class="mb-3">
+                                            <img src="./src/assets/img/about/rupinis-logo.png" class="mb-3">
+                                            <img src="./src/assets/img/about/rare-logo.png" class="mb-3">
+                                            <img src="./src/assets/img/about/tag-logo.png" class="mb-3">
+                                            <img src="./src/assets/img/about/sidbi-logo.png" class="mb-3">
+                                            <img src="./src/assets/img/about/rupinis-logo.png" class="mb-3">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="scroll-container-2 col-span-2 space-y-2">
+                                        <div class="scroll-content-2">
+                                            <img src="./src/assets/img/about/coca-cola-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/tag-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/sidbi-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/rupinis-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/rare-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/tag-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/sidbi-logo.png" class="mt-3">
+                                            <img src="./src/assets/img/about/rupinis-logo.png" class="mt-3">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---End : Our clients---->
+
+
+        <!---Start : Our Initiative---->
+        <section
+            class="2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 lg:py-16 xl:py-16 2xl:py-24 text-black bg-white">
+            <h3 class="text-base text-[#1C95C9] font-inter font-regular">Our Initiative</h3>
+            <div class="mt-5 grid grid-cols-12 lg:gap-16">
+                <div class="lg:col-span-7 col-span-12 space-y-10">
+                    <h1 class="text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl font-gellix font-semibold">Descience Open Source Club
+                        An Opensource community</h1>
+                    <p class="text-[14px] lg:text-sm xl:text-sm 2xl:text-base mt-5 font-inter font-regular">Lorem ipsum dolor sit
+                        amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <div class="grid lg:grid-cols-4 grid-cols-2 gap-4 lg:gap-8">
+                        <!--Value - 01-->
+                        <div>
+                            <div class="border border-[#1C95C9] border-t-3"></div>
+                            <div class="border border-[#1C95C9] border-t-3"></div>
+                            <h1
+                                class="mt-2 lg:mt-2.5 xl:mt-3 2xl:mt-5 text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl font-gellix font-semibold">
+                                24+</h1>
+                            <p
+                                class="mt-3 lg:mt-5 xl:mt-3 2xl:mt-10 text-[#4B4B4B] text-xs lg:text-[10px] xl:text-[10px] 2xl:text-xs font-inter font-regular">
+                                With 24 years of experience, we've
+                                earned
+                                hundreds of awards and certificates.</p>
+                        </div>
+                        <!--Value - 02-->
+                        <div>
+                            <div class="border border-[#1C95C9] border-t-3"></div>
+                            <div class="border border-[#1C95C9] border-t-3"></div>
+                            <h1
+                                class="mt-2 lg:mt-2.5 xl:mt-3 2xl:mt-5 text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl font-gellix font-semibold">
+                                10+</h1>
+                            <p
+                                class="mt-3 lg:mt-5 xl:mt-3 2xl:mt-10 text-[#4B4B4B] text-xs lg:text-[10px] xl:text-[10px] 2xl:text-xs font-inter font-regular">
+                                Offices in 4 countries around the world
+                                -
+                                United States of America, Poland, Germany, and Ukraine.</p>
+                        </div>
+                        <!--Value - 03-->
+                        <div class="lg:mt-0 mt-5">
+                            <div class="border border-[#1C95C9] border-t-3"></div>
+                            <div class="border border-[#1C95C9] border-t-3"></div>
+                            <h1
+                                class="mt-2 lg:mt-2.5 xl:mt-3 2xl:mt-5 text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl font-gellix font-semibold">
+                                280+</h1>
+                            <p
+                                class="mt-3 lg:mt-5 xl:mt-3 2xl:mt-10 text-[#4B4B4B] text-xs lg:text-[10px] xl:text-[10px] 2xl:text-xs font-inter font-regular">
+                                We employ over 280 certified full-time
+                                professionals.</p>
+                        </div>
+                        <!--Value - 04-->
+                        <div class="lg:mt-0 mt-5">
+                            <div class="border border-[#1C95C9] border-t-3"></div>
+                            <div class="border border-[#1C95C9] border-t-3"></div>
+                            <h1
+                                class="mt-2 lg:mt-2.5 xl:mt-3 2xl:mt-5 text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl font-gellix font-semibold">
+                                3500+</h1>
+                            <p
+                                class="mt-3 lg:mt-5 xl:mt-3 2xl:mt-10 text-[#4B4B4B] text-xs lg:text-[10px] xl:text-[10px] 2xl:text-xs font-inter font-regular">
+                                More than 3,500 successfully implemented
+                                projects</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 col-span-12 lg:mt-0 mt-10">
+                    <div>
+                        <img src="./src/assets/img/about/descience-launch-event.svg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---End : Our Initiative---->
+
+
+        <!--Start : Get in Touch-->
+        <!-- <section
+            class="xl:max-w-screen-2xl 2xl:max-w-screen-2xl lg:max-w-screen-lg px-4 md:px-6 lg:px-8 mx-auto py-8 lg:py-10 xl:py-12 2xl:py-24 text-black bg-white">
+            <div class="grid grid-cols-12 bg-[#194F97] text-white lg:px-10 lg:py-10 px-5 py-10">
+                <div class="lg:col-span-7 col-span-12">
+                    <h3 class="text-base font-medium">Get in touch</h3>
+                    <h1 class="mt-5 text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold">Let’s Create Something
+                        Remarkable Together.</h1>
+                    <p class="text-base lg:text-base xl:text-lg 2xl:text-2xl mt-10 font-inter">Collaboration ignites
+                        innovation. Together, we merge your visionary ideas
+                        with
+                        our technological prowess, crafting solutions that shape the future.</p>
+                    <div class="pt-10">
+                        <a href="#" class="border border-white rounded-3xl px-3 py-2 text-white">Work with us</a>
+                    </div>
+                </div>
+                <div class="col-span-1 lg:block hidden"></div>
+                <div class="lg:col-span-4 lg:block hidden">
+                    <img src="./src/assets/img/about/get-in-touch-agile.svg">
+                </div>
+            </div>
+        </section> -->
+        <!--End : Get in Touch-->
+
+
+
+        <!--Start : Footer-->
+        <footer class="bg-[#043E8C]">
+            <div
+                class="space-y-8 py-16 lg:space-y-16 2xl:max-w-screen-2xl xl:max-w-screen-[100rem] lg:max-w-screen-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8">
+
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="lg:col-span-4 col-span-12">
+                        <div class="block lg:flex justify-start items-center gap-2">
+                            <h1
+                                class="2xl:text-3xl xl:text-2xl lg:text-xl text-2xl font-gellix font-semibold text-white">
+                                Follow Our Social
+                                Networks</h1>
+                            <div class="flex justify-start lg:justify-center items-center space-x-2 lg:mt-0 mt-4">
+                                <img src="./src/assets/img/home/icons/linkedin-icon.svg" class="h-10">
+                                <img src="./src/assets/img/home/icons/instagram-icon.svg" class="h-10">
+                                <img src="./src/assets/img/home/icons/twitter-icon.svg" class="h-10">
+                                <img src="./src/assets/img/home/icons/fb-icon.svg" class="h-10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 lg:block hidden"></div>
+                    <div class="lg:col-span-3 col-span-12">
+                        <h1 class="2xl:text-3xl xl:text-2xl lg:text-xl text-2xl font-gellix font-semibold text-white">Be
+                            the First one to hear
+                            About Updates</h1>
+                    </div>
+                    <div class="lg:col-span-4 col-span-12">
+                        <div class="max-w-md mx-auto overflow-hidden md:max-w-xl -ml-3 lg:ml-0">
+                            <div class="md:flex">
+                                <div class="w-full p-3">
+                                    <div class="relative"> <input type="text"
+                                            class="bg-white h-14 w-full px-4 pr-20 focus:outline-none hover:cursor-pointer placeholder:black"
+                                            name="" placeholder="Enter Your Email">
+                                        <button
+                                            class="h-10 bg-[#194F97] absolute top-2 text-sm right-2 px-3 text-white hover:bg-blue-700 flex justify-start items-center space-x-3">Subscribe
+                                            <svg fill="none" height="24"
+                                                class="ml-2 text-gray-100 -rotate-45 transform group-hover:translate-x-1 transition-all duration-300"
+                                                viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                                id="fi_10486492">
+                                                <path
+                                                    d="m16 14.5858-8.99997-8.99998-1.41421 1.41421 8.99998 8.99997h-7.5858v2h11v-11h-2"
+                                                    fill="currentColor"></path>
+                                            </svg></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-t border-white/30"></div>
+
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-6 -mt-14">
+
+                    <div class="text-white w-full col-span-2">
+
+                        <a href="./index.html">
+                            <div class="">
+                                <img src="./src/assets/img/touchmark-logowhite.svg" class="h-10">
+                            </div>
+                        </a>
+
+                        <p
+                            class="mt-5 lg:mt-8 xl:mt-10 2xl:mt-14 text-xs lg:text-sm xl:text-sm 2xl:text-base text-white font-inter">
+                            Innovative Solutions Connecting Brands and Customers We provide full-service IT consulting,
+                            digital
+                            marketing, and software development. Our objective is to use automation and rich media to
+                            close the gap that
+                            exists between brands and consumers.
+                        </p>
+
+                        <div class="mt-2 lg:mt-3 xl:mt-5 2xl:mt-10 flex justify-start items-center space-x-3">
+                            <img src="./src/assets/img/home/icons/phone-icon.svg">
+                            <h3 class="font-inter font-semibold text-xs lg:text-sm xl:text-sm 2xl:text-base">+91 44 4065
+                                2648</h3>
+                        </div>
+
+                        <div class="mt-2 lg:mt-3 xl:mt-3 2xl:mt-5 flex justify-start items-center space-x-3">
+                            <img src="./src/assets/img/home/icons/mail-icon.svg">
+                            <h3 class="font-inter font-semibold text-xs lg:text-sm xl:text-sm 2xl:text-base">
+                                info@touchmarkdes.com</h3>
+                        </div>
+
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-3">
+
+                        <div class="flex justify-start lg:justify-center items-start">
+                            <div>
+                                <p
+                                    class="font-semibold font-gellix text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                                    Quick Links
+                                </p>
+                                <ul class="mt-5 space-y-3 text-sm 2xl:text-base font-inter">
+                                    <li>
+                                        <a href="./about-us.html" class="text-white transition hover:opacity-75"> Who we
+                                            are </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> What we do </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./index.html#casestudy" class="text-white transition hover:opacity-75">
+                                            Case Studies </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Blogs </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> E-Books </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./client&partner.html" class="text-white transition hover:opacity-75">
+                                            Clients and Partners
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./contact-us.html" class="text-white transition hover:opacity-75">
+                                            Contact us </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-start lg:justify-center items-start">
+                            <div>
+                                <p
+                                    class="font-semibold font-gellix text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                                    Services</p>
+                                <ul class="mt-5 space-y-3 text-sm 2xl:text-base font-inter">
+                                    <li>
+                                        <a href="./t&c-service.html" class="text-white transition hover:opacity-75">
+                                            Technology
+                                            Consulting </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Cloud </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Sales & Commerce
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Metaverse </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Data & Analytics
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> AI & ML </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="text-white transition hover:opacity-75"> Robotic Process
+                                            Automation </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-start lg:justify-center items-start">
+                            <div>
+                                <p
+                                    class="font-semibold font-gellix text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                                    Industries
+                                </p>
+                                <ul class="mt-5 space-y-3 text-sm 2xl:text-base font-inter">
+                                    <li>
+                                        <a href="./areo.industry.html" class="text-white transition hover:opacity-75">
+                                            Aerospace & Defence
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./bfsi-industry.html" class="text-white transition hover:opacity-75">
+                                            BFSI </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./es&g-industry.html" class="text-white transition hover:opacity-75">
+                                            Environmental,
+                                            social, and governance </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./fmcg-industry.html" class="text-white transition hover:opacity-75">
+                                            Fast-Moving Consumer
+                                            Goods </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./hc-industry.html" class="text-white transition hover:opacity-75">
+                                            Healthcare </a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="./mining-industry.html" class="text-white transition hover:opacity-75">
+                                            Mining </a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="./gt-industry.html" class="text-white transition hover:opacity-75">
+                                            Geospatial Tech </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./m&e-industry.html" class="text-white transition hover:opacity-75">
+                                            Media and
+                                            Entertainment </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="./real-estate-industry.html"
+                                            class="text-white transition hover:opacity-75"> Real Estate </a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="./t&t-industry.html" class="text-white transition hover:opacity-75">
+                                            Travel and Tourism 
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="border border-t border-white/30"></div>
+                    <div
+                        class="text-white block lg:flex justify-center items-center text-center lg:space-y-0 space-y-3 lg:space-x-5 pt-10">
+                        <h3>© 2010-2024 Touchmark Descience Pvt. Ltd</h3>
+                        <div class="flex justify-center items-center space-x-3">
+                            <h3>Terms of Use</h3>
+                            <h3>┃</h3>
+                            <h3>Privacy Policy</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+        <!--End : Footer-->
+
+    </div>
+
+</body>
+
+
+<script src="./src/js/jquery-3.7.1.min.js"></script>
+<script src="./src/js/owl.carousel.min.js"></script>
+
+
+<script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
+
+<script src="./src/js/preline.min.js"></script>
+
+
+
+<!--Start : Navbar-->
+<script>
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('#navbar');
+        var logo = document.querySelector('#logo');
+        var desktopLogo = './src/assets/img/tds-color-logo.png';
+        var mobileLogo = './src/assets/img/tds-color-logo.png';
+
+        if (header) {
+            header.classList.toggle('bg-scroll-white', window.scrollY > 0);
+        }
+
+        if (logo) {
+            if (window.innerWidth <= 768) {
+                logo.src = mobileLogo;
+            } else {
+                logo.src = window.scrollY > 0 ? mobileLogo : desktopLogo;
+            }
+        }
+
+        var navLinks = document.querySelectorAll('#navbar-collapse-columns .hs-dropdown button');
+        navLinks.forEach(function (link) {
+            link.classList.remove('text-white');
+            link.classList.add('text-black');
+        });
+
+        var contactUsButton = document.querySelector('#navbar-collapse-columns .hs-dropdown button.contact-us');
+        if (contactUsButton) {
+            contactUsButton.classList.remove('text-black');
+            contactUsButton.classList.add('text-white');
+        }
+
+        var border = document.querySelector('.border-white');
+        if (border) {
+            border.classList.toggle('border-white', window.scrollY <= 0);
+            border.classList.toggle('border-blue', window.scrollY > 0);
+        }
+    });
+
+    window.dispatchEvent(new Event('scroll'));
+</script>
+<!--End : Navbar-->
+
+
+<!--Our Teams-->
+<script>
+    $(document).ready(function () {
+        $("#owl-carousel").owlCarousel({
+            loop: true,
+            margin: 70,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        });
+    });
+</script>
+
+
+<!--Life at Touchmark Members-->
+<script>
+    $(document).ready(function () {
+        $("#one-time").owlCarousel({
+            loop: true,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        });
+    });
+</script>
+
+
+<!-- <script>
+    $(document).ready(function () {
+        $("#one-time-mob").owlCarousel({
+            loop: true,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        });
+    });
+</script> -->
+
+
+<!--Reverse Scroll automatical-->
+<script>
+    // Continuous scrolling function
+    function continuousScroll() {
+        const originalContent = document.querySelector('.scroll-content-rev');
+        const containerHeight = document.querySelector('.scroll-container-rev').clientHeight;
+        let scrollPos = containerHeight;
+
+        // Animation function
+        function animate() {
+            scrollPos -= 1; // Adjust speed as needed
+            if (scrollPos <= 0) {
+                scrollPos = containerHeight;
+            }
+            originalContent.style.transform = `translateY(-${scrollPos}px)`;
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+
+    // Start continuous scrolling
+    continuousScroll();
+</script>
+
+
+<!--Forward First Scroll automatical-->
+<script>
+    // Continuous scrolling function
+    function continuousScroll() {
+        const originalContent = document.querySelector('.scroll-content');
+        const containerHeight = document.querySelector('.scroll-container').clientHeight;
+        let scrollPos = 0;
+
+        // Animation function
+        function animate() {
+            scrollPos += 1; // Adjust speed as needed
+            if (scrollPos >= containerHeight) {
+                scrollPos = 0;
+            }
+            originalContent.style.transform = `translateY(-${scrollPos}px)`;
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+
+    // Start continuous scrolling
+    continuousScroll();
+</script>
+
+
+<!--Forward Second Scroll automatical-->
+<script>
+    // Continuous scrolling function
+    function continuousScroll() {
+        const originalContent = document.querySelector('.scroll-content-2');
+        const containerHeight = document.querySelector('.scroll-container-2').clientHeight;
+        let scrollPos = 0;
+
+        // Animation function
+        function animate() {
+            scrollPos += 1; // Adjust speed as needed
+            if (scrollPos >= containerHeight) {
+                scrollPos = 0;
+            }
+            originalContent.style.transform = `translateY(-${scrollPos}px)`;
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+
+    // Start continuous scrolling
+    continuousScroll();
+</script>
+
+
+</html>
